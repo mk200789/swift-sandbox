@@ -28,3 +28,16 @@ Since I'm not using Swift two, I'll take note of this
 sort(&test_array) { $0 < $1 }
 
 print(test_array)
+
+
+
+var array1 = [3.3, 8, 4.5]
+
+//multiplying two items in array
+print(array1[0]*array1[1])
+
+/*
+store the results of multiplying two items and
+store in array1
+*/
+array1.append(array1[0]*array1[1])
