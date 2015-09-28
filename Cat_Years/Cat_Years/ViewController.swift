@@ -10,14 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var textField: UITextField!
+    @IBOutlet var inputAge: UITextField!
     
-    @IBOutlet var label: UILabel!
+    @IBOutlet var result: UILabel!
     
-    @IBAction func submit(sender: AnyObject) {
-        print("Button pressed!")
-        label.text = "The entered age " + textField.text
+    @IBAction func findCatYear(sender: AnyObject) {
+        var catAge = (inputAge.text).toInt()!
+        
+        catAge = catAge * 7
+        
+        result.text = "Your cat is \(inputAge.text) in cat years."
     }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
