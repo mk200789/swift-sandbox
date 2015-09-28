@@ -35,6 +35,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cat.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LMM-DI-cud">
+                                <rect key="frame" x="26" y="388" width="322" height="172"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -45,4 +48,7 @@
             <point key="canvasLocation" x="138.5" y="135.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cat.jpg" width="500" height="331"/>
+    </resources>
 </document>
