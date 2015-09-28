@@ -10,11 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var textField: UITextField!
+    
     @IBOutlet var label: UILabel!
     
     @IBAction func submit(sender: AnyObject) {
         print("Button pressed!")
-        label.text = "Button pressed!"
+        label.text = "The entered age " + textField.text
     }
     override func viewDidLoad() {
         super.viewDidLoad()
