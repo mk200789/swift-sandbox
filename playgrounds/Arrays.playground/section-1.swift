@@ -2,4 +2,16 @@
 
 import UIKit
 
-var str = "Hello, playground"
+//Arrays
+
+var array = [16, 25, 13, 47, "Kim"]
+
+print(array[4])
+
+print(array.count)
+
+array.append(56)
+
+array.removeAtIndex(4)
+
+print(array)
