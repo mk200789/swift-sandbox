@@ -4,14 +4,27 @@ import UIKit
 
 //Arrays
 
-var array = [16, 25, 13, 47, "Kim"]
+var test_array = [16, 25, 13, 47]
 
-print(array[4])
+print(test_array[3])
 
-print(array.count)
+print(test_array.count)
 
-array.append(56)
+//Adding a number to test_array
+test_array.append(56)
 
-array.removeAtIndex(4)
+//Removing an item using the index of array
+test_array.removeAtIndex(1)
 
-print(array)
+print(test_array)
+
+/*
+In Swift 2 we use,  array.sort()
+Since I'm not using Swift two, I'll take note of this
+*/
+
+//Here I sort test_array from low - high order
+//Note: this will not work with a mixed array type
+sort(&test_array) { $0 < $1 }
+
+print(test_array)
