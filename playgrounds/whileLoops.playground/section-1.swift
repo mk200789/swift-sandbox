@@ -16,5 +16,15 @@ while(i < 10){
 var j = 1
 while (j <= 10){
     print(j*5)
+    print("\n")
     j++
+}
+
+var arr = [9, 3, 1, 9, 3, 8]
+
+var k = 0
+
+while (k < arr.count){
+    print(arr[k])
+    k++
 }
