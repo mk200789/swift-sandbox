@@ -31,7 +31,7 @@ if (name == "Kim"){
 
 
 /* 
-now combining checks 
+Combined if statements with && and ||
 */
 
 if (name == "Kim" && age >= 18){
@@ -41,3 +41,12 @@ if (name == "Kim" && age >= 18){
 if (name == "Jimmy" || name == "Dandylion"){
     print("Welcome \(name)")
 }
+
+
+var isFemale = true
+
+if (isFemale){
+    print("You are a woman")
+}
+
+
