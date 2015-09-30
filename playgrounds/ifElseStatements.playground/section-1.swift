@@ -4,7 +4,7 @@ import UIKit
 
 //If statements
 
-var age = 13
+var age = 20
 
 /*
 In swift 2
@@ -19,4 +19,25 @@ if (age >= 18) {
     print("You can play!")
 }else{
     print("Sorry, you're too young.")
+}
+
+var name = "Kim"
+
+if (name == "Kim"){
+    print("Hi \(name) you can play!")
+}else{
+    print("Sorry, \(name) you can't play :(")
+}
+
+
+/* 
+now combining checks 
+*/
+
+if (name == "Kim" && age >= 18){
+    print ("Hi \(name)! You can play with us.")
+}
+
+if (name == "Jimmy" || name == "Dandylion"){
+    print("Welcome \(name)")
 }
