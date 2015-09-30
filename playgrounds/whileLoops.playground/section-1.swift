@@ -28,3 +28,18 @@ while (k < arr.count){
     print(arr[k])
     k++
 }
+
+
+/*
+Challenge: array of 7 numbers, subtract one from each.
+*/
+
+var l = 0
+
+var arr2 = [3, 5, 9, 7 , 1, 23, 8]
+
+while (l < arr2.count){
+    arr2[l] = arr2[l] - 1
+    print(arr2[l])
+    l++
+}
