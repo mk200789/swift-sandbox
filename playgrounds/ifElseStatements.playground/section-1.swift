@@ -50,3 +50,19 @@ if (isFemale){
 }
 
 
+/*
+Challange for myself
+*/
+
+var username = "Adam" //"coolkitty"
+var password = 12345
+
+if (username == "coolkitty" && password == 12345){
+    print("You are in")
+}else if (username != "coolkitty" && password == 12345){
+    print("Invalid username")
+}else if (username == "coolkitty" && password != 12345){
+    print("Invalid password")
+}else{
+    print("Invalid password and username")
+}
