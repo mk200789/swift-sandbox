@@ -38,6 +38,10 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem systemItem="organize" id="a9g-8y-kjQ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jg7-J5-4xr"/>
+                                    <barButtonItem systemItem="bookmarks" id="sUd-sz-FJC"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="YW2-Ke-dJn"/>
+                                    <barButtonItem systemItem="stop" id="MUN-MH-n1r"/>
                                 </items>
                             </toolbar>
                         </subviews>
