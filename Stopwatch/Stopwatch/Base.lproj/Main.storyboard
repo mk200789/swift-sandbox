@@ -23,11 +23,12 @@
                                     <constraint firstAttribute="height" constant="44" id="xkm-vH-eiZ"/>
                                 </constraints>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.63291214923469385" green="0.49721030209538714" blue="0.56959679575769173" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.41351106481607358" green="0.59959689919586856" blue="0.71029974489795911" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Stopwatch" id="uEm-EH-CeA">
                                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="o8H-4R-2tG">
+                                            <color key="tintColor" red="0.4433543211" green="0.70186136590000003" blue="0.70956234060000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="play:" destination="vXZ-lx-hvc" id="iQv-SD-fLC"/>
                                             </connections>
@@ -42,12 +43,14 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem systemItem="stop" id="DWO-8o-fAQ">
+                                        <color key="tintColor" red="0.4433543211" green="0.70186136590000003" blue="0.70956234060000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="reset:" destination="vXZ-lx-hvc" id="ydW-y3-imY"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dWo-kX-hde"/>
                                     <barButtonItem systemItem="pause" id="hRK-kd-rfy">
+                                        <color key="tintColor" red="0.4433543211" green="0.70186136590000003" blue="0.70956234060000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="pause:" destination="vXZ-lx-hvc" id="pOf-Mc-krt"/>
                                         </connections>
@@ -61,7 +64,7 @@
                                     <constraint firstAttribute="height" constant="150" id="yQg-0O-K2P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.51876764483501858" green="0.74875598585748815" blue="0.8837890625" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
