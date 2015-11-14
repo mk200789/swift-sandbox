@@ -27,7 +27,11 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Stopwatch" id="uEm-EH-CeA">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="o8H-4R-2tG"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="o8H-4R-2tG">
+                                            <connections>
+                                                <action selector="play:" destination="vXZ-lx-hvc" id="iQv-SD-fLC"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -37,9 +41,17 @@
                                     <constraint firstAttribute="height" constant="44" id="bpb-Ys-zra"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="stop" id="DWO-8o-fAQ"/>
+                                    <barButtonItem systemItem="stop" id="DWO-8o-fAQ">
+                                        <connections>
+                                            <action selector="reset:" destination="vXZ-lx-hvc" id="ydW-y3-imY"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dWo-kX-hde"/>
-                                    <barButtonItem systemItem="pause" id="hRK-kd-rfy"/>
+                                    <barButtonItem systemItem="pause" id="hRK-kd-rfy">
+                                        <connections>
+                                            <action selector="pause:" destination="vXZ-lx-hvc" id="pOf-Mc-krt"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymv-IS-wa6">
@@ -65,6 +77,9 @@
                             <constraint firstAttribute="centerX" secondItem="Ymv-IS-wa6" secondAttribute="centerX" id="ygL-1e-tBI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="timerLabel" destination="Ymv-IS-wa6" id="CGI-En-cf2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
