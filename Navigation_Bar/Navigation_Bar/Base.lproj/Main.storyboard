@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Rsn-bC-ihU"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Navigation Bars" id="h1u-ia-I60">
+                                    <navigationItem title="Navigation" id="h1u-ia-I60">
                                         <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="dOu-5d-K4e">
                                             <color key="tintColor" red="0.86993086419999999" green="0.58377555380000001" blue="0.8837890625" alpha="1" colorSpace="calibratedRGB"/>
                                         </barButtonItem>
