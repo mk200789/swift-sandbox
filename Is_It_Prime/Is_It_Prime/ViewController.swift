@@ -17,22 +17,31 @@ class ViewController: UIViewController {
     @IBAction func checkPrime(sender: AnyObject) {
         var isPrime = true
         
-        if (userInput.text.toInt() == 1){
-            isPrime = false
-            //result.text = "The number \(userInput.text) is not Prime"
-        }
-        else if (userInput.text.toInt() >= 2){
-            var n = 2
-            while(n < userInput.text.toInt()){
-                if (userInput.text.toInt()!%n == 0){
-                    isPrime = false
-                }
-                n++
-            }
-            //result.text = "The number \(userInput.text) is Prime"
-        }
+        if (userInput.text.toInt() != nil){
         
-        result.text = "Is number \(userInput.text) Prime? \(isPrime)"
+            if (userInput.text.toInt() == 1){
+                isPrime = false
+            }
+            else if (userInput.text.toInt() >= 2){
+                var n = 2
+                while(n < userInput.text.toInt()){
+                    if (userInput.text.toInt()!%n == 0){
+                        isPrime = false
+                    }
+                    n++
+                }
+            }
+        
+            if (isPrime){
+                result.text = "\(userInput.text) is Prime"
+            }
+            else{
+                result.text = "\(userInput.text) is not Prime"
+            }
+        }
+        else{
+            result.text = "\(userInput.text) is not a number"
+        }
 
     }
     
