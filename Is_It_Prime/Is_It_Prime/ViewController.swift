@@ -40,7 +40,7 @@ class ViewController: UIViewController {
             }
         }
         else{
-            result.text = "\(userInput.text) is not a number"
+            result.text = "\(userInput.text) is not a whole number."
         }
 
     }
