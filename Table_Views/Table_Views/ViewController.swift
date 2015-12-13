@@ -5,11 +5,12 @@
 //  Created by Wan Kim Mok on 11/14/15.
 //  Copyright (c) 2015 mk200789. All rights reserved.
 //
-
+ce
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate {
     
+    var cellContent = ["Kim", "Yale", "Michael", "Time"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         //(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
         
-        return 3
+        return cellContent.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -27,7 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
-        cell.textLabel.text = "Test"
+        cell.textLabel.text = cellContent[indexPath.row]
         
         return cell
     }
