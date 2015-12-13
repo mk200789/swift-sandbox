@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,12 +17,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="adD-Wc-ucR">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="adD-Wc-ucR">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="a9c-FE-OYh"/>
+                                    <constraint firstAttribute="height" constant="568" id="qvf-f4-R9h"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="1fe-gK-kNO"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="ukT-fd-beB"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="adD-Wc-ucR" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="2vk-zD-bCb"/>
+                            <constraint firstAttribute="centerY" secondItem="adD-Wc-ucR" secondAttribute="centerY" id="IpK-ec-YpR"/>
+                            <constraint firstAttribute="centerY" secondItem="adD-Wc-ucR" secondAttribute="centerY" id="JRs-8e-psG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="adD-Wc-ucR" secondAttribute="trailing" constant="-16" id="V1b-fB-nk1"/>
+                            <constraint firstAttribute="centerX" secondItem="adD-Wc-ucR" secondAttribute="centerX" id="VPB-uw-pDR"/>
+                            <constraint firstAttribute="centerX" secondItem="adD-Wc-ucR" secondAttribute="centerX" id="Yz5-Dq-oqP"/>
+                            <constraint firstItem="adD-Wc-ucR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="cae-kw-ej8"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="adD-Wc-ucR" secondAttribute="bottom" id="uof-bz-A1n"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2vk-zD-bCb"/>
+                                <exclude reference="JRs-8e-psG"/>
+                                <exclude reference="V1b-fB-nk1"/>
+                                <exclude reference="VPB-uw-pDR"/>
+                                <exclude reference="cae-kw-ej8"/>
+                                <exclude reference="uof-bz-A1n"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
