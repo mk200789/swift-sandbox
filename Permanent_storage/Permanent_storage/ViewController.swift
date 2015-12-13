@@ -16,17 +16,25 @@ class ViewController: UIViewController {
         
         //NSUserDefaults.standardUserDefaults().setObject("Kim", forKey: "Name")
         
-        let username = NSUserDefaults.standardUserDefaults().objectForKey("Name")!
+        //let username = NSUserDefaults.standardUserDefaults().objectForKey("Name")!
         
-        println(username)
+        //println(username)
         
-        var array = [1, 2, 3, 4]
+        //var array = [1, 2, 3, 4]
         
         //NSUserDefaults.standardUserDefaults().setObject(array, forKey: "Array")
+
+        //in swift 2:
+        //let returnedArray = NSUserDefaults.standardUserDefaults().objectForKey("Array") as NSArray
+        let returnedArray = NSUserDefaults.standardUserDefaults().objectForKey("Array") as NSArray
         
-        let returnedArray = NSUserDefaults.standardUserDefaults().objectForKey("Array")!
+        //println(returnedArray)
+        for x in returnedArray{
+            print(x)
+        }
+
         
-        println(returnedArray)
+
     }
 
     override func didReceiveMemoryWarning() {
