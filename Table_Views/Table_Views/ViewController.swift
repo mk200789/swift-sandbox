@@ -5,7 +5,7 @@
 //  Created by Wan Kim Mok on 11/14/15.
 //  Copyright (c) 2015 mk200789. All rights reserved.
 //
-ce
+
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate {

@@ -24,6 +24,14 @@
                                     <constraint firstAttribute="width" constant="320" id="a9c-FE-OYh"/>
                                     <constraint firstAttribute="height" constant="568" id="qvf-f4-R9h"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="tQf-dw-jVr">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tQf-dw-jVr" id="EHb-0F-tP2">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="1fe-gK-kNO"/>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="ukT-fd-beB"/>
