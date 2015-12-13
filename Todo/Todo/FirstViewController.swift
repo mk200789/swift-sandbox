@@ -41,9 +41,20 @@ class FirstViewController: UIViewController, UITableViewDelegate {
         return cell
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        
+        //check for swipe to left
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            todoList.removeAtIndex(indexPath.row)
+            NSUserDefaults.standardUserDefaults().setObject(todoList, forKey: "todoList")
+            table.reloadData()
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
         table.reloadData()
     }
+    
 
 }
 
