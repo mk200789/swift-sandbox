@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>8D8049C0-C2B9-489A-82E0-6465AEA10AE8</string>
+	<string>3E6A0449-10BA-4325-B7B2-A9DC0908E218</string>
 	<key>IDESourceControlProjectName</key>
-	<string>To_Do</string>
+	<string>Todo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>440384376FBB7E7262105E1065B29AE3D6C25AB1</key>
 		<string>https://github.com/mk200789/swift-sandbox.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>To_Do/To_Do.xcodeproj</string>
+	<string>Todo/Todo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>440384376FBB7E7262105E1065B29AE3D6C25AB1</key>

@@ -1,6 +1,6 @@
 //
-//  To_DoTests.swift
-//  To_DoTests
+//  TodoTests.swift
+//  TodoTests
 //
 //  Created by Wan Kim Mok on 12/12/15.
 //  Copyright (c) 2015 mk200789. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class To_DoTests: XCTestCase {
+class TodoTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
