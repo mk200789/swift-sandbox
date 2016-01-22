@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,6 +31,16 @@ class ViewController: UIViewController {
                 
                 //print the content of the url
                 print(webContent)
+                
+                //force queue to come to a close when data is obtained and display webcontent
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    
+                    // in swift 2:
+                    // self.webView.loadHTMLString(String(webContent!), baseURL: nil)
+                    
+                    self.webView.loadHTMLString(webContent, baseURL: nil)
+                })
+                
             }
             else{
                 //If no data, show an error message
