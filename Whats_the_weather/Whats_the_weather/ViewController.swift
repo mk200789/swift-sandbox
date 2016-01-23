@@ -15,6 +15,35 @@ class ViewController: UIViewController {
     @IBOutlet var weatherResultLabel: UILabel!
     
     @IBAction func getWeather(sender: AnyObject) {
+        
+        let city = NSString(string: cityTextField.text).stringByReplacingOccurrencesOfString(" ",  withString: "-")
+        
+        let url = NSURL(string: "http://www.weather-forecast.com/locations/"+city+"/forecasts/latest")!
+        
+        //create a session to obtain the content from the url
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
+            
+            //Execute this once task is completed
+            if let urlContent = data{
+                
+                //convert page content to nsutf8
+                let webContent = NSString(data: urlContent, encoding: NSUTF8StringEncoding)
+                
+                //print the content of the url
+                print(webContent)
+                
+                
+                
+            }
+            else{
+                //If no data, show an error message
+            }
+        }
+        
+        //run the task
+        task.resume()
+
+        
     }
     
     override func viewDidLoad() {
