@@ -40,6 +40,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPT-pa-Het">
+                                <rect key="frame" x="187" y="343" width="226" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="25h-Ym-xoT"/>
+                                    <constraint firstAttribute="height" constant="30" id="BUK-od-Ub1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -50,6 +59,8 @@
                             <constraint firstItem="WO1-c4-naY" firstAttribute="top" secondItem="O9Z-S3-gv3" secondAttribute="bottom" constant="18" id="daR-wy-dMu"/>
                             <constraint firstItem="O9Z-S3-gv3" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="hPE-W5-tDY"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lWd-7w-Bdy" secondAttribute="bottom" id="nxW-DO-kgZ"/>
+                            <constraint firstAttribute="centerX" secondItem="zPT-pa-Het" secondAttribute="centerX" id="qU6-ll-AAQ"/>
+                            <constraint firstItem="zPT-pa-Het" firstAttribute="top" secondItem="WO1-c4-naY" secondAttribute="bottom" constant="182" id="yPK-It-ErX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lWd-7w-Bdy" secondAttribute="trailing" constant="-16" id="ynf-dq-sAJ"/>
                         </constraints>
                     </view>
