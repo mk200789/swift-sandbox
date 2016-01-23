@@ -13,6 +13,7 @@
 		C64FCEC31C533C54005DE826 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64FCEC21C533C54005DE826 /* Images.xcassets */; };
 		C64FCEC61C533C54005DE826 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64FCEC41C533C54005DE826 /* LaunchScreen.xib */; };
 		C64FCED21C533C54005DE826 /* Whats_the_weatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FCED11C533C54005DE826 /* Whats_the_weatherTests.swift */; };
+		C64FCEDC1C533F0B005DE826 /* brooklyn_bridge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C64FCEDB1C533F0B005DE826 /* brooklyn_bridge.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C64FCECB1C533C54005DE826 /* Whats_the_weatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Whats_the_weatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64FCED01C533C54005DE826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64FCED11C533C54005DE826 /* Whats_the_weatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whats_the_weatherTests.swift; sourceTree = "<group>"; };
+		C64FCEDB1C533F0B005DE826 /* brooklyn_bridge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brooklyn_bridge.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				C64FCEBB1C533C54005DE826 /* AppDelegate.swift */,
 				C64FCEBD1C533C54005DE826 /* ViewController.swift */,
 				C64FCEBF1C533C54005DE826 /* Main.storyboard */,
+				C64FCEDB1C533F0B005DE826 /* brooklyn_bridge.jpg */,
 				C64FCEC21C533C54005DE826 /* Images.xcassets */,
 				C64FCEC41C533C54005DE826 /* LaunchScreen.xib */,
 				C64FCEB91C533C54005DE826 /* Supporting Files */,
@@ -194,6 +197,7 @@
 			files = (
 				C64FCEC11C533C54005DE826 /* Main.storyboard in Resources */,
 				C64FCEC61C533C54005DE826 /* LaunchScreen.xib in Resources */,
+				C64FCEDC1C533F0B005DE826 /* brooklyn_bridge.jpg in Resources */,
 				C64FCEC31C533C54005DE826 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
