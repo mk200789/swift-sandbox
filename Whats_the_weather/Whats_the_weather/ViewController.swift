@@ -18,64 +18,61 @@ class ViewController: UIViewController {
         
         if cityTextField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).isEmpty{
             //handles when nothing is typed
-            self.weatherResultLabel.text = "Invalid input!"
+            self.weatherResultLabel.text = "Please enter a city!"
         }
         else{
 
-                let city = NSString(string: cityTextField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())).stringByReplacingOccurrencesOfString(" ",  withString: "-")
-                
-                let url = NSURL(string: "http://www.weather-forecast.com/locations/"+city+"/forecasts/latest")!
-                
-                //create a session to obtain the content from the url
-                let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
+            let city = NSString(string: cityTextField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())).stringByReplacingOccurrencesOfString(" ",  withString: "-")
+    
+            let url = NSURL(string: "http://www.weather-forecast.com/locations/"+city+"/forecasts/latest")!
+    
+            //create a session to obtain the content from the url
+            let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
                     
-                    let status_code = (response as NSHTTPURLResponse).statusCode
+                let status_code = (response as NSHTTPURLResponse).statusCode
 
-                    if status_code == 200{
+                if status_code == 200{
 
-                        //Execute this once task is completed
-                        if let urlContent = data{
+                    //Execute this once task is completed
+                    if let urlContent = data{
                         
-                            //convert page content to nsutf8
-                            let webContent = NSString(data: urlContent, encoding: NSUTF8StringEncoding)
+                        //convert page content to nsutf8
+                        let webContent = NSString(data: urlContent, encoding: NSUTF8StringEncoding)
                         
-                            let websiteArray = webContent!.componentsSeparatedByString("<span class=\"phrase\">")
+                        let websiteArray = webContent!.componentsSeparatedByString("<span class=\"phrase\">")
                         
                         
-                            if websiteArray.count > 1{
+                        if websiteArray.count > 1{
                             
-                                //splits in array when there's </span>
-                                let weatherArray = websiteArray[1].componentsSeparatedByString("</span>")
+                            //splits in array when there's </span>
+                            let weatherArray = websiteArray[1].componentsSeparatedByString("</span>")
                             
-                                if weatherArray.count > 1{
+                            if weatherArray.count > 1{
+
+                                //first component is what is needed and replace &deg with the actual deg sign
+                                let weatherSummary = weatherArray[0].stringByReplacingOccurrencesOfString("&deg;", withString: "º" )
                                 
-                                    //first component is what is needed and replace &deg with the actual deg sign
-                                    let weatherSummary = weatherArray[0].stringByReplacingOccurrencesOfString("&deg;", withString: "º" )
-                                
-                                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
                                     
-                                        self.weatherResultLabel.text = weatherSummary
+                                    self.weatherResultLabel.text = weatherSummary
                                     
-                                        print(weatherSummary)
-                                    
-                                    
-                                    })
-                                }
-                            
+                                })
                             }
-                        
-                        }
-                    }
-                    else{
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.weatherResultLabel.text = "Could not find city :("
                             
-                        })
-
+                        }
+                        
                     }
                 }
-                //run task
-                task.resume()
+                else{
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.weatherResultLabel.text = "Could not find city :("
+                            
+                    })
+
+                }
+            }
+            //run task
+            task.resume()
         }
         
     }
