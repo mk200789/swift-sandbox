@@ -16,56 +16,67 @@ class ViewController: UIViewController {
     
     @IBAction func getWeather(sender: AnyObject) {
         
-        let city = NSString(string: cityTextField.text).stringByReplacingOccurrencesOfString(" ",  withString: "-")
-        
-        let url = NSURL(string: "http://www.weather-forecast.com/locations/"+city+"/forecasts/latest")!
-        
-        //create a session to obtain the content from the url
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
-            
-            //Execute this once task is completed
-            if let urlContent = data{
-                
-                //convert page content to nsutf8
-                let webContent = NSString(data: urlContent, encoding: NSUTF8StringEncoding)
-                
-                let websiteArray = webContent!.componentsSeparatedByString("3 Day Weather Forecast Summary:</b><span class=\"read-more-small\"><span class=\"read-more-content\"> <span class=\"phrase\">")
-
-                
-                if websiteArray.count > 1{
-                    
-                    //splits in array when there's </span>
-                    let weatherArray = websiteArray[1].componentsSeparatedByString("</span>")
-                    
-                    if weatherArray.count > 1{
-                        
-                        //first component is what is needed and replace &deg with the actual deg sign
-                        let weatherSummary = weatherArray[0].stringByReplacingOccurrencesOfString("&deg;", withString: "º" )
-
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-
-                            self.weatherResultLabel.text = weatherSummary
-                            
-                            print(weatherSummary)
-
-
-                        })
-                    }
-
-                }
-
-                
-                
-                
-            }
-            else{
-                //If no data, show an error message
-            }
+        if cityTextField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).isEmpty{
+            //handles when nothing is typed
+            self.weatherResultLabel.text = "Invalid input!"
         }
-        
-        //run the task
-        task.resume()
+        else{
 
+                let city = NSString(string: cityTextField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())).stringByReplacingOccurrencesOfString(" ",  withString: "-")
+                
+                let url = NSURL(string: "http://www.weather-forecast.com/locations/"+city+"/forecasts/latest")!
+                
+                //create a session to obtain the content from the url
+                let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
+                    
+                    let status_code = (response as NSHTTPURLResponse).statusCode
+
+                    if status_code == 200{
+
+                        //Execute this once task is completed
+                        if let urlContent = data{
+                        
+                            //convert page content to nsutf8
+                            let webContent = NSString(data: urlContent, encoding: NSUTF8StringEncoding)
+                        
+                            let websiteArray = webContent!.componentsSeparatedByString("3 Day Weather Forecast Summary:</b><span class=\"read-more-small\"><span class=\"read-more-content\"> <span class=\"phrase\">")
+                        
+                        
+                            if websiteArray.count > 1{
+                            
+                                //splits in array when there's </span>
+                                let weatherArray = websiteArray[1].componentsSeparatedByString("</span>")
+                            
+                                if weatherArray.count > 1{
+                                
+                                    //first component is what is needed and replace &deg with the actual deg sign
+                                    let weatherSummary = weatherArray[0].stringByReplacingOccurrencesOfString("&deg;", withString: "º" )
+                                
+                                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                    
+                                        self.weatherResultLabel.text = weatherSummary
+                                    
+                                        print(weatherSummary)
+                                    
+                                    
+                                    })
+                                }
+                            
+                            }
+                        
+                        }
+                    }
+                    else{
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.weatherResultLabel.text = "Could not find city :("
+                            
+                        })
+
+                    }
+                }
+                //run task
+                task.resume()
+        }
         
     }
     
