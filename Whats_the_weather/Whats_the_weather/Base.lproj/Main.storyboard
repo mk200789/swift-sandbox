@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.79999999999999982" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brooklyn_bridge.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lWd-7w-Bdy">
+                            <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brooklyn_bridge_2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lWd-7w-Bdy">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's the Weather?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9Z-S3-gv3">
@@ -49,15 +49,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzS-Za-Q92">
-                                <rect key="frame" x="122" y="313" width="356" height="188"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="356" id="PfM-0E-kc3"/>
-                                    <constraint firstAttribute="height" constant="188" id="nbX-KW-OUI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGg-OV-9qQ">
                                 <rect key="frame" x="245" y="250" width="111" height="30"/>
                                 <constraints>
@@ -72,6 +63,15 @@
                                     <action selector="getWeather:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="N1G-nR-L8u"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzS-Za-Q92">
+                                <rect key="frame" x="162" y="320" width="277" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="1C8-7O-HRk"/>
+                                    <constraint firstAttribute="height" constant="188" id="ZAr-3G-rrO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -79,10 +79,10 @@
                             <constraint firstItem="lWd-7w-Bdy" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="5Ko-he-XzT"/>
                             <constraint firstAttribute="centerX" secondItem="WO1-c4-naY" secondAttribute="centerX" id="5TP-uD-r2C"/>
                             <constraint firstAttribute="centerX" secondItem="zPT-pa-Het" secondAttribute="centerX" id="7uD-Q5-etj"/>
-                            <constraint firstItem="MzS-Za-Q92" firstAttribute="top" secondItem="dGg-OV-9qQ" secondAttribute="bottom" constant="33" id="AIP-TN-aP1"/>
+                            <constraint firstItem="MzS-Za-Q92" firstAttribute="top" secondItem="dGg-OV-9qQ" secondAttribute="bottom" constant="40" id="AUe-7t-tSh"/>
+                            <constraint firstAttribute="centerX" secondItem="MzS-Za-Q92" secondAttribute="centerX" id="Dff-mh-M3w"/>
                             <constraint firstItem="lWd-7w-Bdy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Lpw-Zv-SJG"/>
                             <constraint firstAttribute="centerX" secondItem="O9Z-S3-gv3" secondAttribute="centerX" id="RV2-Uh-LPh"/>
-                            <constraint firstAttribute="centerX" secondItem="MzS-Za-Q92" secondAttribute="centerX" id="Tqu-hR-Mhz"/>
                             <constraint firstItem="WO1-c4-naY" firstAttribute="top" secondItem="O9Z-S3-gv3" secondAttribute="bottom" constant="18" id="daR-wy-dMu"/>
                             <constraint firstItem="O9Z-S3-gv3" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="hPE-W5-tDY"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lWd-7w-Bdy" secondAttribute="bottom" id="nxW-DO-kgZ"/>
@@ -101,6 +101,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="brooklyn_bridge.jpg" width="1836" height="3264"/>
+        <image name="brooklyn_bridge_2.jpg" width="1536" height="1536"/>
     </resources>
 </document>

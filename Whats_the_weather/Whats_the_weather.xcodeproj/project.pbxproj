@@ -14,6 +14,7 @@
 		C64FCEC61C533C54005DE826 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64FCEC41C533C54005DE826 /* LaunchScreen.xib */; };
 		C64FCED21C533C54005DE826 /* Whats_the_weatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64FCED11C533C54005DE826 /* Whats_the_weatherTests.swift */; };
 		C64FCEDC1C533F0B005DE826 /* brooklyn_bridge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C64FCEDB1C533F0B005DE826 /* brooklyn_bridge.jpg */; };
+		C64FCEE01C56F198005DE826 /* brooklyn_bridge_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C64FCEDF1C56F198005DE826 /* brooklyn_bridge_2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		C64FCED01C533C54005DE826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64FCED11C533C54005DE826 /* Whats_the_weatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whats_the_weatherTests.swift; sourceTree = "<group>"; };
 		C64FCEDB1C533F0B005DE826 /* brooklyn_bridge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brooklyn_bridge.jpg; sourceTree = "<group>"; };
+		C64FCEDF1C56F198005DE826 /* brooklyn_bridge_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brooklyn_bridge_2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				C64FCEBB1C533C54005DE826 /* AppDelegate.swift */,
 				C64FCEBD1C533C54005DE826 /* ViewController.swift */,
 				C64FCEBF1C533C54005DE826 /* Main.storyboard */,
+				C64FCEDF1C56F198005DE826 /* brooklyn_bridge_2.jpg */,
 				C64FCEDB1C533F0B005DE826 /* brooklyn_bridge.jpg */,
 				C64FCEC21C533C54005DE826 /* Images.xcassets */,
 				C64FCEC41C533C54005DE826 /* LaunchScreen.xib */,
@@ -199,6 +202,7 @@
 				C64FCEC61C533C54005DE826 /* LaunchScreen.xib in Resources */,
 				C64FCEDC1C533F0B005DE826 /* brooklyn_bridge.jpg in Resources */,
 				C64FCEC31C533C54005DE826 /* Images.xcassets in Resources */,
+				C64FCEE01C56F198005DE826 /* brooklyn_bridge_2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

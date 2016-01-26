@@ -28,21 +28,25 @@ class ViewController: UIViewController {
                 
                 //convert page content to nsutf8
                 let webContent = NSString(data: urlContent, encoding: NSUTF8StringEncoding)
-
+                
                 let websiteArray = webContent!.componentsSeparatedByString("3 Day Weather Forecast Summary:</b><span class=\"read-more-small\"><span class=\"read-more-content\"> <span class=\"phrase\">")
 
                 
-                if websiteArray.count > 0{
-
+                if websiteArray.count > 1{
+                    
+                    //splits in array when there's </span>
                     let weatherArray = websiteArray[1].componentsSeparatedByString("</span>")
-
-                    if weatherArray.count > 0{
-
-                        let weatherSummary = String(weatherArray[0] as NSString)
+                    
+                    if weatherArray.count > 1{
+                        
+                        //first component is what is needed and replace &deg with the actual deg sign
+                        let weatherSummary = weatherArray[0].stringByReplacingOccurrencesOfString("&deg;", withString: "º" )
 
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
 
                             self.weatherResultLabel.text = weatherSummary
+                            
+                            print(weatherSummary)
 
 
                         })
