@@ -12,9 +12,19 @@ class ViewController: UIViewController {
 
     @IBOutlet var catImage: UIImageView!
     
+    var frame_no = 1
+    
     @IBAction func updateImage(sender: AnyObject) {
         
-        catImage.image = UIImage(named: "frame_2.png")
+        catImage.image = UIImage(named: "frame_"+String(frame_no)+".png")
+        print("\n")
+        print(frame_no)
+        
+        frame_no++
+        
+        if frame_no == 31{
+            frame_no = 1
+        }
     }
     
     override func viewDidLoad() {
