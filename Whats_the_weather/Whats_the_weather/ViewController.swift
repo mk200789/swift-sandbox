@@ -22,14 +22,17 @@ class ViewController: UIViewController {
         }
         else{
 
-            let city = NSString(string: cityTextField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())).stringByReplacingOccurrencesOfString(" ",  withString: "-")
+            let city = NSString(string: cityTextField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())).stringByReplacingOccurrencesOfString(" ",  withString: "-")
     
-            let url = NSURL(string: "http://www.weather-forecast.com/locations/"+city+"/forecasts/latest")!
-    
-            //create a session to obtain the content from the url
-            let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
+            let attemptUrl = NSURL(string: "http://www.weather-forecast.com/locations/"+city+"/forecasts/latest")
+            
+            if let url=attemptUrl{
+                //create a session to obtain the content from the url
+                let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
                     
                 let status_code = (response as NSHTTPURLResponse).statusCode
+                
+                print(status_code)
 
                 if status_code == 200{
 
@@ -65,14 +68,20 @@ class ViewController: UIViewController {
                 }
                 else{
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        self.weatherResultLabel.text = "Could not find city :("
+                        self.weatherResultLabel.text = "Could not find the weather for the city you're looking for :("
                             
                     })
 
                 }
+                }
+                task.resume()
             }
+            else{
+                self.weatherResultLabel.text = "Could not find the weather for the city you're looking for :("
+            }
+
             //run task
-            task.resume()
+            //task.resume()
         }
         
     }
