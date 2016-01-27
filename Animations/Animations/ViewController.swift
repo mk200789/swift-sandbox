@@ -16,9 +16,7 @@ class ViewController: UIViewController {
     
     @IBAction func updateImage(sender: AnyObject) {
         
-        catImage.image = UIImage(named: "frame_"+String(frame_no)+".png")
-        print("\n")
-        print(frame_no)
+        catImage.image = UIImage(named: "frame_\(frame_no).png")
         
         frame_no++
         
