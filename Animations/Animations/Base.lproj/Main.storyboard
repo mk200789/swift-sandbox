@@ -17,12 +17,24 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZJk-Pb-mGK">
-                                <rect key="frame" x="5" y="182" width="364" height="304"/>
+                                <rect key="frame" x="5" y="137" width="364" height="304"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SME-Y2-chk">
+                                <rect key="frame" x="139" y="478" width="97" height="30"/>
+                                <state key="normal" title="Update image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateImage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Jmv-gA-lgi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="catImage" destination="ZJk-Pb-mGK" id="BT0-RY-4Ii"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

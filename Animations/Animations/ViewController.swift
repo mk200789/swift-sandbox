@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var catImage: UIImageView!
+    
+    @IBAction func updateImage(sender: AnyObject) {
+        
+        catImage.image = UIImage(named: "frame_2.png")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
