@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var catImage: UIImageView!
     
-    var frame_no = 1
+    var frame_no = 2
     
     @IBAction func updateImage(sender: AnyObject) {
         
