@@ -34,6 +34,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidLayoutSubviews(){
+        //cat image will be the on the left of the screen
+        catImage.center = CGPointMake(catImage.center.x-400, catImage.center.y)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool){
+        UIView.animateWithDuration(1, animations: {() -> Void in
+            //bringing back the image from left to its actual position
+            self.catImage.center = CGPointMake(self.catImage.center.x+400, self.catImage.center.y)
+        })
+        
+    }
 
 
 }
