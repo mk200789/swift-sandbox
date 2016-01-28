@@ -37,14 +37,21 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews(){
         //cat image will be the on the left of the screen
-        catImage.center = CGPointMake(catImage.center.x-400, catImage.center.y)
+        //catImage.center = CGPointMake(catImage.center.x-400, catImage.center.y)
+        
+        //set alpha of image to 0,
+        catImage.alpha = 0
         
     }
     
     override func viewDidAppear(animated: Bool){
         UIView.animateWithDuration(1, animations: {() -> Void in
             //bringing back the image from left to its actual position
-            self.catImage.center = CGPointMake(self.catImage.center.x+400, self.catImage.center.y)
+            //self.catImage.center = CGPointMake(self.catImage.center.x+400, self.catImage.center.y)
+            
+            //set alpha to 1 so it appears on screen
+            self.catImage.alpha = 1
+            
         })
         
     }
