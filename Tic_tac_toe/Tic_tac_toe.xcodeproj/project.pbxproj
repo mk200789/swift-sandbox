@@ -13,6 +13,9 @@
 		C6FCACF81C5C7A9D008D5CD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6FCACF71C5C7A9D008D5CD4 /* Images.xcassets */; };
 		C6FCACFB1C5C7A9D008D5CD4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6FCACF91C5C7A9D008D5CD4 /* LaunchScreen.xib */; };
 		C6FCAD071C5C7A9E008D5CD4 /* Tic_tac_toeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FCAD061C5C7A9E008D5CD4 /* Tic_tac_toeTests.swift */; };
+		C6FCAD131C5C7E61008D5CD4 /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FCAD101C5C7E61008D5CD4 /* board.png */; };
+		C6FCAD141C5C7E61008D5CD4 /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FCAD111C5C7E61008D5CD4 /* o.png */; };
+		C6FCAD151C5C7E61008D5CD4 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6FCAD121C5C7E61008D5CD4 /* x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		C6FCAD001C5C7A9E008D5CD4 /* Tic_tac_toeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tic_tac_toeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6FCAD051C5C7A9E008D5CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6FCAD061C5C7A9E008D5CD4 /* Tic_tac_toeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_tac_toeTests.swift; sourceTree = "<group>"; };
+		C6FCAD101C5C7E61008D5CD4 /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
+		C6FCAD111C5C7E61008D5CD4 /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
+		C6FCAD121C5C7E61008D5CD4 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 				C6FCACF01C5C7A9D008D5CD4 /* AppDelegate.swift */,
 				C6FCACF21C5C7A9D008D5CD4 /* ViewController.swift */,
 				C6FCACF41C5C7A9D008D5CD4 /* Main.storyboard */,
+				C6FCAD101C5C7E61008D5CD4 /* board.png */,
+				C6FCAD111C5C7E61008D5CD4 /* o.png */,
+				C6FCAD121C5C7E61008D5CD4 /* x.png */,
 				C6FCACF71C5C7A9D008D5CD4 /* Images.xcassets */,
 				C6FCACF91C5C7A9D008D5CD4 /* LaunchScreen.xib */,
 				C6FCACEE1C5C7A9D008D5CD4 /* Supporting Files */,
@@ -192,6 +201,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6FCAD151C5C7E61008D5CD4 /* x.png in Resources */,
+				C6FCAD141C5C7E61008D5CD4 /* o.png in Resources */,
+				C6FCAD131C5C7E61008D5CD4 /* board.png in Resources */,
 				C6FCACF61C5C7A9D008D5CD4 /* Main.storyboard in Resources */,
 				C6FCACFB1C5C7A9D008D5CD4 /* LaunchScreen.xib in Resources */,
 				C6FCACF81C5C7A9D008D5CD4 /* Images.xcassets in Resources */,
