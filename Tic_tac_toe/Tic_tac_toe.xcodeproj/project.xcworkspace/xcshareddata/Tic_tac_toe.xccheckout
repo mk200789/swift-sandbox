@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5054C836-67CA-466D-A291-A13F00BA2F4F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tic_tac_toe</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>440384376FBB7E7262105E1065B29AE3D6C25AB1</key>
+		<string>https://github.com/mk200789/swift-sandbox.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tic_tac_toe/Tic_tac_toe.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>440384376FBB7E7262105E1065B29AE3D6C25AB1</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mk200789/swift-sandbox.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>440384376FBB7E7262105E1065B29AE3D6C25AB1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>440384376FBB7E7262105E1065B29AE3D6C25AB1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>swift-sandbox</string>
+		</dict>
+	</array>
+</dict>
+</plist>
