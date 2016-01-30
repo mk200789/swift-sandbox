@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         catAge = catAge * 7
         
-        result.text = "Your cat is \(inputAge.text) in cat years."
+        result.text = "Your cat is \(catAge) in cat years."
     }
     
 
