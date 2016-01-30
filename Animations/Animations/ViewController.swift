@@ -16,6 +16,20 @@ class ViewController: UIViewController {
     
     var timer = NSTimer()
     
+    var isAnimating = true
+    
+    @IBAction func stopGo(sender: AnyObject) {
+        
+        if isAnimating == true {
+            timer.invalidate()
+            isAnimating = false
+        }
+        else{
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("doAnimation"), userInfo: nil, repeats: true)
+            isAnimating = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
