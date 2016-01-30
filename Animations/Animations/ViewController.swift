@@ -16,17 +16,6 @@ class ViewController: UIViewController {
     
     var timer = NSTimer()
     
-    @IBAction func updateImage(sender: AnyObject) {
-        
-        catImage.image = UIImage(named: "frame_\(frame_no).png")
-        
-        frame_no++
-        
-        if frame_no == 31{
-            frame_no = 1
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
