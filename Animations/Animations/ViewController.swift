@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     var frame_no = 2
     
+    var timer = NSTimer()
+    
     @IBAction func updateImage(sender: AnyObject) {
         
         catImage.image = UIImage(named: "frame_\(frame_no).png")
@@ -28,6 +30,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //set timer to trigger the selector doAnimation for changing the animation frame
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("doAnimation"), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +40,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func doAnimation(){
+        //handles the display the animation frame and update to its next frame
+        
+        catImage.image = UIImage(named: "frame_\(frame_no).png")
+        if frame_no == 30{
+            frame_no = 1
+        }
+        else{
+            frame_no++
+        }
+    }
+ 
+    /*
     override func viewDidLayoutSubviews(){
         //cat image will be the on the left of the screen
         //catImage.center = CGPointMake(catImage.center.x-400, catImage.center.y)
@@ -61,7 +79,7 @@ class ViewController: UIViewController {
         })
         
     }
-
+    */
 
 }
 
