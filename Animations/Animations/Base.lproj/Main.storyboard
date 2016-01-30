@@ -20,8 +20,8 @@
                                 <rect key="frame" x="5" y="137" width="364" height="304"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SME-Y2-chk">
-                                <rect key="frame" x="139" y="478" width="94" height="30"/>
-                                <state key="normal" title="Stop/Animate">
+                                <rect key="frame" x="99" y="481" width="177" height="30"/>
+                                <state key="normal" title="Pause/Resume Animation">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
