@@ -55,34 +55,22 @@ class ViewController: UIViewController {
         }
     }
  
-    /*
+
     override func viewDidLayoutSubviews(){
-        //cat image will be the on the left of the screen
-        //catImage.center = CGPointMake(catImage.center.x-400, catImage.center.y)
-        
         //set alpha of image to 0,
-        //catImage.alpha = 0
-        
-        //alternate way to hide cat image
-        catImage.frame = CGRectMake(100, 20, 0, 0)
+        catImage.alpha = 0
         
     }
     
     override func viewDidAppear(animated: Bool){
         UIView.animateWithDuration(1, animations: {() -> Void in
-            //bringing back the image from left to its actual position
-            //self.catImage.center = CGPointMake(self.catImage.center.x+400, self.catImage.center.y)
-            
             //set alpha to 1 so it appears on screen
-            //self.catImage.alpha = 1
-            
-            //make frame bigger, so it will be visible
-            self.catImage.frame = CGRectMake(self.catImage.center.x, self.catImage.center.y, 200, 500)
+            self.catImage.alpha = 1
             
         })
         
     }
-    */
+
 
 }
 
