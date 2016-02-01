@@ -22,22 +22,27 @@ class ViewController: UIViewController {
 
     @IBAction func buttonPressed(sender: AnyObject) {
         //check if this position of board isn't taken
+
         if board[sender.tag] == -1 {
             
-            //set gamestate to player's value
-            board[sender.tag] = Int(player)
+            if winner == false{
+                //enables to set board if there isn't any winners
+                
+                //set gamestate to player's value
+                board[sender.tag] = Int(player)
             
-            if player {
+                if player {
 
-                sender.setImage(UIImage(named: "x.png"), forState: .Normal)
+                    sender.setImage(UIImage(named: "x.png"), forState: .Normal)
+                }
+                else{
+
+                    sender.setImage(UIImage(named: "o.png"), forState: .Normal)
+                }
+
+                toggleUser()
+                checkWin()
             }
-            else{
-
-                sender.setImage(UIImage(named: "o.png"), forState: .Normal)
-            }
-
-            toggleUser()
-            checkWin()
         }
 
     }
@@ -62,7 +67,7 @@ class ViewController: UIViewController {
                         winner = true
                         
                         
-                        winnerLabel.backgroundColor = UIColor.blueColor()
+                        winnerLabel.backgroundColor = UIColor.purpleColor()
                         winnerLabel.alpha = 1
 
                     }
