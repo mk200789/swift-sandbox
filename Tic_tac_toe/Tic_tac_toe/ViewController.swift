@@ -12,9 +12,11 @@ class ViewController: UIViewController {
     
     var player = true
     
-    var board = [-1, -1, -1, -1, -1, -1, -1, -1 ,-1, -1]
+    var board = [-1, -1, -1, -1, -1, -1, -1 ,-1, -1]
     
-    var winningCombination = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3, 6, 9], [1,5,9], [3,5,7]]
+    var winningCombination = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2, 5, 8], [0,4,8], [2,4,6]]
+    
+    var winner = false
 
     @IBAction func buttonPressed(sender: AnyObject) {
         //check if this position of board isn't taken
@@ -40,15 +42,20 @@ class ViewController: UIViewController {
     
     func checkWin(){
         
-        for combination in winningCombination{
-            if (board[combination[0]] != -1){
-                if (board[combination[0]] == board[combination[1]] && board[combination[0]] == board[combination[2]]){
+        if winner == false {
+            //check winning combinations if there is no winner
+            
+            for combination in winningCombination{
+                if (board[combination[0]] != -1){
+                    if (board[combination[0]] == board[combination[1]] && board[combination[0]] == board[combination[2]]){
                     
-                    if board[combination[0]] == 1{
-                        print("x wins!")
-                    }
-                    else{
-                        print("o wins!")
+                        if board[combination[0]] == 1{
+                            print("x wins!")
+                        }
+                        else{
+                            print("o wins!")
+                        }
+                        winner = true
                     }
                 }
             }
