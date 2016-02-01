@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     var player = true
     
-    var board = [-1, -1, -1, -1, -1, -1, -1, -1 ,-1]
+    var board = [-1, -1, -1, -1, -1, -1, -1, -1 ,-1, -1]
     
     var winningCombination = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3, 6, 9], [1,5,9], [3,5,7]]
 
@@ -25,14 +25,33 @@ class ViewController: UIViewController {
             
             if player {
 
-                sender.setImage(UIImage(named: "o.png"), forState: .Normal)
+                sender.setImage(UIImage(named: "x.png"), forState: .Normal)
             }
             else{
 
-                sender.setImage(UIImage(named: "x.png"), forState: .Normal)
+                sender.setImage(UIImage(named: "o.png"), forState: .Normal)
             }
 
             toggleUser()
+            checkWin()
+        }
+
+    }
+    
+    func checkWin(){
+        
+        for combination in winningCombination{
+            if (board[combination[0]] != -1){
+                if (board[combination[0]] == board[combination[1]] && board[combination[0]] == board[combination[2]]){
+                    
+                    if board[combination[0]] == 1{
+                        print("x wins!")
+                    }
+                    else{
+                        print("o wins!")
+                    }
+                }
+            }
         }
 
     }
