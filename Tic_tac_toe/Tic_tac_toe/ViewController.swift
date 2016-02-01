@@ -12,14 +12,20 @@ class ViewController: UIViewController {
     
     var player = true
     
+    var winner = false
+    
     var board = [-1, -1, -1, -1, -1, -1, -1 ,-1, -1]
     
     var tags = [UIButton]()
     
     @IBOutlet var restart: UIButton!
-
+    
+    @IBOutlet var winnerLabel: UILabel!
+    
+    var winningCombination = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2, 5, 8], [0,4,8], [2,4,6]]
+    
     @IBAction func restart(sender: AnyObject) {
-
+        
         //reset board grids to -1
         for var i=0; i<board.count; ++i{
             board[i] = -1
@@ -27,10 +33,10 @@ class ViewController: UIViewController {
         
         //remove images x's and o's
         for var i=0; i<tags.count; ++i{
-            print(tags[i].tag)
             tags[i].setImage(UIImage(CGImage: nil), forState: .Normal)
         }
         
+        //remove all all items from tags array
         for index in stride(from: tags.count - 1, through: 0, by: -1) {
             tags.removeAtIndex(index)
         }
@@ -40,12 +46,6 @@ class ViewController: UIViewController {
         winnerLabel.alpha = 0
     }
     
-    @IBOutlet var winnerLabel: UILabel!
-    
-    var winningCombination = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2, 5, 8], [0,4,8], [2,4,6]]
-    
-    var winner = false
-
     @IBAction func buttonPressed(sender: AnyObject) {
         //check if this position of board isn't taken
 
@@ -108,12 +108,7 @@ class ViewController: UIViewController {
     
 
     func toggleUser(){
-        if player{
-            player = false
-        }
-        else{
-            player = true
-        }
+        player = !player
     }
     
     
