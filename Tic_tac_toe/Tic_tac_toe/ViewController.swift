@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     var board = [-1, -1, -1, -1, -1, -1, -1 ,-1, -1]
     
+    @IBOutlet var winnerLabel: UILabel!
+    
     var winningCombination = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2, 5, 8], [0,4,8], [2,4,6]]
     
     var winner = false
@@ -51,11 +53,18 @@ class ViewController: UIViewController {
                     
                         if board[combination[0]] == 1{
                             print("x wins!")
+                            winnerLabel.text =  "X Wins!"
                         }
                         else{
                             print("o wins!")
+                            winnerLabel.text =  "O Wins!"
                         }
                         winner = true
+                        
+                        
+                        winnerLabel.backgroundColor = UIColor.blueColor()
+                        winnerLabel.alpha = 1
+
                     }
                 }
             }
@@ -77,6 +86,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        winnerLabel.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
