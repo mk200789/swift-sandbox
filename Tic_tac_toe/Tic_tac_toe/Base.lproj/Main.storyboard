@@ -143,6 +143,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhj-fQ-Okh">
+                                <rect key="frame" x="275" y="307" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YYo-SL-1wa"/>
+                                    <constraint firstAttribute="width" constant="50" id="iCf-W0-OzX"/>
+                                </constraints>
+                                <state key="normal" title="Restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restart:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IZM-zd-2U9"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gkc-GZ-wZ2">
                                 <rect key="frame" x="0.0" y="63" width="600" height="436"/>
                                 <constraints>
@@ -153,6 +166,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="hhj-fQ-Okh" secondAttribute="centerX" id="53f-gR-5hg"/>
                             <constraint firstItem="7Hc-qm-URo" firstAttribute="leading" secondItem="Gkc-GZ-wZ2" secondAttribute="trailing" constant="-224" id="5hH-UP-HdX"/>
                             <constraint firstItem="g3o-Q6-2ad" firstAttribute="leading" secondItem="Gkc-GZ-wZ2" secondAttribute="trailing" constant="-366" id="AYr-gF-FeD"/>
                             <constraint firstItem="2gm-Hs-M4f" firstAttribute="top" secondItem="Gkc-GZ-wZ2" secondAttribute="bottom" constant="-285" id="BOO-mg-TUH"/>
@@ -168,6 +182,7 @@
                             <constraint firstItem="Gkc-GZ-wZ2" firstAttribute="leading" secondItem="jXM-0e-RXV" secondAttribute="trailing" constant="-231" id="e3C-Rp-PZd"/>
                             <constraint firstAttribute="centerX" secondItem="4ph-pt-F6I" secondAttribute="centerX" id="fy6-b4-Gqg"/>
                             <constraint firstItem="4ph-pt-F6I" firstAttribute="top" secondItem="7Hc-qm-URo" secondAttribute="bottom" constant="36" id="gtX-2o-HYd"/>
+                            <constraint firstItem="hhj-fQ-Okh" firstAttribute="top" secondItem="g3o-Q6-2ad" secondAttribute="bottom" constant="106" id="n65-xk-kfw"/>
                             <constraint firstItem="Gkc-GZ-wZ2" firstAttribute="leading" secondItem="dWb-Yk-sQD" secondAttribute="trailing" constant="-231" id="oRS-06-pVN"/>
                             <constraint firstItem="Gkc-GZ-wZ2" firstAttribute="leading" secondItem="g5Q-jg-fZM" secondAttribute="trailing" constant="-231" id="owU-OC-STA"/>
                             <constraint firstItem="Gkc-GZ-wZ2" firstAttribute="top" secondItem="g3o-Q6-2ad" secondAttribute="bottom" constant="-138" id="pCN-iW-h7I"/>
@@ -178,6 +193,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="restart" destination="hhj-fQ-Okh" id="M4a-Bh-Tyg"/>
                         <outlet property="winnerLabel" destination="4ph-pt-F6I" id="HNm-uh-k6N"/>
                     </connections>
                 </viewController>

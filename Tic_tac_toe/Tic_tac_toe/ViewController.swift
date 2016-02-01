@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     
     var board = [-1, -1, -1, -1, -1, -1, -1 ,-1, -1]
     
+    @IBOutlet var restart: UIButton!
+
+    @IBAction func restart(sender: AnyObject) {
+        print("hello")
+    }
     @IBOutlet var winnerLabel: UILabel!
     
     var winningCombination = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2, 5, 8], [0,4,8], [2,4,6]]
@@ -69,6 +74,7 @@ class ViewController: UIViewController {
                         
                         winnerLabel.backgroundColor = UIColor.purpleColor()
                         winnerLabel.alpha = 1
+                        restart.alpha = 1
 
                     }
                 }
@@ -92,12 +98,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         winnerLabel.alpha = 0
+        restart.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 
 }
