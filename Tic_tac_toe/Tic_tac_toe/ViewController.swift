@@ -14,11 +14,32 @@ class ViewController: UIViewController {
     
     var board = [-1, -1, -1, -1, -1, -1, -1 ,-1, -1]
     
+    var tags = [UIButton]()
+    
     @IBOutlet var restart: UIButton!
 
     @IBAction func restart(sender: AnyObject) {
-        print("hello")
+
+        //reset board grids to -1
+        for var i=0; i<board.count; ++i{
+            board[i] = -1
+        }
+        
+        //remove images x's and o's
+        for var i=0; i<tags.count; ++i{
+            print(tags[i].tag)
+            tags[i].setImage(UIImage(CGImage: nil), forState: .Normal)
+        }
+        
+        for index in stride(from: tags.count - 1, through: 0, by: -1) {
+            tags.removeAtIndex(index)
+        }
+        
+        winner = false
+        restart.alpha = 0
+        winnerLabel.alpha = 0
     }
+    
     @IBOutlet var winnerLabel: UILabel!
     
     var winningCombination = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2, 5, 8], [0,4,8], [2,4,6]]
@@ -35,6 +56,8 @@ class ViewController: UIViewController {
                 
                 //set gamestate to player's value
                 board[sender.tag] = Int(player)
+                
+                tags.append(sender as UIButton)
             
                 if player {
 
