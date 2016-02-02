@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     var winner = false
     
+    var gameOver = false
+    
     var board = [-1, -1, -1, -1, -1, -1, -1 ,-1, -1]
     
     var tags = [UIButton]()
@@ -42,8 +44,13 @@ class ViewController: UIViewController {
         }
         
         winner = false
-        restart.alpha = 0
-        winnerLabel.alpha = 0
+        gameOver = false
+        
+        winnerLabel.hidden = true
+        winnerLabel.center = CGPointMake(winnerLabel.center.x - 500, winnerLabel.center.y)
+
+        restart.hidden = true
+        restart.center = CGPointMake(restart.center.x - 500, restart.center.y)
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -77,7 +84,7 @@ class ViewController: UIViewController {
     
     func checkWin(){
         
-        if winner == false {
+        if winner == false && gameOver == false{
             //check winning combinations if there is no winner
             
             for combination in winningCombination{
@@ -93,15 +100,40 @@ class ViewController: UIViewController {
                             winnerLabel.text =  "O Wins!"
                         }
                         winner = true
+
+                        winnerLabel.hidden = false
+                        restart.hidden = false
+                        UIView.animateWithDuration(0.5, animations: { ()-> Void in
+                            self.winnerLabel.center = CGPointMake(self.winnerLabel.center.x + 500, self.winnerLabel.center.y)
+                            self.restart.center = CGPointMake(self.restart.center.x + 500, self.restart.center.y)
+                        })
                         
-                        
-                        winnerLabel.backgroundColor = UIColor.purpleColor()
-                        winnerLabel.alpha = 1
-                        restart.alpha = 1
+
 
                     }
                 }
             }
+            
+            //check if board is filled
+            for grid in board{
+                if (grid != -1){
+                    gameOver = true
+                }
+                else{
+                    gameOver = false
+                    break
+                }
+            }
+        }
+        
+        if gameOver == true && winner == false{
+            winnerLabel.hidden = false
+            restart.hidden = false
+            winnerLabel.text = "It's a draw!"
+            UIView.animateWithDuration(0.5, animations: { ()-> Void in
+                self.winnerLabel.center = CGPointMake(self.winnerLabel.center.x + 500, self.winnerLabel.center.y)
+                self.restart.center = CGPointMake(self.restart.center.x + 500, self.restart.center.y)
+            })
         }
 
     }
@@ -115,8 +147,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        winnerLabel.alpha = 0
-        restart.alpha = 0
+
+        winnerLabel.hidden = true
+        winnerLabel.backgroundColor = UIColor.purpleColor()
+        winnerLabel.center = CGPointMake(winnerLabel.center.x - 500, winnerLabel.center.y)
+
+        restart.hidden = true
+        restart.center = CGPointMake(restart.center.x - 500, restart.center.y)
     }
 
     override func didReceiveMemoryWarning() {
