@@ -36,6 +36,15 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         //set the region in the map
         map.setRegion(region, animated: true)
+        
+        //create annotation
+        var annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = "Brooklyn"
+        annotation.subtitle = "Hello .... Brooklyn"
+        
+        //add the annotation to the map
+        map.addAnnotation(annotation)
     }
 
     override func didReceiveMemoryWarning() {
