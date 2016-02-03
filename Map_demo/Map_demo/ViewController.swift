@@ -15,7 +15,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet var map: MKMapView!
     
     //locationManager variable will be used to access location
-    var locationManager =  CLLocationManagerDelegate()
+    var locationManager =  CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +68,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         map.addGestureRecognizer(uilpgr)
         
         
+        
+    }
+    
+    //called whenever a new location is registered by the phone
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]){
+        print(locations)
         
     }
     
