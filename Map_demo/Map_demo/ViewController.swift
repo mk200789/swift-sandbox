@@ -14,9 +14,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     @IBOutlet var map: MKMapView!
     
+    //locationManager variable will be used to access location
+    var locationManager =  CLLocationManagerDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //setup variables to request user location
+        
+        //setup locationManager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         
         //set longitude and latitude for initial view when app starts
