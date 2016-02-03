@@ -71,11 +71,28 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
-    //called whenever a new location is registered by the phone
+    //Called whenever a new location is registered by the phone: Updates map when according to user's location
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]){
         print(locations)
         
+        //get the 1st user location
+        var userLocation : CLLocation = locations[0] as CLLocation
+        
+        var latitude = userLocation.coordinate.latitude
+        var longitude = userLocation.coordinate.longitude
+        
+        var latDelta : CLLocationDegrees = 0.05
+        var lonDelta : CLLocationDegrees = 0.05
+        
+        var span: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        var location : CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        var region : MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        map.setRegion(region, animated: false)
     }
+    
     
     //action function that receives a variable type uigestureRecognizer
     func action(gestureRecognizer: UIGestureRecognizer){
