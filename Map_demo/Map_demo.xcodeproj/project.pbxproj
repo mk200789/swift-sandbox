@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C64C289D1C61ADAA00CD9384 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C289C1C61ADAA00CD9384 /* CoreLocation.framework */; };
 		C6B11C101C602E350043C43E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B11C0F1C602E350043C43E /* AppDelegate.swift */; };
 		C6B11C121C602E350043C43E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B11C111C602E350043C43E /* ViewController.swift */; };
 		C6B11C151C602E350043C43E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B11C131C602E350043C43E /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C64C289C1C61ADAA00CD9384 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C6B11C0A1C602E350043C43E /* Map_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B11C0E1C602E350043C43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6B11C0F1C602E350043C43E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64C289D1C61ADAA00CD9384 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		C6B11C011C602E350043C43E = {
 			isa = PBXGroup;
 			children = (
+				C64C289C1C61ADAA00CD9384 /* CoreLocation.framework */,
 				C6B11C0C1C602E350043C43E /* Map_demo */,
 				C6B11C221C602E350043C43E /* Map_demoTests */,
 				C6B11C0B1C602E350043C43E /* Products */,
@@ -405,6 +409,7 @@
 				C6B11C2B1C602E350043C43E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6B11C2C1C602E350043C43E /* Build configuration list for PBXNativeTarget "Map_demoTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				C6B11C2E1C602E350043C43E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
