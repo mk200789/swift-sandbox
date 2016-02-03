@@ -58,6 +58,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         
     }
+    
+    //action function that receives a variable type uigestureRecognizer
+    func action(gestureRecognizer: UIGestureRecognizer){
+        print("Gesture recognized!")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
