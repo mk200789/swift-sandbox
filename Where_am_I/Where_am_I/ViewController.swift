@@ -13,6 +13,8 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
     
     @IBOutlet var map: MKMapView!
     
+    @IBOutlet var userLocationInfo: UILabel!
+    
     var locationManager = CLLocationManager()
 
     override func viewDidLoad() {
@@ -41,7 +43,38 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         
     }
     
+    /*
+    to do:
+        show user latitude longitude, speed, altitude, course
+        get nearest address of the location (reversegeocode location)
+    */
     
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]){
+        
+        //get user's location
+        var userLocation : CLLocation = locations[0] as CLLocation
+        
+        var latitude = userLocation.coordinate.latitude
+        var longitude = userLocation.coordinate.longitude
+        
+        var altitude = userLocation.altitude
+        
+        var speed = userLocation.speed
+        
+        var latDelta: CLLocationDegrees = 0.05
+        var lonDelta: CLLocationDegrees = 0.05
+        
+        var span: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        var location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        var region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        map.setRegion(region, animated: true)
+        
+        
+        userLocationInfo.text = "User's location info: \n\n\nAltitude \(altitude) \nLatitude \(latitude)\nLongitude \(longitude) \nTraveling at the speed of \(speed) \n"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

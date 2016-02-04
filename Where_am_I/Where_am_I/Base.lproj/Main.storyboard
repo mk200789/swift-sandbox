@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,14 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Is3-fB-P3k">
-                                <rect key="frame" x="0.0" y="28" width="600" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Is3-fB-P3k">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="367"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="367" id="Ui0-0C-400"/>
+                                    <constraint firstAttribute="width" constant="600" id="idv-zu-6hE"/>
+                                </constraints>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88h-oD-G0b">
+                                <rect key="frame" x="41" y="399" width="518" height="148"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Is3-fB-P3k" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="Eln-hb-hTC"/>
+                            <constraint firstItem="88h-oD-G0b" firstAttribute="top" secondItem="Is3-fB-P3k" secondAttribute="bottom" constant="32" id="YKA-TK-O6V"/>
+                            <constraint firstAttribute="centerX" secondItem="Is3-fB-P3k" secondAttribute="centerX" id="czH-J4-0mQ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="88h-oD-G0b" secondAttribute="bottom" constant="53" id="jyS-HU-vz1"/>
+                            <constraint firstAttribute="centerX" secondItem="88h-oD-G0b" secondAttribute="centerX" id="kGP-IH-zib"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="88h-oD-G0b" secondAttribute="trailing" constant="25" id="wHr-6s-F8l"/>
+                            <constraint firstItem="88h-oD-G0b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="25" id="wxe-sT-WFb"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="map" destination="Is3-fB-P3k" id="p6R-qj-VqU"/>
+                        <outlet property="userLocationInfo" destination="88h-oD-G0b" id="GwY-PA-pSq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
