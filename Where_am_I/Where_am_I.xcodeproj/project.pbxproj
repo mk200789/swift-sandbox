@@ -13,6 +13,7 @@
 		C64C28B41C61B4CF00CD9384 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64C28B31C61B4CF00CD9384 /* Images.xcassets */; };
 		C64C28B71C61B4CF00CD9384 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C64C28B51C61B4CF00CD9384 /* LaunchScreen.xib */; };
 		C64C28C31C61B4CF00CD9384 /* Where_am_ITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64C28C21C61B4CF00CD9384 /* Where_am_ITests.swift */; };
+		C64C28CD1C63013C00CD9384 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C64C28CC1C63013C00CD9384 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C64C28BC1C61B4CF00CD9384 /* Where_am_ITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Where_am_ITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64C28C11C61B4CF00CD9384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C64C28C21C61B4CF00CD9384 /* Where_am_ITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Where_am_ITests.swift; sourceTree = "<group>"; };
+		C64C28CC1C63013C00CD9384 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C64C28CD1C63013C00CD9384 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		C64C289E1C61B4CF00CD9384 = {
 			isa = PBXGroup;
 			children = (
+				C64C28CC1C63013C00CD9384 /* CoreLocation.framework */,
 				C64C28A91C61B4CF00CD9384 /* Where_am_I */,
 				C64C28BF1C61B4CF00CD9384 /* Where_am_ITests */,
 				C64C28A81C61B4CF00CD9384 /* Products */,
