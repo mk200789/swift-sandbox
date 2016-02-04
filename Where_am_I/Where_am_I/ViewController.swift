@@ -49,10 +49,12 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         get nearest address of the location (reversegeocode location)
     */
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]){
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]){
         
         //get user's location
         var userLocation : CLLocation = locations[0] as CLLocation
+        
+        //var address: String = ""
         
         var latitude = userLocation.coordinate.latitude
         var longitude = userLocation.coordinate.longitude
@@ -72,8 +74,23 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         
         map.setRegion(region, animated: true)
         
+        CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler:{ (placemarks, error) -> Void in
+            
+            if (error != nil){
+                //print(error)
+            }
+            else{
+                if let p = CLPlacemark(placemark: placemarks[0] as CLPlacemark){
+                    print(p)
+                    var address = "\(p.thoroughfare) \(p.locality) \(p.subAdministrativeArea) \(p.postalCode) \(p.country)"
+
+                    self.userLocationInfo.text = "User's location info: \n\n\nAltitude \(altitude) \nLatitude \(latitude)\nLongitude \(longitude) \nTraveling at the speed of \(speed) \nNearest address: \(address)"
+                }
+            }
+        })
         
-        userLocationInfo.text = "User's location info: \n\n\nAltitude \(altitude) \nLatitude \(latitude)\nLongitude \(longitude) \nTraveling at the speed of \(speed) \n"
+        
+//        userLocationInfo.text = "User's location info: \n\n\nAltitude \(altitude) \nLatitude \(latitude)\nLongitude \(longitude) \nTraveling at the speed of \(speed) \nNearest address \(address)"
     }
 
     override func didReceiveMemoryWarning() {
