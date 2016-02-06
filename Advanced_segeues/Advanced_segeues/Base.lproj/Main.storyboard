@@ -57,6 +57,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="ulQ-B7-jSz"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="npm-pu-ePf">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -71,6 +74,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="Pqj-sS-EcU"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rLA-BJ-gcN">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -85,6 +91,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="Jjd-ci-ZEq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WeD-Ki-C59">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -99,6 +108,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="3ku-lP-hXx"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g3H-nE-c1W">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -113,6 +125,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="ht0-o9-D7z"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8rY-p7-NdK">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -127,6 +142,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="QcO-iP-Dqp"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="56s-it-wz9">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -141,6 +159,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="cRK-Ry-oSX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -156,4 +177,7 @@
             <point key="canvasLocation" x="334" y="-41"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ulQ-B7-jSz"/>
+    </inferredMetricsTieBreakers>
 </document>
