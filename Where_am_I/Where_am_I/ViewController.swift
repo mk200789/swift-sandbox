@@ -11,9 +11,17 @@ import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDelegate  {
     
-    @IBOutlet var map: MKMapView!
+    @IBOutlet var altitude: UILabel!
     
-    @IBOutlet var userLocationInfo: UILabel!
+    @IBOutlet var latitude: UILabel!
+    
+    @IBOutlet var longitude: UILabel!
+    
+    @IBOutlet var speed: UILabel!
+    
+    @IBOutlet var address: UILabel!
+    
+    @IBOutlet var map: MKMapView!
     
     var locationManager = CLLocationManager()
 
@@ -54,14 +62,8 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         //get user's location
         var userLocation : CLLocation = locations[0] as CLLocation
         
-        //var address: String = ""
-        
         var latitude = userLocation.coordinate.latitude
         var longitude = userLocation.coordinate.longitude
-        
-        var altitude = userLocation.altitude
-        
-        var speed = userLocation.speed
         
         var latDelta: CLLocationDegrees = 0.05
         var lonDelta: CLLocationDegrees = 0.05
@@ -74,6 +76,16 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         
         map.setRegion(region, animated: true)
         
+        
+        //set labels
+        self.altitude.text = "\(userLocation.altitude)"
+        
+        self.speed.text = "\(userLocation.speed)"
+        
+        self.latitude.text = "\(latitude)"
+        
+        self.longitude.text = "\(longitude)"
+        
         CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler:{ (placemarks, error) -> Void in
             
             if (error != nil){
@@ -83,14 +95,12 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
                 if let p = CLPlacemark(placemark: placemarks[0] as CLPlacemark){
                     print(p)
                     var address = "\(p.thoroughfare) \(p.locality) \(p.subAdministrativeArea) \(p.postalCode) \(p.country)"
-
-                    self.userLocationInfo.text = "User's location info: \n\n\nAltitude \(altitude) \nLatitude \(latitude)\nLongitude \(longitude) \nTraveling at the speed of \(speed) \nNearest address: \(address)"
+                    
+                    self.address.text = address
                 }
             }
         })
-        
-        
-//        userLocationInfo.text = "User's location info: \n\n\nAltitude \(altitude) \nLatitude \(latitude)\nLongitude \(longitude) \nTraveling at the speed of \(speed) \nNearest address \(address)"
+
     }
 
     override func didReceiveMemoryWarning() {
