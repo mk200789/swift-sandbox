@@ -13,6 +13,8 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.rowHeight = 44
+        
         print("It works!")
 
         // Uncomment the following line to preserve selection between presentations
