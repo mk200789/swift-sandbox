@@ -41,14 +41,45 @@ class ViewController: UIViewController{
         var uilpgr = UILongPressGestureRecognizer(target: self, action: "action:")
         
         //set the minimum duration have to press down to have the long press recognized
-        uilpgr.minimumPressDuration = 2
+        uilpgr.minimumPressDuration = 1
         
         //add this to the map
         map.addGestureRecognizer(uilpgr)
     }
     
     func action(gestureRecognizer: UIGestureRecognizer){
-        print("HELLO LONGPRESS!")
+
+        //touchPoint gives the point where the long pressed on relative to the map in the view
+        var touchPoint = gestureRecognizer.locationInView(self.map)
+        
+        //get the 2D coordinates from touchPoint
+        var newCoordinate : CLLocationCoordinate2D = map.convertPoint(touchPoint, toCoordinateFromView: self.map)
+        
+        let userLocation = CLLocation(latitude: newCoordinate.latitude, longitude: newCoordinate.longitude)
+        
+
+        CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler:{ (placemarks, error) -> Void in
+            
+            if (error != nil){
+                //print(error)
+            }
+            else{
+                if let p = CLPlacemark(placemark: placemarks[0] as CLPlacemark){
+                    
+                    //create annotation for favorite place
+                    var annotation = MKPointAnnotation()
+                    annotation.coordinate = newCoordinate
+                    annotation.title = "\(p.thoroughfare), \(p.locality)"
+                    annotation.subtitle = "\(p.subAdministrativeArea) \(p.postalCode)"
+                    
+                    //add annotation to map
+                    self.map.addAnnotation(annotation)
+                }
+            }
+        })
+        
+        
+
     }
 
     override func didReceiveMemoryWarning() {

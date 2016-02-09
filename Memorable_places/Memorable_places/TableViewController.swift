@@ -43,7 +43,7 @@ class TableViewController: UITableViewController, UITableViewDelegate {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return favoritePlaces.count
-    }    
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("places", forIndexPath: indexPath) as UITableViewCell
