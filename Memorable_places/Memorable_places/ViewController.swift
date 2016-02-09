@@ -65,6 +65,8 @@ class ViewController: UIViewController{
             }
             else{
                 if let p = CLPlacemark(placemark: placemarks[0] as CLPlacemark){
+
+                    var address = "\(p.thoroughfare), \(p.locality), \(p.subAdministrativeArea), \(p.postalCode) \(p.country)"
                     
                     //create annotation for favorite place
                     var annotation = MKPointAnnotation()
@@ -74,6 +76,8 @@ class ViewController: UIViewController{
                     
                     //add annotation to map
                     self.map.addAnnotation(annotation)
+                    
+                    favoritePlaces.append(address)
                 }
             }
         })
