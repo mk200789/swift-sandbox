@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZBh-CD-cWl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Map-->
@@ -15,14 +16,29 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DQq-UT-b2B">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="DQq-UT-b2B" secondAttribute="centerX" id="08U-XL-sch"/>
+                            <constraint firstItem="DQq-UT-b2B" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="2Jo-To-5P5"/>
+                            <constraint firstItem="DQq-UT-b2B" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="OIZ-V6-W1v"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="DQq-UT-b2B" secondAttribute="bottom" id="h0G-as-0Ld"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DQq-UT-b2B" secondAttribute="trailing" constant="-16" id="k9e-H7-Nth"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="map" destination="DQq-UT-b2B" id="0Rp-aL-V4E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="853" y="866"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Favorite Places-->
         <scene sceneID="Yyc-Wc-BY5">
             <objects>
                 <tableViewController id="8tv-gc-4f8" sceneMemberID="viewController">
@@ -31,7 +47,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JNe-v7-xaH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="places" id="JNe-v7-xaH">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JNe-v7-xaH" id="n7Z-3O-a32">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -43,8 +59,8 @@
                             <outlet property="delegate" destination="8tv-gc-4f8" id="LW1-Bd-MUF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Jei-Vc-BYr">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="tX1-WI-iuQ">
+                    <navigationItem key="navigationItem" title="Favorite Places" id="Jei-Vc-BYr">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="tX1-WI-iuQ">
                             <connections>
                                 <segue destination="vXZ-lx-hvc" kind="show" id="Mmx-zD-t5s"/>
                             </connections>
