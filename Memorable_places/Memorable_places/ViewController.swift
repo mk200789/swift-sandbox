@@ -7,8 +7,13 @@
 //
 
 import UIKit
+/*
+Goal:
+    Table view controller: shows all the user favorite places
+    Map page: user view where those places are and allow them to choose new places with long press
 
-class ViewController: UIViewController {
+*/
+class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
