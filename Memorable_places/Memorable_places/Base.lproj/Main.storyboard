@@ -41,7 +41,7 @@
         <!--Favorite Places-->
         <scene sceneID="Yyc-Wc-BY5">
             <objects>
-                <tableViewController id="8tv-gc-4f8" customClass="TableViewController" customModule="Memorable_places" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8tv-gc-4f8" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pHq-tY-63F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

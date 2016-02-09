@@ -36,6 +36,19 @@ class ViewController: UIViewController{
         var region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
         
         map.setRegion(region, animated: true)
+        
+        //variable for longpress and setups and where actions: is the function to be run when longpress is recognized
+        var uilpgr = UILongPressGestureRecognizer(target: self, action: "action:")
+        
+        //set the minimum duration have to press down to have the long press recognized
+        uilpgr.minimumPressDuration = 2
+        
+        //add this to the map
+        map.addGestureRecognizer(uilpgr)
+    }
+    
+    func action(gestureRecognizer: UIGestureRecognizer){
+        print("HELLO LONGPRESS!")
     }
 
     override func didReceiveMemoryWarning() {
