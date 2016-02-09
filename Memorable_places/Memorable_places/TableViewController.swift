@@ -8,8 +8,12 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+var favoritePlaces = ["Brooklyn", "Washington DC"]
 
+class TableViewController: UITableViewController, UITableViewDelegate {
+
+    @IBOutlet var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +22,8 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.rowHeight = 44
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,24 +36,25 @@ class TableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
-    }
-
-    /*
+        return favoritePlaces.count
+    }    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("places", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
+        cell.textLabel.text = favoritePlaces[indexPath.row]
 
         return cell
     }
-    */
+    
+
 
     /*
     // Override to support conditional editing of the table view.
