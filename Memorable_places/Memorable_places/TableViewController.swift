@@ -8,7 +8,7 @@
 
 import UIKit
 
-var favoritePlaces = ["Brooklyn", "Washington DC"]
+var favoritePlaces = [String]()
 
 class TableViewController: UITableViewController, UITableViewDelegate {
 

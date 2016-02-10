@@ -14,9 +14,14 @@ Goal:
     Map page: user view where those places are and allow them to choose new places with long press
 
 */
+
+var favoritePlacesCoordinate = [CLLocationCoordinate2D]()
+
 class ViewController: UIViewController{
 
     @IBOutlet var map: MKMapView!
+    
+    var address = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +46,11 @@ class ViewController: UIViewController{
         var uilpgr = UILongPressGestureRecognizer(target: self, action: "action:")
         
         //set the minimum duration have to press down to have the long press recognized
-        uilpgr.minimumPressDuration = 1
+        uilpgr.minimumPressDuration = 2
         
         //add this to the map
         map.addGestureRecognizer(uilpgr)
+        
     }
     
     func action(gestureRecognizer: UIGestureRecognizer){
@@ -66,22 +72,29 @@ class ViewController: UIViewController{
             else{
                 if let p = CLPlacemark(placemark: placemarks[0] as CLPlacemark){
 
-                    var address = "\(p.thoroughfare), \(p.locality), \(p.subAdministrativeArea), \(p.postalCode) \(p.country)"
+                    self.address = "\(p.subThoroughfare) \(p.thoroughfare), \(p.locality), \(p.subAdministrativeArea), \(p.postalCode) \(p.country)"
                     
                     //create annotation for favorite place
                     var annotation = MKPointAnnotation()
                     annotation.coordinate = newCoordinate
-                    annotation.title = "\(p.thoroughfare), \(p.locality)"
+                    annotation.title = "\(p.subThoroughfare) \(p.thoroughfare), \(p.locality)"
                     annotation.subtitle = "\(p.subAdministrativeArea) \(p.postalCode)"
                     
                     //add annotation to map
                     self.map.addAnnotation(annotation)
                     
-                    favoritePlaces.append(address)
+                    //favoritePlaces.append(address)
+                    //favoritePlacesCoordinate.append(newCoordinate)
                 }
+
             }
         })
         
+        if address != ""{
+            favoritePlaces.append(address)
+            favoritePlacesCoordinate.append(newCoordinate)
+            address = ""
+        }
         
 
     }
@@ -89,6 +102,38 @@ class ViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        for coordinate in favoritePlacesCoordinate{
+            
+            var userLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            
+            CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler:{ (placemarks, error) -> Void in
+                
+                if (error != nil){
+                    //print(error)
+                }
+                else{
+                    if let p = CLPlacemark(placemark: placemarks[0] as CLPlacemark){
+                        
+                        var address = "\(p.subThoroughfare) \(p.thoroughfare), \(p.locality), \(p.subAdministrativeArea), \(p.postalCode) \(p.country)"
+                        
+                        var annotation = MKPointAnnotation()
+                        annotation.coordinate = coordinate
+                        annotation.title = "\(p.subThoroughfare) \(p.thoroughfare), \(p.locality)"
+                        annotation.subtitle = "\(p.subAdministrativeArea) \(p.postalCode)"
+                        
+                        self.map.addAnnotation(annotation)
+
+                    }
+                    
+                }
+            })
+        }
+        
     }
 
 
