@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import CoreLocation
+
 /*
 Goal:
     Table view controller: shows all the user favorite places
@@ -17,15 +19,23 @@ Goal:
 
 var favoritePlacesCoordinate = [CLLocationCoordinate2D]()
 
-class ViewController: UIViewController{
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
 
     @IBOutlet var map: MKMapView!
     
     var address = ""
     
+    //locationManager variable will be used to access location
+    var locationManager =  CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //setup locationManager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         //set up the initial view of the map when app starts
         var latitude : CLLocationDegrees = 40.5734344
@@ -52,7 +62,31 @@ class ViewController: UIViewController{
         map.addGestureRecognizer(uilpgr)
         
     }
+
     
+    //Called whenever a new location is registered by the phone: Updates map when according to user's location
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]){
+        
+        //get the 1st user location
+        var userLocation : CLLocation = locations[0] as CLLocation
+        
+        var latitude = userLocation.coordinate.latitude
+        var longitude = userLocation.coordinate.longitude
+        
+        var latDelta : CLLocationDegrees = 0.05
+        var lonDelta : CLLocationDegrees = 0.05
+        
+        var span: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        var location : CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        var region : MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        map.setRegion(region, animated: false)
+    }
+
+    
+    //Called when long press gesture is recognized
     func action(gestureRecognizer: UIGestureRecognizer){
 
         //touchPoint gives the point where the long pressed on relative to the map in the view
