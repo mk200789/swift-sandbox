@@ -9,6 +9,7 @@
 import UIKit
 
 var favoritePlaces = [String]()
+var favoriteCoordinates = [[String: NSNumber]]()
 
 class TableViewController: UITableViewController, UITableViewDelegate {
 
@@ -24,6 +25,18 @@ class TableViewController: UITableViewController, UITableViewDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.rowHeight = 44
+        
+        if  NSUserDefaults.standardUserDefaults().objectForKey("favorite_places") != nil{
+            print("exist\n")
+            print(NSUserDefaults.standardUserDefaults().objectForKey("favorite_places"))
+            print(NSUserDefaults.standardUserDefaults().objectForKey("favorite_coordinates"))
+
+        }
+        else{
+            print("create array ")
+            NSUserDefaults.standardUserDefaults().setObject(favoritePlaces, forKey: "favorite_places")
+            NSUserDefaults.standardUserDefaults().setObject(favoriteCoordinates, forKey: "favorite_coordinates")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,14 +55,19 @@ class TableViewController: UITableViewController, UITableViewDelegate {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return favoritePlaces.count
+        var place = NSUserDefaults.standardUserDefaults().objectForKey("favorite_places") as Array<String>
+        
+        return place.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("places", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        cell.textLabel.text = favoritePlaces[indexPath.row]
+        let place = NSUserDefaults.standardUserDefaults().objectForKey("favorite_places") as Array<String>
+        cell.textLabel.text = place[indexPath.row]
+        
+        //cell.textLabel.text = favoritePlaces[indexPath.row]
 
         return cell
     }
@@ -71,11 +89,23 @@ class TableViewController: UITableViewController, UITableViewDelegate {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            
             // Delete the row from the data source
             //favoritePlaces.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            favoritePlaces.removeAtIndex(indexPath.row)
-            NSUserDefaults.standardUserDefaults().setObject(favoritePlaces, forKey: "favoritePlaces")
-            favoritePlacesCoordinate.removeAtIndex(indexPath.row)
+            
+            //favoritePlaces.removeAtIndex(indexPath.row)
+            var place = NSUserDefaults.standardUserDefaults().objectForKey("favorite_places") as Array<String>
+            place.removeAtIndex(indexPath.row)
+            
+            NSUserDefaults.standardUserDefaults().setObject(place, forKey: "favorite_places")
+            
+            //favoritePlacesCoordinate.removeAtIndex(indexPath.row)
+            
+            //favoriteCoordinates.removeAtIndex(indexPath.row)
+            var coordinate = NSUserDefaults.standardUserDefaults().objectForKey("favorite_coordinates") as Array<[String: NSNumber]>
+            coordinate.removeAtIndex(indexPath.row)
+            NSUserDefaults.standardUserDefaults().setObject(coordinate, forKey: "favorite_coordinates")
+            
             table.reloadData()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

@@ -31,6 +31,21 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if NSUserDefaults.standardUserDefaults().objectForKey("favorite_coordinates") != nil{
+            
+            let favorite_place_coordinate = NSUserDefaults.standardUserDefaults().objectForKey("favorite_coordinates") as Array<[String: NSNumber]>
+            let favorite_place = NSUserDefaults.standardUserDefaults().objectForKey("favorite_places") as Array<String>
+            
+            for (var i = 0; i<favorite_place.count; i++){
+                var annotation = MKPointAnnotation()
+                annotation.coordinate.latitude = favorite_place_coordinate[i]["latitude"] as CLLocationDegrees
+                annotation.coordinate.longitude = favorite_place_coordinate[i]["longitude"] as CLLocationDegrees
+                annotation.title = favorite_place[i]
+                map.addAnnotation(annotation)
+            }
+            
+        }
+        
         //setup locationManager
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -127,6 +142,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if address != ""{
             favoritePlaces.append(address)
             favoritePlacesCoordinate.append(newCoordinate)
+
+            var temp = NSUserDefaults.standardUserDefaults().objectForKey("favorite_places") as Array<String>
+            temp.append(address)
+            NSUserDefaults.standardUserDefaults().setObject(temp, forKey: "favorite_places")
+            
+
+            var temp2 = NSUserDefaults.standardUserDefaults().objectForKey("favorite_coordinates") as Array<[String: NSNumber]>
+            var coord = ["latitude": newCoordinate.latitude, "longitude": newCoordinate.longitude]
+            temp2.append(coord)
+            NSUserDefaults.standardUserDefaults().setObject(temp2, forKey: "favorite_coordinates")
+            
             address = ""
         }
         
