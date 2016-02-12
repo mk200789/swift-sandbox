@@ -17,8 +17,6 @@ Goal:
 
 */
 
-var favoritePlacesCoordinate = [CLLocationCoordinate2D]()
-
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate{
 
     @IBOutlet var map: MKMapView!
@@ -140,9 +138,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         })
         
         if address != ""{
-            favoritePlaces.append(address)
-            favoritePlacesCoordinate.append(newCoordinate)
-
             var temp = NSUserDefaults.standardUserDefaults().objectForKey("favorite_places") as Array<String>
             temp.append(address)
             NSUserDefaults.standardUserDefaults().setObject(temp, forKey: "favorite_places")
@@ -166,11 +161,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     
     override func viewDidAppear(animated: Bool) {
+        let favoriteCoordinates = NSUserDefaults.standardUserDefaults().objectForKey("favorite_coordinates") as Array<[String: NSNumber]>
         
-        for coordinate in favoritePlacesCoordinate{
+        for coordinate in favoriteCoordinates{
             
-            var userLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-            
+            var userLocation = CLLocation(latitude: coordinate["latitude"] as CLLocationDegrees, longitude: coordinate["longitude"] as CLLocationDegrees)
+    
             CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler:{ (placemarks, error) -> Void in
                 
                 if (error != nil){
@@ -182,7 +178,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                         var address = "\(p.subThoroughfare) \(p.thoroughfare), \(p.locality), \(p.subAdministrativeArea), \(p.postalCode) \(p.country)"
                         
                         var annotation = MKPointAnnotation()
-                        annotation.coordinate = coordinate
+                        annotation.coordinate.latitude = coordinate["latitude"] as CLLocationDegrees
+                        annotation.coordinate.longitude = coordinate["longitude"] as CLLocationDegrees
                         annotation.title = "\(p.subThoroughfare) \(p.thoroughfare), \(p.locality)"
                         annotation.subtitle = "\(p.subAdministrativeArea) \(p.postalCode)"
                         
@@ -192,6 +189,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     
                 }
             })
+
         }
         
     }

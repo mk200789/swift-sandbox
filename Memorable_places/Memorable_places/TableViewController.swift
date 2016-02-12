@@ -8,8 +8,6 @@
 
 import UIKit
 
-var favoritePlaces = [String]()
-var favoriteCoordinates = [[String: NSNumber]]()
 
 class TableViewController: UITableViewController, UITableViewDelegate {
 
@@ -34,8 +32,10 @@ class TableViewController: UITableViewController, UITableViewDelegate {
         }
         else{
             print("create array ")
-            NSUserDefaults.standardUserDefaults().setObject(favoritePlaces, forKey: "favorite_places")
-            NSUserDefaults.standardUserDefaults().setObject(favoriteCoordinates, forKey: "favorite_coordinates")
+            //NSUserDefaults.standardUserDefaults().setObject(favoritePlaces, forKey: "favorite_places")
+            //NSUserDefaults.standardUserDefaults().setObject(favoriteCoordinates, forKey: "favorite_coordinates")
+            NSUserDefaults.standardUserDefaults().setObject([String](), forKey: "favorite_places")
+            NSUserDefaults.standardUserDefaults().setObject([[String: NSNumber]](), forKey: "favorite_coordinates")
         }
     }
 
@@ -93,15 +93,12 @@ class TableViewController: UITableViewController, UITableViewDelegate {
             // Delete the row from the data source
             //favoritePlaces.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
-            //favoritePlaces.removeAtIndex(indexPath.row)
+            print(indexPath.row)
+            
             var place = NSUserDefaults.standardUserDefaults().objectForKey("favorite_places") as Array<String>
             place.removeAtIndex(indexPath.row)
-            
             NSUserDefaults.standardUserDefaults().setObject(place, forKey: "favorite_places")
-            
-            //favoritePlacesCoordinate.removeAtIndex(indexPath.row)
-            
-            //favoriteCoordinates.removeAtIndex(indexPath.row)
+
             var coordinate = NSUserDefaults.standardUserDefaults().objectForKey("favorite_coordinates") as Array<[String: NSNumber]>
             coordinate.removeAtIndex(indexPath.row)
             NSUserDefaults.standardUserDefaults().setObject(coordinate, forKey: "favorite_coordinates")
