@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         //set audio player with the content of the audio (audioPath)
         /*in Swift 2
         do{
-            try player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: audioPath))
+            try player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: audioPath), error: nil)
             player.play()
         }catch{
             //process error here
