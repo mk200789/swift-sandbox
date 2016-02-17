@@ -11,6 +11,17 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+    @IBOutlet var slider: UISlider!
+    
+    @IBAction func volumeSlider(sender: AnyObject) {
+    }
+
+    @IBAction func pauseButton(sender: AnyObject) {
+    }
+
+    @IBAction func playButton(sender: AnyObject) {
+    }
+    
     //act as a controller for the music which is set to be empty
     var player: AVAudioPlayer = AVAudioPlayer()
 
