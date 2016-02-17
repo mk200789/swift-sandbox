@@ -19,8 +19,6 @@ class ViewController: UIViewController {
     @IBAction func volumeSlider(sender: AnyObject) {
     }
 
-    @IBAction func pauseButton(sender: AnyObject) {
-    }
 
     @IBAction func playButton(sender: AnyObject) {
         //get audio path
@@ -41,7 +39,9 @@ class ViewController: UIViewController {
         player.play()
     }
     
-
+    @IBAction func pauseButton(sender: AnyObject) {
+        player.pause()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
