@@ -16,8 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-BK-xXl">
-                                <rect key="frame" x="277" y="143" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWg-BK-xXl">
+                                <rect key="frame" x="285" y="143" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gfP-PQ-k6q"/>
+                                    <constraint firstAttribute="width" constant="30" id="i7h-lq-Oi4"/>
+                                </constraints>
                                 <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,8 +29,12 @@
                                     <action selector="playButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K4Y-59-vwv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiu-is-3Bh">
-                                <rect key="frame" x="271" y="193" width="43" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiu-is-3Bh">
+                                <rect key="frame" x="279" y="195" width="43" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="43" id="2O0-iI-o7u"/>
+                                    <constraint firstAttribute="height" constant="30" id="vYU-Im-4rz"/>
+                                </constraints>
                                 <state key="normal" title="Pause">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -34,14 +42,22 @@
                                     <action selector="pauseButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LNP-gN-cIm"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PWU-x5-YWb">
-                                <rect key="frame" x="233" y="346" width="118" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PWU-x5-YWb">
+                                <rect key="frame" x="241" y="346" width="118" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="jVW-SG-iWs"/>
+                                    <constraint firstAttribute="height" constant="30" id="kVK-kd-jPt"/>
+                                </constraints>
                                 <connections>
                                     <action selector="volumeSlider:" destination="vXZ-lx-hvc" eventType="valueChanged" id="hJI-TH-shD"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lf-fA-NiS">
-                                <rect key="frame" x="276" y="259" width="33" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lf-fA-NiS">
+                                <rect key="frame" x="284" y="259" width="33" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aNE-Wu-0qv"/>
+                                    <constraint firstAttribute="width" constant="33" id="cga-Tq-K5P"/>
+                                </constraints>
                                 <state key="normal" title="Stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -51,6 +67,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="hiu-is-3Bh" secondAttribute="centerX" id="Cn0-KC-iwe"/>
+                            <constraint firstItem="hiu-is-3Bh" firstAttribute="top" secondItem="pWg-BK-xXl" secondAttribute="bottom" constant="22" id="JC0-tM-793"/>
+                            <constraint firstAttribute="centerX" secondItem="5lf-fA-NiS" secondAttribute="centerX" id="Nse-7B-vOy"/>
+                            <constraint firstItem="PWU-x5-YWb" firstAttribute="top" secondItem="5lf-fA-NiS" secondAttribute="bottom" constant="57" id="ZOf-EU-R9W"/>
+                            <constraint firstAttribute="centerX" secondItem="PWU-x5-YWb" secondAttribute="centerX" id="aen-Bd-9f7"/>
+                            <constraint firstItem="pWg-BK-xXl" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="123" id="dIw-9t-Dvc"/>
+                            <constraint firstAttribute="centerX" secondItem="pWg-BK-xXl" secondAttribute="centerX" id="fFs-7n-xuZ"/>
+                            <constraint firstItem="5lf-fA-NiS" firstAttribute="top" secondItem="hiu-is-3Bh" secondAttribute="bottom" constant="34" id="lwQ-TN-y3Y"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="slider" destination="PWU-x5-YWb" id="yKN-zv-7rG"/>
