@@ -8,6 +8,15 @@
 
 import UIKit
 
+/*
+task:
+    - a title
+    - play, pause, and stop button
+    - an image
+    - a volume slider
+    - a slider to move along the song
+*/
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
