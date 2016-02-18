@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var slider: UISlider!
     
+    //act as a controller for the music which is set to be empty
+    var player: AVAudioPlayer = AVAudioPlayer()
+    
     @IBAction func volumeSlider(sender: AnyObject) {
         player.volume = slider.value
     }
@@ -26,9 +29,13 @@ class ViewController: UIViewController {
         player.pause()
     }
 
+    @IBAction func stopButton(sender: AnyObject) {
+        player.stop()
+        //reset the currentTime of the player to the beginning
+        player.currentTime = 0
+    }
     
-    //act as a controller for the music which is set to be empty
-    var player: AVAudioPlayer = AVAudioPlayer()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
