@@ -21,11 +21,18 @@ task:
 class ViewController: UIViewController {
     
     var player: AVAudioPlayer = AVAudioPlayer()
+    
+    var timer: NSTimer!
 
     @IBOutlet var volumeSlider: UISlider!
     
+    @IBOutlet var timeSlider: UISlider!
+    
+    @IBOutlet var playTime: UILabel!
+    
     @IBAction func play(sender: AnyObject) {
         player.play()
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateTime", userInfo: nil, repeats: true)
     }
     
     @IBAction func pause(sender: AnyObject) {
@@ -41,6 +48,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func scrubSong(sender: AnyObject) {
+        var moveTo = Float(player.duration) * Float(timeSlider.value)
+
+        player.currentTime = NSTimeInterval(moveTo)
+    }
+    
+    
+    func updateTime() {
+
+        
+        timeSlider.value = Float(player.currentTime)/Float(player.duration)
+        
     }
     
     override func viewDidLoad() {
@@ -49,13 +67,12 @@ class ViewController: UIViewController {
         
         let audioPath = NSBundle.mainBundle().pathForResource("my_cherie_amour", ofType: "mp3")!
         player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: audioPath), error: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

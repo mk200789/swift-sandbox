@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sZK-I6-WUT">
-                                <rect key="frame" x="96" y="509" width="183" height="31"/>
+                                <rect key="frame" x="96" y="519" width="183" height="31"/>
                                 <connections>
                                     <action selector="volume:" destination="vXZ-lx-hvc" eventType="valueChanged" id="wee-Ys-qkc"/>
                                 </connections>
@@ -63,13 +63,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRE-vX-Gqk">
-                                <rect key="frame" x="163" y="555" width="48" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFR-Qi-Z7e">
-                                <rect key="frame" x="163" y="466" width="48" height="21"/>
+                                <rect key="frame" x="163" y="565" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -77,11 +71,19 @@
                             <imageView userInteractionEnabled="NO" alpha="0.64999999999999969" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settlers.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cdY-SU-NwG">
                                 <rect key="frame" x="80" y="279" width="240" height="128"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNG-jv-skq">
+                                <rect key="frame" x="141" y="467" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="playTime" destination="TNG-jv-skq" id="8JB-pF-aXr"/>
+                        <outlet property="timeSlider" destination="Uaf-7G-a34" id="hSx-Cv-7na"/>
                         <outlet property="volumeSlider" destination="sZK-I6-WUT" id="pe1-Cg-VLe"/>
                     </connections>
                 </viewController>
