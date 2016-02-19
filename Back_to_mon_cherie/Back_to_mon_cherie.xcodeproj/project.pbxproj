@@ -13,6 +13,8 @@
 		C6031CF01C75AD3A00070A94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6031CEF1C75AD3A00070A94 /* Images.xcassets */; };
 		C6031CF31C75AD3A00070A94 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6031CF11C75AD3A00070A94 /* LaunchScreen.xib */; };
 		C6031CFF1C75AD3A00070A94 /* Back_to_mon_cherieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6031CFE1C75AD3A00070A94 /* Back_to_mon_cherieTests.swift */; };
+		C6031D091C75B05A00070A94 /* my_cherie_amour.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C6031D081C75B05A00070A94 /* my_cherie_amour.mp3 */; };
+		C6031D0B1C75B23500070A94 /* settlers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6031D0A1C75B23500070A94 /* settlers.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		C6031CF81C75AD3A00070A94 /* Back_to_mon_cherieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Back_to_mon_cherieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6031CFD1C75AD3A00070A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6031CFE1C75AD3A00070A94 /* Back_to_mon_cherieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Back_to_mon_cherieTests.swift; sourceTree = "<group>"; };
+		C6031D081C75B05A00070A94 /* my_cherie_amour.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = my_cherie_amour.mp3; path = ../../../../my_cherie_amour.mp3; sourceTree = "<group>"; };
+		C6031D0A1C75B23500070A94 /* settlers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = settlers.jpg; path = ../../../../../Downloads/settlers.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				C6031CE81C75AD3A00070A94 /* AppDelegate.swift */,
 				C6031CEA1C75AD3A00070A94 /* ViewController.swift */,
 				C6031CEC1C75AD3A00070A94 /* Main.storyboard */,
+				C6031D081C75B05A00070A94 /* my_cherie_amour.mp3 */,
+				C6031D0A1C75B23500070A94 /* settlers.jpg */,
 				C6031CEF1C75AD3A00070A94 /* Images.xcassets */,
 				C6031CF11C75AD3A00070A94 /* LaunchScreen.xib */,
 				C6031CE61C75AD3A00070A94 /* Supporting Files */,
@@ -192,7 +198,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6031D0B1C75B23500070A94 /* settlers.jpg in Resources */,
 				C6031CEE1C75AD3A00070A94 /* Main.storyboard in Resources */,
+				C6031D091C75B05A00070A94 /* my_cherie_amour.mp3 in Resources */,
 				C6031CF31C75AD3A00070A94 /* LaunchScreen.xib in Resources */,
 				C6031CF01C75AD3A00070A94 /* Images.xcassets in Resources */,
 			);
