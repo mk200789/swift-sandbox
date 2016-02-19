@@ -55,7 +55,11 @@ class ViewController: UIViewController {
     
     
     func updateTime() {
-
+        var currentTime = Int(player.currentTime)
+        var minutes = currentTime/60
+        var seconds = currentTime - minutes * 60
+        
+        playTime.text = NSString(format: "%02d:%02d", minutes,seconds) as String
         
         timeSlider.value = Float(player.currentTime)/Float(player.duration)
         
