@@ -12,7 +12,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //this variable will be use to detect left swipe
+        var swipeLeft = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        
+        //add direction to the the swipeLeft object (which is the direction we're looking for)
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+
+        //add the swipe gesture to the view
+        self.view.addGestureRecognizer(swipeLeft)
+        
     }
 
     override func didReceiveMemoryWarning() {
