@@ -15,12 +15,31 @@ class ViewController: UIViewController {
         
         //this variable will be use to detect left swipe
         var swipeLeft = UISwipeGestureRecognizer(target: self, action: "swiped:")
-        
         //add direction to the the swipeLeft object (which is the direction we're looking for)
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
-
         //add the swipe gesture to the view
         self.view.addGestureRecognizer(swipeLeft)
+        
+        
+        var swipeUp = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUp)
+    }
+    
+    func swiped(gesture: UIGestureRecognizer){
+
+        //if there's a gesture assign it to swipeGesture variable
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+            //checking if gesture matches any of the direction of the following:
+            switch swipeGesture.direction{
+                case UISwipeGestureRecognizerDirection.Left:
+                    print("Swiped Left!")
+                case UISwipeGestureRecognizerDirection.Up:
+                    print("Swiped Up!")
+                default:
+                    break
+            }
+        }
         
     }
 
