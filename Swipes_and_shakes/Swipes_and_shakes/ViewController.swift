@@ -26,6 +26,14 @@ class ViewController: UIViewController {
         self.view.addGestureRecognizer(swipeUp)
     }
     
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent){
+        //check if motion ended is a shake type
+        if event.subtype == UIEventSubtype.MotionShake{
+            print("Shaked!")
+        }
+        
+    }
+    
     func swiped(gesture: UIGestureRecognizer){
 
         //if there's a gesture assign it to swipeGesture variable
