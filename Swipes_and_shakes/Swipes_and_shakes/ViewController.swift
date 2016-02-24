@@ -29,7 +29,9 @@ class ViewController: UIViewController {
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent){
         //check if motion ended is a shake type
         if event.subtype == UIEventSubtype.MotionShake{
-            print("Shaked!")
+            //select random number
+            let random_num = Int(arc4random_uniform(7))
+            print(random_num)
         }
         
     }

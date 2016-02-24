@@ -18,10 +18,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake for a Song!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-JH-2mN">
                                 <rect key="frame" x="232" y="289" width="137" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="PyS-7E-etD"/>
-                                    <constraint firstAttribute="width" constant="137" id="hc0-7n-R77"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,9 +25,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="8EL-JH-2mN" secondAttribute="centerY" id="ies-wK-7Zx"/>
-                            <constraint firstItem="8EL-JH-2mN" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="269" id="llT-hA-FVP"/>
-                            <constraint firstAttribute="centerX" secondItem="8EL-JH-2mN" secondAttribute="centerX" id="yod-n2-oSp"/>
+                            <constraint firstAttribute="centerX" secondItem="8EL-JH-2mN" secondAttribute="centerX" id="VM5-Vh-wkD"/>
+                            <constraint firstItem="8EL-JH-2mN" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="269" id="wTp-kt-iTG"/>
+                            <constraint firstAttribute="centerY" secondItem="8EL-JH-2mN" secondAttribute="centerY" id="xDG-5L-e8t"/>
                         </constraints>
                     </view>
                 </viewController>
