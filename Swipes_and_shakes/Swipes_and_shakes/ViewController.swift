@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-
+    
+    //list of song titles
+    var songs = ["red_beans", "my_cherie_amour", "cello_suite_1_prelude"]
+    
+    var player: AVAudioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         /*
         //this variable will be use to detect left swipe
         var swipeLeft = UISwipeGestureRecognizer(target: self, action: "swiped:")
@@ -28,17 +35,16 @@ class ViewController: UIViewController {
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent){
+
         //check if motion ended is a shake type
         if event.subtype == UIEventSubtype.MotionShake{
             //select random number
-            let random_num = Int(arc4random_uniform(7))
+            var random_num = Int(arc4random_uniform(UInt32(songs.count)))
+            var songPath = NSBundle.mainBundle().pathForResource(songs[random_num], ofType: "mp3")!
+            player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: songPath), error: nil)
+            player.play()
             
-            switch random_num{
-                case 0,3:
-                    print(random_num)
-                default:
-                    break
-            }
+
         }
         
     }
