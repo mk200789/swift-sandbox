@@ -16,10 +16,12 @@ class ViewController: UIViewController {
     
     var player: AVAudioPlayer = AVAudioPlayer()
     
+    @IBOutlet var display: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /*
+        
         //this variable will be use to detect left swipe
         var swipeLeft = UISwipeGestureRecognizer(target: self, action: "swiped:")
         //add direction to the the swipeLeft object (which is the direction we're looking for)
@@ -28,10 +30,10 @@ class ViewController: UIViewController {
         self.view.addGestureRecognizer(swipeLeft)
         
         
-        var swipeUp = UISwipeGestureRecognizer(target: self, action: "swiped:")
-        swipeUp.direction = UISwipeGestureRecognizerDirection.Up
-        self.view.addGestureRecognizer(swipeUp)
-        */
+        var swipeRight = UISwipeGestureRecognizer(target: self, action: "swiped:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
+        
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent){
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
         }
         
     }
-/*
+
     func swiped(gesture: UIGestureRecognizer){
 
         //if there's a gesture assign it to swipeGesture variable
@@ -56,16 +58,20 @@ class ViewController: UIViewController {
             //checking if gesture matches any of the direction of the following:
             switch swipeGesture.direction{
                 case UISwipeGestureRecognizerDirection.Left:
-                    print("Swiped Left!")
-                case UISwipeGestureRecognizerDirection.Up:
-                    print("Swiped Up!")
+                    //swipe left to pause
+                    player.pause()
+                    display.text = "Pausing"
+                case UISwipeGestureRecognizerDirection.Right:
+                    //swipe right to unpause
+                    player.play()
+                    display.text = "Playing"
                 default:
                     break
             }
         }
         
     }
-*/
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
