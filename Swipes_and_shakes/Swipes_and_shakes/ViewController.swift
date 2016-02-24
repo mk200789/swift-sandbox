@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         //this variable will be use to detect left swipe
         var swipeLeft = UISwipeGestureRecognizer(target: self, action: "swiped:")
         //add direction to the the swipeLeft object (which is the direction we're looking for)
@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         var swipeUp = UISwipeGestureRecognizer(target: self, action: "swiped:")
         swipeUp.direction = UISwipeGestureRecognizerDirection.Up
         self.view.addGestureRecognizer(swipeUp)
+        */
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent){
@@ -31,11 +32,17 @@ class ViewController: UIViewController {
         if event.subtype == UIEventSubtype.MotionShake{
             //select random number
             let random_num = Int(arc4random_uniform(7))
-            print(random_num)
+            
+            switch random_num{
+                case 0,3:
+                    print(random_num)
+                default:
+                    break
+            }
         }
         
     }
-    
+/*
     func swiped(gesture: UIGestureRecognizer){
 
         //if there's a gesture assign it to swipeGesture variable
@@ -52,7 +59,7 @@ class ViewController: UIViewController {
         }
         
     }
-
+*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
