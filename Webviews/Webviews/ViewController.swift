@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+/*
         var url = NSURL(string: "http://www.ecowebhosting.co.uk")!
         
         //make url request
@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         
         //load request in webview
         webview.loadRequest(request)
+*/
+        var html = "<html><body><h1>My Page</h1><p>Hello Everyone!</p></body></html>"
+        
+        webview.loadHTMLString(html, baseURL: nil)
     }
 
     override func didReceiveMemoryWarning() {
