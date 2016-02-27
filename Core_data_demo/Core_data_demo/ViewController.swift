@@ -19,26 +19,26 @@ class ViewController: UIViewController {
         
         //allows to access coredata database
         let context: NSManagedObjectContext = appDel.managedObjectContext!
-        
+/*
         //Adds a user to the database
         //1.specify which entity your going to use
-        var newUser = NSEntityDescription.insertNewObjectForEntityForName("Users", inManagedObjectContext: context)
+        var newUser = NSEntityDescription.insertNewObjectForEntityForName("Users", inManagedObjectContext: context) as NSManagedObject
         //2.set the value for username
         newUser.setValue("Kim", forKey:"username")
         //3.set the value for password
         newUser.setValue("password123", forKey:"password")
         //4.save to database (by calling the context)
         /*
-        In Swift 2
+        In Swift 2 for handling errors
         do{
-        try context.save()
+            try context.save(nil)
         }
         catch{
-        //error
+            print("There's an error!")
         }
         */
         context.save(nil)
-        
+*/
         
         //create a request that allows us to get data from users entity
         let request = NSFetchRequest(entityName: "Users")
@@ -54,12 +54,19 @@ class ViewController: UIViewController {
             try let results = context.executeFetchRequest(request)
         }
         catch{
+            print("Fetch failed")
         }
         */
         
         let results = context.executeFetchRequest(request, error:nil)
-
-        print(results)
+        
+        if results?.count > 0 {
+            print("there is results!: \n")
+            for result in results as [NSManagedObject]{
+                print(result.valueForKey("username"))
+                print("\n")
+            }
+        }
         
     }
 
