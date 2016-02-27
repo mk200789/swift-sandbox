@@ -24,11 +24,33 @@ class ViewController: UIViewController {
                 print(error)
             }
             else{
-                //create uiimage
-                if let bach = UIImage(data: data!){
-                    //update imageview to the downloaded image
-                    self.image.image = bach
+                
+                //this will store the location of the document folder
+                var documentsDirectory: String?
+                
+                //location of the document directory
+                var paths: [AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+                
+                if paths.count > 0 {
+                    documentsDirectory = paths[0] as? String
+                    
+                    //path that the image will be saved
+                    let savePath = documentsDirectory! + "/bach.jpg"
+                    
+                    //save the file
+                    NSFileManager.defaultManager().createFileAtPath(savePath, contents: data, attributes: nil)
+                    
+                    //avoid updating image from background thread, instead update from the main thread
+                    dispatch_async(dispatch_get_main_queue(), { ()-> Void in
+                        
+                        //update imageview to the saved image
+                        self.image.image = UIImage(named: savePath)
+                    })
+                    
                 }
+                
+
+
             }
             
         }
