@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+/*
         let url = NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg")!
             
         //create a session
@@ -55,6 +55,23 @@ class ViewController: UIViewController {
             
         }
         task.resume()
+*/
+        
+        //this will store the location of the document folder
+        var documentsDirectory: String?
+        
+        //location of the document directory
+        var paths: [AnyObject] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        
+        if paths.count > 0 {
+            documentsDirectory = paths[0] as? String
+            
+            //path that the image will be saved
+            let savePath = documentsDirectory! + "/bach.jpg"
+            
+            //update imageview to the saved image
+            self.image.image = UIImage(named: savePath)
+        }
         
     }
 
