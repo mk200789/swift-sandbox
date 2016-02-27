@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         //create a session
         let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
             
+            
             if let urlContent = data{
                 
                 //processing json and store in jsonResult
@@ -30,8 +31,13 @@ class ViewController: UIViewController {
                 }
                 
                 */
-                let jsonResult = NSJSONSerialization.JSONObjectWithData(urlContent, options: NSJSONReadingOptions.MutableContainers, error: nil)
-                print(jsonResult)
+                if (response as NSHTTPURLResponse).statusCode == 200{
+                    let jsonResult = NSJSONSerialization.JSONObjectWithData(urlContent, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                    print(jsonResult["city"])
+                }
+                else{
+                    print("Service unavailable")
+                }
             }
             
         }
