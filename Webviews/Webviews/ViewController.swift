@@ -10,9 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var webview: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var url = NSURL(string: "http://www.ecowebhosting.co.uk")!
+        
+        //make url request
+        var request = NSURLRequest(URL: url)
+        
+        //load request in webview
+        webview.loadRequest(request)
     }
 
     override func didReceiveMemoryWarning() {
