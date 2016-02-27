@@ -13,6 +13,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = NSURL(string: "http://freegeoip.net/json")!
+        
+        //create a session
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
+            
+            if let urlContent = data{
+                
+                //processing json and store in jsonResult
+                /* Swift 2
+                do{
+                    try let jsonResult = NSJSONSerialization.JSONObjectWithData(urlContent, options: NSJSONReadingOptions.MutableContainers)
+                }catch{
+                    print("error")
+                }
+                
+                */
+                let jsonResult = NSJSONSerialization.JSONObjectWithData(urlContent, options: NSJSONReadingOptions.MutableContainers, error: nil)
+                print(jsonResult)
+            }
+            
+        }
+        task.resume()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
