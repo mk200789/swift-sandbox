@@ -10,9 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let url = NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg")!
+            
+        //create a session
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url){ (data, response, error) -> Void in
+                
+            if error != nil{
+                print(error)
+            }
+            else{
+                //create uiimage
+                if let bach = UIImage(data: data!){
+                    //update imageview to the downloaded image
+                    self.image.image = bach
+                }
+            }
+            
+        }
+        task.resume()
+        
     }
 
     override func didReceiveMemoryWarning() {
