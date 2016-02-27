@@ -43,6 +43,10 @@ class ViewController: UIViewController {
         //create a request that allows us to get data from users entity
         let request = NSFetchRequest(entityName: "Users")
         
+        
+        //add a predicate to search for Yale
+        request.predicate = NSPredicate(format: "username = %@" , "Yale")
+        
 
         //fetch request
         /*
@@ -62,10 +66,17 @@ class ViewController: UIViewController {
         
         if results?.count > 0 {
             print("there is results!: \n")
+            
             for result in results as [NSManagedObject]{
-                print(result.valueForKey("username"))
-                print("\n")
+                
+                //converting results username type to a string
+                if let username = result.valueForKey("username") as? String{
+                    print(username)
+                }
             }
+        }
+        else{
+            print("there is no results")
         }
         
     }
