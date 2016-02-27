@@ -44,8 +44,8 @@ class ViewController: UIViewController {
         let request = NSFetchRequest(entityName: "Users")
         
         
-        //add a predicate to search for Yale
-        request.predicate = NSPredicate(format: "username = %@" , "Yale")
+        //add a predicate to search for Ling
+        request.predicate = NSPredicate(format: "username = %@" , "Ling")
         
 
         //fetch request
@@ -68,6 +68,16 @@ class ViewController: UIViewController {
             print("there is results!: \n")
             
             for result in results as [NSManagedObject]{
+                
+                //changing username Yale to Ling
+                //result.setValue("Ling", forKey: "username")
+                
+                //save changes
+                //context.save(nil)
+                
+                //delete username(s) Ling
+                context.deleteObject(result)
+                context.save(nil)
                 
                 //converting results username type to a string
                 if let username = result.valueForKey("username") as? String{
