@@ -98,11 +98,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
         task.resume()
         
-        
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
     }
 
     override func didReceiveMemoryWarning() {
