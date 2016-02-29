@@ -25,6 +25,29 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
+        
+        //url to the recent posts of blogger with the id 10861780
+        var url = NSURL(string:"https://www.googleapis.com/blogger/v3/blogs/10861780/posts?key=AIzaSyCtL2fjwTa7UziwUgx66glCH3aG23oGMIw")!
+        
+        //create session
+        var session = NSURLSession.sharedSession()
+        var task = session.dataTaskWithURL(url){ (data, responses, error) -> Void in
+            
+            if error != nil{
+                print(error)
+            }
+            else{
+                if let data = data{
+                    print(NSString(data: data, encoding: NSUTF8StringEncoding))
+                }
+                else{
+                    print("error")
+                }
+            }
+        }
+        task.resume()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
