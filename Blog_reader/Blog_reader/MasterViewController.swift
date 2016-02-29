@@ -20,11 +20,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
+        
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let context: NSManagedObjectContext = appDel.managedObjectContext!
+        
         
         //url to the recent posts of blogger with the id 10861780
         var url = NSURL(string:"https://www.googleapis.com/blogger/v3/blogs/10861780/posts?key=AIzaSyCtL2fjwTa7UziwUgx66glCH3aG23oGMIw")!
@@ -43,6 +43,28 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                     //set data in json format
                     let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
                     
+                    //make a request to BlogItems table
+                    let request = NSFetchRequest(entityName: "BlogItems")
+                    
+                    request.returnsObjectsAsFaults = false
+                    
+                    let request_result = context.executeFetchRequest(request, error: nil)
+                    
+                    //if there is any locally stored
+                    if request_result?.count > 0{
+                        
+                        print("Removing all previously saved post.")
+                        //remove all post stored
+                        for post in request_result as [NSManagedObject]{
+                            context.deleteObject(post)
+                            context.save(nil)
+                            
+                        }
+                        
+                    }
+                    
+                    
+                    
                     if jsonResult.count > 0{
                         if let items = jsonResult["items"] as? NSArray{
                             
@@ -52,9 +74,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                                     
                                     if let content = item["content"] as? String{
                                         
-                                        print(title)
-                                        print(content)
-                                    
+                                        if let published = item["published"] as? String{
+                                            
+                                            let new_post = NSEntityDescription.insertNewObjectForEntityForName("BlogItems", inManagedObjectContext: context) as NSManagedObject
+                                            
+                                            new_post.setValue(title, forKey: "title")
+                                            new_post.setValue(published, forKey: "date")
+                                            new_post.setValue(content, forKey: "content")
+                                            //print(title)
+                                            //print(published)
+                                            //print(content)                                            
+                                        }
                                     }
                                 }
                             }
@@ -69,6 +99,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         task.resume()
         
         
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        self.navigationItem.rightBarButtonItem = addButton
     }
 
     override func didReceiveMemoryWarning() {
