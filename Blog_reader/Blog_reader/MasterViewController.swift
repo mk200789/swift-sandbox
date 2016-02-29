@@ -38,7 +38,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             }
             else{
                 if let data = data{
-                    print(NSString(data: data, encoding: NSUTF8StringEncoding))
+                    //print(NSString(data: data, encoding: NSUTF8StringEncoding))
+                    
+                    //set data in json format
+                    let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+                    print(jsonResult)
                 }
                 else{
                     print("error")
