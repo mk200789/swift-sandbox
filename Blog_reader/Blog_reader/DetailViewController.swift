@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  Blog_reader
 //
-//  Created by Wan Kim Mok on 2/27/16.
+//  Created by Wan Kim Mok on 2/28/16.
 //  Copyright (c) 2016 mk200789. All rights reserved.
 //
 
@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail: AnyObject = self.detailItem {
             if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+                label.text = detail.valueForKey("timeStamp")!.description
             }
         }
     }

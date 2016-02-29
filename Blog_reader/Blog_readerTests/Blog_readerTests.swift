@@ -2,7 +2,7 @@
 //  Blog_readerTests.swift
 //  Blog_readerTests
 //
-//  Created by Wan Kim Mok on 2/27/16.
+//  Created by Wan Kim Mok on 2/28/16.
 //  Copyright (c) 2016 mk200789. All rights reserved.
 //
 
