@@ -42,7 +42,24 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                     
                     //set data in json format
                     let jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-                    print(jsonResult)
+                    
+                    if jsonResult.count > 0{
+                        if let items = jsonResult["items"] as? NSArray{
+                            
+                            for item in items{
+                                
+                                if let title = item["title"] as? String{
+                                    
+                                    if let content = item["content"] as? String{
+                                        
+                                        print(title)
+                                        print(content)
+                                    
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 else{
                     print("error")
