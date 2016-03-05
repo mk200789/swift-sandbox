@@ -16,7 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.57779605619999996" green="0.83252949620000005" blue="0.73997036230000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <segue destination="bep-0t-0CM" kind="presentation" identifier="LoginToDoList" id="od9-9v-BGF"/>
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="436" y="295"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Grocery List-->
         <scene sceneID="JJo-Dk-DYz">
             <objects>
-                <tableViewController id="F6g-fM-Lfi" sceneMemberID="viewController">
+                <tableViewController id="F6g-fM-Lfi" customClass="GroceryListTableViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yf8-bs-bp2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
                             <outlet property="delegate" destination="F6g-fM-Lfi" id="1MY-1N-8YT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="VLV-Je-ven"/>
+                    <navigationItem key="navigationItem" title="Grocery List" id="VLV-Je-ven"/>
                     <connections>
                         <segue destination="OeG-tX-hzo" kind="show" id="nzM-Na-Sxt"/>
                     </connections>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="1876" y="295"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Online Users Table View Controller-->
         <scene sceneID="OMi-2B-FzW">
             <objects>
-                <tableViewController id="OeG-tX-hzo" sceneMemberID="viewController">
+                <tableViewController id="OeG-tX-hzo" customClass="OnlineUsersTableViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LQy-WQ-JIa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
