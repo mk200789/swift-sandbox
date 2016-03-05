@@ -105,7 +105,15 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        ref.observeAuthEventWithBlock { (authData) -> Void in
+            if authData != nil{
+                print(authData)
+                print("\nSomone is authenticated")
+            }
+        }
+    }
 
 }
 
