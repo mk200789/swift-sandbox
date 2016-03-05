@@ -9,6 +9,9 @@
 import UIKit
 
 class GroceryListTableViewController: UITableViewController {
+    
+    //connection to demo7011 database
+    let ref = Firebase(url: "https://demo7011.firebaseio.com/grocery-items")
 
     override func viewDidLoad() {
         super.viewDidLoad()

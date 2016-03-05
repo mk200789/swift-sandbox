@@ -44,6 +44,7 @@
 		C64D34E11C8A6FF500233C71 /* GrocrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrocrTests.swift; sourceTree = "<group>"; };
 		C64D34ED1C8A768A00233C71 /* GroceryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryListTableViewController.swift; sourceTree = "<group>"; };
 		C64D34EF1C8A770800233C71 /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
+		C64D34F11C8A7A8A00233C71 /* Grocr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Grocr-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +108,12 @@
 			children = (
 				C64D34CB1C8A6FF500233C71 /* AppDelegate.swift */,
 				C64D34CD1C8A6FF500233C71 /* LoginViewController.swift */,
+				C64D34ED1C8A768A00233C71 /* GroceryListTableViewController.swift */,
+				C64D34EF1C8A770800233C71 /* OnlineUsersTableViewController.swift */,
 				C64D34CF1C8A6FF500233C71 /* Main.storyboard */,
 				C64D34D21C8A6FF500233C71 /* Images.xcassets */,
 				C64D34D41C8A6FF500233C71 /* LaunchScreen.xib */,
-				C64D34ED1C8A768A00233C71 /* GroceryListTableViewController.swift */,
-				C64D34EF1C8A770800233C71 /* OnlineUsersTableViewController.swift */,
+				C64D34F11C8A7A8A00233C71 /* Grocr-Bridging-Header.h */,
 				C64D34C91C8A6FF500233C71 /* Supporting Files */,
 			);
 			path = Grocr;
@@ -420,9 +422,12 @@
 			baseConfigurationReference = 6D847180469021E3C8EFA4B4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Grocr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Grocr-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -431,9 +436,11 @@
 			baseConfigurationReference = 416DBA1C45C8028860D86433 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Grocr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Grocr-Bridging-Header.h";
 			};
 			name = Release;
 		};

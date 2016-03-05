@@ -14,23 +14,67 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Grocr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwT-wa-7hg">
+                                <rect key="frame" x="104" y="120" width="167" height="51"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ky-Xp-6LH">
+                                <rect key="frame" x="45" y="262" width="294" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o55-8L-vjb">
+                                <rect key="frame" x="45" y="312" width="294" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE3-tJ-tYt">
+                                <rect key="frame" x="45" y="388" width="294" height="30"/>
+                                <color key="backgroundColor" red="0.97950124740600586" green="0.84111229641072038" blue="0.35018712207036151" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.46119658801020413" green="0.46119658801020413" blue="0.46119658801020413" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cyy-Rf-hMv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-K5-ROZ">
+                                <rect key="frame" x="44" y="434" width="294" height="30"/>
+                                <color key="backgroundColor" red="0.58314053897094853" green="0.8529575892857143" blue="0.77289207627695766" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" red="0.46119658800000002" green="0.46119658800000002" blue="0.46119658800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signup:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="X3w-NU-0sZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.57779605619999996" green="0.83252949620000005" blue="0.73997036230000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="bep-0t-0CM" kind="presentation" identifier="LoginToDoList" id="od9-9v-BGF"/>
+                        <outlet property="email" destination="3ky-Xp-6LH" id="YX7-NV-FYN"/>
+                        <outlet property="password" destination="o55-8L-vjb" id="NCL-LS-Kdk"/>
+                        <segue destination="bep-0t-0CM" kind="presentation" identifier="LoginToList" id="od9-9v-BGF"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="436" y="295"/>
+            <point key="canvasLocation" x="435.5" y="294.5"/>
         </scene>
         <!--Grocery List-->
         <scene sceneID="JJo-Dk-DYz">
             <objects>
                 <tableViewController id="F6g-fM-Lfi" customClass="GroceryListTableViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yf8-bs-bp2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -56,7 +100,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Grocery List" id="VLV-Je-ven"/>
                     <connections>
-                        <segue destination="OeG-tX-hzo" kind="show" id="nzM-Na-Sxt"/>
+                        <segue destination="OeG-tX-hzo" kind="show" identifier="ListToUsers" id="nzM-Na-Sxt"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dvh-rS-n3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,7 +112,7 @@
             <objects>
                 <tableViewController id="OeG-tX-hzo" customClass="OnlineUsersTableViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LQy-WQ-JIa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
