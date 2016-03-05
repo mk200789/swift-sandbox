@@ -32,6 +32,25 @@ class ViewController: UIViewController {
                         print("complete")
                     })
                 }
+                else{
+                    var err = error.userInfo! as NSDictionary
+                    
+                    var preprocessMessage = err["NSLocalizedDescription"] as NSString
+                    
+                    var filterMessage = preprocessMessage.componentsSeparatedByString(")")
+                    
+                    let Message = filterMessage[1] as String
+
+                    let errorAlert = UIAlertController(title: "Error", message: Message , preferredStyle: .Alert)
+                    
+                    let agree = UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) -> Void in
+
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    })
+                    errorAlert.addAction(agree)
+                    
+                    self.presentViewController(errorAlert, animated: true, completion: nil)
+                }
             })
         }
         
