@@ -14,10 +14,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Create a reference to a Firebase location
-        var myRootRef = Firebase(url: "https://demo7011.firebaseio.com/")
+        var myRootRef = Firebase(url: "https://demo7011.firebaseio.com")
 
         //write value to firebase
-        myRootRef.setValue("Do you like lemonade?")
+        var q1 = ["questions" : ["how are you?", "are you having fun?"]]
+        myRootRef.setValue(q1)
+        
+        
+        //read data
+        myRootRef.observeEventType(.Value, withBlock: {
+            snapshot in
+            print(snapshot.value)
+            
+        })
+
+        
+
     }
 
     override func didReceiveMemoryWarning() {
