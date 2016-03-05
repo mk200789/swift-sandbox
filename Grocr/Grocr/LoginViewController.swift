@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("hello")
+        print("Login page")
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,10 +107,12 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        //check if in authentication state
         ref.observeAuthEventWithBlock { (authData) -> Void in
             if authData != nil{
-                print(authData)
-                print("\nSomone is authenticated")
+                //user is authenticated
+                print("\nSomone is authenticated\n")
+                self.performSegueWithIdentifier("LoginToList", sender: nil)
             }
         }
     }

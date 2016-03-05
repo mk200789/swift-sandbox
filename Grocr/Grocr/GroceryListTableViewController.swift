@@ -11,10 +11,26 @@ import UIKit
 class GroceryListTableViewController: UITableViewController {
     
     //connection to demo7011 database
-    let ref = Firebase(url: "https://demo7011.firebaseio.com/grocery-items")
+    let ref = Firebase(url: "https://demo7011.firebaseio.com")
 
+    @IBAction func logout(sender: AnyObject) {
+        ref.unauth()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        //check if in authentication state
+        ref.observeAuthEventWithBlock { (authData) -> Void in
+            if authData == nil{
+                //user is authenticated
+                print("\nSomone is unauthenticated\n")
+                self.performSegueWithIdentifier("LogOff", sender: nil)
+
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("grocery lists\n")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

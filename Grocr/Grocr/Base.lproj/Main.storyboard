@@ -4,16 +4,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Page-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login Page" id="vXZ-lx-hvc" customClass="ViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="login_page" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -98,9 +98,16 @@
                             <outlet property="delegate" destination="F6g-fM-Lfi" id="1MY-1N-8YT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Grocery List" id="VLV-Je-ven"/>
+                    <navigationItem key="navigationItem" title="Grocery List" id="VLV-Je-ven">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="nfI-hg-iEt">
+                            <connections>
+                                <action selector="logout:" destination="F6g-fM-Lfi" id="a7a-gk-zFh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="OeG-tX-hzo" kind="show" identifier="ListToUsers" id="nzM-Na-Sxt"/>
+                        <segue destination="vXZ-lx-hvc" kind="showDetail" identifier="LogOff" id="z09-sy-tRQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dvh-rS-n3P" userLabel="First Responder" sceneMemberID="firstResponder"/>
