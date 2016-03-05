@@ -17,6 +17,27 @@ class ViewController: UIViewController {
     @IBOutlet var password: UITextField!
     
     @IBAction func login(sender: AnyObject) {
+        self.ref.authUser(email.text, password: password.text) { (error, auth) -> Void in
+            if error != nil{
+                var err = error.userInfo! as NSDictionary
+                
+                var preprocessMessage = err["NSLocalizedDescription"] as NSString
+                
+                var filterMessage = preprocessMessage.componentsSeparatedByString(")")
+                
+                var Message = filterMessage[1] as String
+                
+                let errorAlert = UIAlertController(title: "Error", message: Message , preferredStyle: .Alert)
+                
+                let agree = UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) -> Void in
+                    
+                })
+                
+                errorAlert.addAction(agree)
+                
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func signup(sender: AnyObject) {
@@ -29,7 +50,6 @@ class ViewController: UIViewController {
             self.ref.createUser(emailField.text, password: passwordField.text, withCompletionBlock: { (error: NSError!) -> Void in
                 if error == nil{
                     self.ref.authUser(emailField.text, password: passwordField.text, withCompletionBlock: { (error, auth) in
-                        print("complete")
                     })
                 }
                 else{
