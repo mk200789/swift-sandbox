@@ -15,8 +15,10 @@ class GroceryListTableViewController: UITableViewController {
 
     @IBAction func logout(sender: AnyObject) {
         ref.unauth()
+        self.performSegueWithIdentifier("LogOff", sender: nil)
     }
-    
+
+    /*
     override func viewDidAppear(animated: Bool) {
         //check if in authentication state
         ref.observeAuthEventWithBlock { (authData) -> Void in
@@ -28,6 +30,7 @@ class GroceryListTableViewController: UITableViewController {
             }
         }
     }
+*/
     override func viewDidLoad() {
         super.viewDidLoad()
         print("grocery lists\n")

@@ -16,6 +16,8 @@
 		C64D34E21C8A6FF500233C71 /* GrocrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64D34E11C8A6FF500233C71 /* GrocrTests.swift */; };
 		C64D34EE1C8A768A00233C71 /* GroceryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64D34ED1C8A768A00233C71 /* GroceryListTableViewController.swift */; };
 		C64D34F01C8A770800233C71 /* OnlineUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64D34EF1C8A770800233C71 /* OnlineUsersTableViewController.swift */; };
+		C64D34F61C8A956300233C71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64D34F51C8A956300233C71 /* User.swift */; };
+		C64D34FA1C8ABE4100233C71 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64D34F91C8ABE4100233C71 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		C64D34ED1C8A768A00233C71 /* GroceryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryListTableViewController.swift; sourceTree = "<group>"; };
 		C64D34EF1C8A770800233C71 /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
 		C64D34F11C8A7A8A00233C71 /* Grocr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Grocr-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		C64D34F51C8A956300233C71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C64D34F91C8ABE4100233C71 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		C64D34C81C8A6FF500233C71 /* Grocr */ = {
 			isa = PBXGroup;
 			children = (
+				C64D34F41C8A951300233C71 /* Models */,
 				C64D34CB1C8A6FF500233C71 /* AppDelegate.swift */,
 				C64D34CD1C8A6FF500233C71 /* LoginViewController.swift */,
 				C64D34ED1C8A768A00233C71 /* GroceryListTableViewController.swift */,
@@ -142,6 +147,15 @@
 				C64D34E01C8A6FF500233C71 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C64D34F41C8A951300233C71 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C64D34F51C8A956300233C71 /* User.swift */,
+				C64D34F91C8ABE4100233C71 /* Item.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +312,8 @@
 				C64D34CE1C8A6FF500233C71 /* LoginViewController.swift in Sources */,
 				C64D34F01C8A770800233C71 /* OnlineUsersTableViewController.swift in Sources */,
 				C64D34EE1C8A768A00233C71 /* GroceryListTableViewController.swift in Sources */,
+				C64D34F61C8A956300233C71 /* User.swift in Sources */,
+				C64D34FA1C8ABE4100233C71 /* Item.swift in Sources */,
 				C64D34CC1C8A6FF500233C71 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
