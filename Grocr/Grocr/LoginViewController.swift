@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     
     @IBOutlet var password: UITextField!
     
+    @IBAction func resetPassword(sender: AnyObject) {
+        //reset password
+    }
+    
     @IBAction func login(sender: AnyObject) {
         self.ref.authUser(email.text, password: password.text) { (error, auth) -> Void in
             if error != nil{

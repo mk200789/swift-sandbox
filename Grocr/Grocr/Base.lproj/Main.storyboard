@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F1134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Login Page-->
@@ -44,7 +44,7 @@
                                     <action selector="login:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cyy-Rf-hMv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-K5-ROZ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-K5-ROZ">
                                 <rect key="frame" x="44" y="434" width="294" height="30"/>
                                 <color key="backgroundColor" red="0.58314053897094853" green="0.8529575892857143" blue="0.77289207627695766" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign up">
@@ -55,8 +55,28 @@
                                     <action selector="signup:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="X3w-NU-0sZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHA-Io-AW1">
+                                <rect key="frame" x="41" y="484" width="294" height="30"/>
+                                <color key="backgroundColor" red="0.70332042964619168" green="0.75053074048913038" blue="0.64262081228275181" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="294" id="XYk-Ui-He3"/>
+                                </constraints>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" red="0.46119658800000002" green="0.46119658800000002" blue="0.46119658800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPassword:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vFl-Cx-tsa"/>
+                                    <action selector="signup:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oUP-hK-tPn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.57779605619999996" green="0.83252949620000005" blue="0.73997036230000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="AHA-Io-AW1" secondAttribute="centerY" constant="-165" id="XNl-em-Hto"/>
+                            <constraint firstAttribute="centerX" secondItem="AHA-Io-AW1" secondAttribute="centerX" id="ZL3-Xw-5kC"/>
+                            <constraint firstItem="AHA-Io-AW1" firstAttribute="top" secondItem="Hsv-K5-ROZ" secondAttribute="bottom" constant="20" id="ztQ-mb-HHv"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
