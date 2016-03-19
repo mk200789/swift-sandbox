@@ -10,8 +10,14 @@ import UIKit
 
 class GroceryListTableViewController: UITableViewController {
     
+    var items = [Item]()
+    
     //connection to demo7011 database
-    let ref = Firebase(url: "https://demo7011.firebaseio.com")
+    let ref = Firebase(url: "https://demo7011.firebaseio.com/grocery-items")
+    let usersRef = Firebase(url: "https://demo7011.firebaseio.com/online")
+    var user: User!
+    var userCountBarButtonItem : UIBarButtonItem!
+    
 
     @IBAction func logout(sender: AnyObject) {
         ref.unauth()
