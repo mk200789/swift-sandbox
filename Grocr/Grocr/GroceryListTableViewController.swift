@@ -25,20 +25,52 @@ class GroceryListTableViewController: UITableViewController {
         ref.unauth()
         self.performSegueWithIdentifier("LogOff", sender: nil)
     }
+    
 
-    /*
+    
     override func viewDidAppear(animated: Bool) {
+        
         //check if in authentication state
         ref.observeAuthEventWithBlock { (authData) -> Void in
             if authData == nil{
                 //user is authenticated
-                print("\nSomone is unauthenticated\n")
+                print("\nSomeone is unauthenticated\n")
                 self.performSegueWithIdentifier("LogOff", sender: nil)
 
             }
+            else{
+                print("\nSomeone is authenticated\n")
+                
+                self.user = User(authData: authData)
+                
+                //create a child reference with a unique id
+                let currentUserRef = self.usersRef.childByAutoId()
+                
+                //save the curent user to the online users list
+                currentUserRef.setValue(self.user.email)
+                
+                //when user disconnects/log off remove all the value
+                currentUserRef.onDisconnectRemoveValue()
+           
+            }
         }
+        
+        //create a value observer
+        usersRef.observeEventType(.Value, withBlock: { (snapshot: FDataSnapshot!) in
+            //check if the snapshot exist
+            if snapshot.exists(){
+                //get the number of users online from the childrenCount property
+                self.userCountBarButtonItem?.title = snapshot.childrenCount.description
+                print("there is data!")
+            }
+            else{
+                print("no snapshots")
+                self.userCountBarButtonItem?.title = "0"
+            }
+        })
+        
     }
-*/
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("grocery lists\n")
@@ -54,8 +86,40 @@ class GroceryListTableViewController: UITableViewController {
     //adds grocery item to grocery list
     @IBAction func addGroceryItem(sender: AnyObject) {
         print("add button clicked")
+
+        var alert = UIAlertController(title: "New grocery item", message: "Add a new grocery item", preferredStyle: .Alert)
+        
+        let saveAction = UIAlertAction(title: "Save", style: .Default) { (action: UIAlertAction!) -> Void in
+            //get item name
+            let itemName = alert.textFields![0] as UITextField
+            //create a new Item
+            let groceryItem = Item(name: itemName.text, addedByUser: self.user.email, completed: false)
+            //create a child's id from item's name as lowercase string
+            let groceryItemRef = self.ref.childByAppendingPath(itemName.text.lowercaseString)
+            //save grocery item in AnyObject form
+            groceryItemRef.setValue(groceryItem.toAnyObject())
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action: UIAlertAction!) -> Void in
+        }
+        
+        alert.addTextFieldWithConfigurationHandler { (item) -> Void in
+            item.placeholder = "Enter item name"
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+
     }
 
+    
+    
+
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

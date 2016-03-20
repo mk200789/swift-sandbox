@@ -16,7 +16,7 @@ struct Item {
     let ref: Firebase?
     
     //initialize arbitrary data
-    init(key: String = "", name: String, addedByUser: String, completed: Bool){
+    init(name: String, addedByUser: String, completed: Bool, key: String = ""){
         self.key = key
         self.name = name
         self.addedByUser = addedByUser
