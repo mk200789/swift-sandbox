@@ -44,8 +44,8 @@
                                     <action selector="login:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cyy-Rf-hMv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-K5-ROZ">
-                                <rect key="frame" x="44" y="434" width="294" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-K5-ROZ">
+                                <rect key="frame" x="41" y="434" width="294" height="30"/>
                                 <color key="backgroundColor" red="0.58314053897094853" green="0.8529575892857143" blue="0.77289207627695766" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" red="0.46119658800000002" green="0.46119658800000002" blue="0.46119658800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +75,6 @@
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="AHA-Io-AW1" secondAttribute="centerY" constant="-165" id="XNl-em-Hto"/>
                             <constraint firstAttribute="centerX" secondItem="AHA-Io-AW1" secondAttribute="centerX" id="ZL3-Xw-5kC"/>
-                            <constraint firstItem="AHA-Io-AW1" firstAttribute="top" secondItem="Hsv-K5-ROZ" secondAttribute="bottom" constant="20" id="ztQ-mb-HHv"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -118,10 +117,18 @@
                             <outlet property="delegate" destination="F6g-fM-Lfi" id="1MY-1N-8YT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Grocery List" id="VLV-Je-ven">
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="nfI-hg-iEt">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="T2y-aW-7gT"/>
+                        <barButtonItem title="Log Out" id="nfI-hg-iEt">
                             <connections>
                                 <action selector="logout:" destination="F6g-fM-Lfi" id="a7a-gk-zFh"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Grocery List" id="VLV-Je-ven">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gxk-Cb-vEv">
+                            <connections>
+                                <action selector="addGroceryItem:" destination="F6g-fM-Lfi" id="A9C-eK-8g4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -171,11 +178,14 @@
         <!--Navigation Controller-->
         <scene sceneID="pAZ-3p-06w">
             <objects>
-                <navigationController id="bep-0t-0CM" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="bep-0t-0CM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j8e-Wo-AAR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="7Tc-zz-Rhk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="F6g-fM-Lfi" kind="relationship" relationship="rootViewController" id="kGG-pm-rRu"/>
                     </connections>

@@ -10,6 +10,8 @@ import UIKit
 
 class GroceryListTableViewController: UITableViewController {
     
+    let ListToUsers = "ListToUsers"
+    
     var items = [Item]()
     
     //connection to demo7011 database
@@ -41,11 +43,17 @@ class GroceryListTableViewController: UITableViewController {
         super.viewDidLoad()
         print("grocery lists\n")
 
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    //adds grocery item to grocery list
+    @IBAction func addGroceryItem(sender: AnyObject) {
+        print("add button clicked")
     }
 
     override func didReceiveMemoryWarning() {

@@ -115,7 +115,7 @@ class ViewController: UIViewController {
         ref.observeAuthEventWithBlock { (authData) -> Void in
             if authData != nil{
                 //user is authenticated
-                print("\nSomone is authenticated\n")
+                print("\nSomeone is authenticated\n")
                 self.performSegueWithIdentifier("LoginToList", sender: nil)
             }
         }
