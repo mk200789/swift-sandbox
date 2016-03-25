@@ -27,7 +27,6 @@ class GroceryListTableViewController: UITableViewController {
     }
     
 
-    
     override func viewDidAppear(animated: Bool) {
         
         //check if in authentication state
@@ -61,10 +60,8 @@ class GroceryListTableViewController: UITableViewController {
             if snapshot.exists(){
                 //get the number of users online from the childrenCount property
                 self.userCountBarButtonItem?.title = snapshot.childrenCount.description
-                print("there is data!")
             }
             else{
-                print("no snapshots")
                 self.userCountBarButtonItem?.title = "0"
             }
         })
@@ -74,6 +71,13 @@ class GroceryListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("grocery lists\n")
+        
+        //user count
+        userCountBarButtonItem = UIBarButtonItem(title: "1", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("userCountButtonDidTouch"))
+        userCountBarButtonItem.tintColor = UIColor.redColor()
+        
+        //set left bar button to userCountBarButtonItem
+        navigationItem.leftBarButtonItem = userCountBarButtonItem
 
     
         // Uncomment the following line to preserve selection between presentations
@@ -82,6 +86,12 @@ class GroceryListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    func userCountButtonDidTouch(){
+        performSegueWithIdentifier(ListToUsers, sender: nil)
+    }
+    
+    
     
     //adds grocery item to grocery list
     @IBAction func addGroceryItem(sender: AnyObject) {
@@ -114,10 +124,6 @@ class GroceryListTableViewController: UITableViewController {
 
     }
 
-    
-    
-
-    
     
     
     override func didReceiveMemoryWarning() {
