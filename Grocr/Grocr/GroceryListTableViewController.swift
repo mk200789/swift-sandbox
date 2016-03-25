@@ -54,6 +54,7 @@ class GroceryListTableViewController: UITableViewController {
             }
         }
         
+
         //create a value observer
         usersRef.observeEventType(.Value, withBlock: { (snapshot: FDataSnapshot!) in
             //check if the snapshot exist
@@ -66,10 +67,33 @@ class GroceryListTableViewController: UITableViewController {
             }
         })
         
+        
+        
     }
+    
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //query for items by completed property
+        ref.queryOrderedByChild("completed").observeEventType(.Value, withBlock: { snapshot in
+            var newItems = [Item]()
+            
+            for item in snapshot.children.allObjects as [FDataSnapshot]{
+                let groceryItem = Item(snapshot: item as FDataSnapshot)
+                newItems.append(groceryItem)
+            }
+            
+            self.items = newItems
+            
+            self.tableView.reloadData()
+        })
+        
         print("grocery lists\n")
         
         //user count
@@ -96,6 +120,7 @@ class GroceryListTableViewController: UITableViewController {
     //adds grocery item to grocery list
     @IBAction func addGroceryItem(sender: AnyObject) {
         print("add button clicked")
+        print(items.count)
 
         var alert = UIAlertController(title: "New grocery item", message: "Add a new grocery item", preferredStyle: .Alert)
         
@@ -133,27 +158,27 @@ class GroceryListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return items.count
     }
-
-    /*
+    
+   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell") as UITableViewCell
+        let groceryItem = items[indexPath.row]
+        
+        cell.textLabel?.text = groceryItem.name
+        cell.detailTextLabel?.text = groceryItem.addedByUser
 
         return cell
     }
-    */
+
+    
+
 
     /*
     // Override to support conditional editing of the table view.
