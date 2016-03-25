@@ -174,6 +174,10 @@ class GroceryListTableViewController: UITableViewController {
         
         cell.textLabel?.text = groceryItem.name
         cell.detailTextLabel?.text = groceryItem.addedByUser
+        
+        //toggle for completed/incomplete status for item
+        toggleCellCheckbox(cell, isCompleted: groceryItem.completed)
+    
 
         return cell
     }
@@ -201,6 +205,36 @@ class GroceryListTableViewController: UITableViewController {
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //get cell
+        let cell = tableView.cellForRowAtIndexPath(indexPath)!
+        
+        //get its associated grocery item
+        var item = items[indexPath.row]
+        
+        //get new completion status
+        let toggleCompletion = !item.completed
+        
+        //determining new status
+        toggleCellCheckbox(cell, isCompleted: toggleCompletion)
+        
+        //update the item's status on db
+        item.ref?.updateChildValues(["completed" : toggleCompletion])
+    }
+    
+    
+    func toggleCellCheckbox(cell: UITableViewCell, isCompleted: Bool) {
+        if !isCompleted {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.textLabel?.textColor = UIColor.blackColor()
+            cell.detailTextLabel?.textColor = UIColor.blackColor()
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.textLabel?.textColor = UIColor.grayColor()
+            cell.detailTextLabel?.textColor = UIColor.grayColor()
+        }
     }
     
 
