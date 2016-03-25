@@ -10,14 +10,43 @@ import UIKit
 
 class OnlineUsersTableViewController: UITableViewController {
 
+    let UserCell = "UserCell"
+    let usersRef = Firebase(url: "https://demo7011.firebaseio.com/online")
+    
+    var currentUsers = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //listener to check if any user added
+        usersRef.observeEventType(.ChildAdded, withBlock: { (snapshot: FDataSnapshot!) in
+            //add user to currentUsers
+            self.currentUsers.append(snapshot.value as String)
+            
+            //get index of current row
+            let row = self.currentUsers.count - 1
+            
+            //create an nsindexpath for row
+            let path = NSIndexPath(forRow: row, inSection: 0)
+            
+            //insert row in table with animation
+            self.tableView.insertRowsAtIndexPaths([path], withRowAnimation: .Top)
+        })
+        
+        //listener for removed user
+        usersRef.observeEventType(.ChildRemoved, withBlock: { (snapshot: FDataSnapshot!) in
+            let emailToFind = snapshot.value as String
+            
+            for (index, email) in enumerate(self.currentUsers){
+                if email == emailToFind{
+                    let path = NSIndexPath(forRow: index, inSection: 0)
+                    self.currentUsers.removeAtIndex(index)
+                    self.tableView.deleteRowsAtIndexPaths([path], withRowAnimation: .Fade)
+                }
+            }
+        })
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,27 +56,23 @@ class OnlineUsersTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return currentUsers.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(UserCell, forIndexPath: indexPath) as UITableViewCell
 
-        // Configure the cell...
+        let onlineUserEmail = currentUsers[indexPath.row]
+        cell.textLabel?.text = onlineUserEmail
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

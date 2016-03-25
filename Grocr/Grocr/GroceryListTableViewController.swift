@@ -18,6 +18,7 @@ class GroceryListTableViewController: UITableViewController {
     let ref = Firebase(url: "https://demo7011.firebaseio.com/grocery-items")
     let usersRef = Firebase(url: "https://demo7011.firebaseio.com/online")
     var user: User!
+    var userRef: Firebase!
     var userCountBarButtonItem : UIBarButtonItem!
     
 
@@ -32,14 +33,14 @@ class GroceryListTableViewController: UITableViewController {
         //check if in authentication state
         ref.observeAuthEventWithBlock { (authData) -> Void in
             if authData == nil{
-                //user is authenticated
+                //user is unauthenticated
                 print("\nSomeone is unauthenticated\n")
                 self.performSegueWithIdentifier("LogOff", sender: nil)
 
             }
             else{
                 print("\nSomeone is authenticated\n")
-                
+                /*
                 self.user = User(authData: authData)
                 
                 //create a child reference with a unique id
@@ -50,6 +51,21 @@ class GroceryListTableViewController: UITableViewController {
                 
                 //when user disconnects/log off remove all the value
                 currentUserRef.onDisconnectRemoveValue()
+*/
+                if self.user == nil{
+                    self.user = User(authData: authData)
+                    
+                    //create a child reference with a unique id
+                    self.userRef = self.usersRef.childByAutoId()
+                    
+                    //save the curent user to the online users list
+                    self.userRef.setValue(self.user.email)
+                    
+                }
+                //when user disconnects/log off remove all the value
+                self.userRef.onDisconnectRemoveValue()
+
+                
            
             }
         }

@@ -147,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="1876" y="295"/>
         </scene>
-        <!--Online Users Table View Controller-->
+        <!--Online users-->
         <scene sceneID="OMi-2B-FzW">
             <objects>
-                <tableViewController id="OeG-tX-hzo" customClass="OnlineUsersTableViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Online users" id="OeG-tX-hzo" customClass="OnlineUsersTableViewController" customModule="Grocr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LQy-WQ-JIa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
