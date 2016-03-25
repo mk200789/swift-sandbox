@@ -94,6 +94,9 @@ class GroceryListTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
+        //set up swipe to delete
+        tableView.allowsMultipleSelectionDuringEditing = false
+        
         print("grocery lists\n")
         
         //user count
@@ -119,8 +122,6 @@ class GroceryListTableViewController: UITableViewController {
     
     //adds grocery item to grocery list
     @IBAction func addGroceryItem(sender: AnyObject) {
-        print("add button clicked")
-        print(items.count)
 
         var alert = UIAlertController(title: "New grocery item", message: "Add a new grocery item", preferredStyle: .Alert)
         
@@ -178,27 +179,30 @@ class GroceryListTableViewController: UITableViewController {
     }
 
     
-
-
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //get the item being deleted
+            let item = items[indexPath.row]
+            
+            //delete from item from db 
+            item.ref?.removeValue()
+            
+            print("DELETE!")
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
