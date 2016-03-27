@@ -40,18 +40,7 @@ class GroceryListTableViewController: UITableViewController {
             }
             else{
                 print("\nSomeone is authenticated\n")
-                /*
-                self.user = User(authData: authData)
-                
-                //create a child reference with a unique id
-                let currentUserRef = self.usersRef.childByAutoId()
-                
-                //save the curent user to the online users list
-                currentUserRef.setValue(self.user.email)
-                
-                //when user disconnects/log off remove all the value
-                currentUserRef.onDisconnectRemoveValue()
-*/
+
                 if self.user == nil{
                     self.user = User(authData: authData)
                     
