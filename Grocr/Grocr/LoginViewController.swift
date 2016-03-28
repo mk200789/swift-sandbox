@@ -103,6 +103,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("Login page")
+        
+        self.password.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -124,6 +126,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         //close keyboard
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        //allow user to press return button to close the keyboard
+        //also include UITextFieldDelegate
+        textField.resignFirstResponder()
+        
+        return true
     }
 
 }
