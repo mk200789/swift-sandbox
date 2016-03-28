@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     let ref = Firebase(url:"https://demo7011.firebaseio.com")
 
@@ -119,6 +119,11 @@ class ViewController: UIViewController {
                 self.performSegueWithIdentifier("LoginToList", sender: nil)
             }
         }
+    }
+
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        //close keyboard
+        self.view.endEditing(true)
     }
 
 }
