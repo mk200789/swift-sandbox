@@ -69,6 +69,8 @@ class OnlineUsersTableViewController: UITableViewController {
 
         let onlineUserEmail = currentUsers[indexPath.row]
         cell.textLabel?.text = onlineUserEmail
+        
+        print(currentUsers)
 
         return cell
     }
