@@ -34,6 +34,7 @@ class ViewController: UIViewController {
                 if (response as NSHTTPURLResponse).statusCode == 200{
                     let jsonResult = NSJSONSerialization.JSONObjectWithData(urlContent, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
                     print(jsonResult["city"])
+                    
                 }
                 else{
                     print("Service unavailable")

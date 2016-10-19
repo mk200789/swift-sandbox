@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
-        cell.textLabel.text = cellContent[indexPath.row]
+        cell.textLabel?.text = cellContent[indexPath.row]
         
         return cell
     }
