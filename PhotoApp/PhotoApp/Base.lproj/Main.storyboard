@@ -30,9 +30,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G20-6t-FDl">
-                                <frame key="frameInset" minX="143" minY="563" width="88" height="30"/>
+                                <frame key="frameInset" minX="103" minY="563" width="169" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Photo"/>
+                                <state key="normal" title="Select Photo">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.98217147435897434" green="0.98217147435897434" blue="0.98217147435897434" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="selectPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vv1-bI-GZu"/>
                                 </connections>
@@ -42,6 +45,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="ehu-PQ-U75" id="rcZ-Eq-lMb"/>
+                        <outlet property="selectButtonLabel" destination="G20-6t-FDl" id="YNq-SB-dNd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

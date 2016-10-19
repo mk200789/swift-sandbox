@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet var selectButtonLabel: UIButton!
+    
     @IBOutlet var imageView: UIImageView!
     
     let imagePicker = UIImagePickerController()
@@ -28,7 +30,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //include camera action in alert
         let camera = UIAlertAction(title: "Camera", style: .default) { (action) in
-            
+            self.cameraTapped()
         }
         
         alert.addAction(camera)
@@ -39,16 +41,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         alert.addAction(cancel)
         
-        
-        self.present(alert, animated: true){
-            
-        }
+        self.present(alert, animated: true)
     }
     
     func photoLibTapped(){
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func cameraTapped(){
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = false
         self.present(imagePicker, animated: true, completion: nil)
     }
     
@@ -61,11 +67,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //dismiss the view
         dismiss(animated: true, completion: nil)
         
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        selectButtonLabel.layer.cornerRadius = 2
+        selectButtonLabel.layer.borderWidth = 0.1
     }
 
     override func didReceiveMemoryWarning() {
