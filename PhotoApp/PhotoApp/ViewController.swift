@@ -10,7 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
+    @IBAction func selectPhotoButton(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "Select Photo", message: nil, preferredStyle: .actionSheet)
+        
+        let photolib = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+        }
+        
+        alert.addAction(photolib)
+        
+        let camera = UIAlertAction(title: "Camera", style: .default) { (action) in
+            
+        }
+        
+        alert.addAction(camera)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        }
+        
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true){
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
