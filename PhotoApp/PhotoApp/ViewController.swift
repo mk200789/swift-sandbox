@@ -28,6 +28,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let photolib = UIAlertAction(title: "Photo Library", style: .default) { (action) in
             print("photo lib!")
             self.photoLibTapped()
+            self.getTags()
         }
         
         alert.addAction(photolib)
@@ -84,6 +85,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func getTags(){
+        let tagURL = "https://api.clarifai.com/v1/tag/"
+        let header = "Bearer " + self.accessToken
+        
+        let url = URL(string: tagURL)
+        var request = URLRequest(url: url!)
+        
+        request.httpMethod = "POST"
+        request.setValue(header, forHTTPHeaderField: "Authorization")
+        request.setValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
+        
+        request.httpBody = ("encoded_data=\(self.imageURL)").data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            print(response)
+        }
+        task.resume()
+        
         
     }
     
