@@ -16,6 +16,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let imagePicker = UIImagePickerController()
     
+    var accessToken : String = ""
+    
+    var imageURL : String = ""
+    
     @IBAction func selectPhotoButton(_ sender: AnyObject) {
         //set an alertcontroller
         let alert = UIAlertController(title: "Select Photo", message: nil, preferredStyle: .actionSheet)
@@ -64,9 +68,58 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.image = info[UIImagePickerControllerOriginalImage] as! UIImage?
         imageView.contentMode = .scaleAspectFit
         
+        let url = info[UIImagePickerControllerReferenceURL] as! NSURL
+        let imageName = url.lastPathComponent
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as String
+        let path = documentDirectory.appending(imageName!)
+        print(path)
+        
+        self.imageURL = path
+
+        
         //dismiss the view
         dismiss(animated: true, completion: nil)
         
+        
+    }
+    
+    func getTags(){
+        
+    }
+    
+    
+    func getAccessToken(){
+        let clientID = getVal(key: "client_id")
+        let clientSecret = getVal(key: "client_secret")
+        let authURL = "https://api.clarifai.com/v1/token"
+        
+        
+        let params = "client_id=\(clientID)&client_secret=\(clientSecret)&grant_type=client_credentials"
+        let url = URL(string: authURL)
+        
+        var request = URLRequest(url: url!)
+        
+        request.httpMethod = "POST"
+
+        request.httpBody = params.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if ((response as! HTTPURLResponse).statusCode == 200){
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
+                    DispatchQueue.main.async {
+                        self.accessToken = setVal(key: "access_token", value: json["access_token"] as! String)
+                        setVal(key: "expires_in", value: String(describing: json["expires_in"]))
+                        
+                    }
+                }catch{
+                    
+                }
+            }
+        }
+        task.resume()
+
+
         
     }
     
@@ -75,6 +128,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Do any additional setup after loading the view, typically from a nib.
         selectButtonLabel.layer.cornerRadius = 2
         selectButtonLabel.layer.borderWidth = 0.1
+        
+        getAccessToken()
     }
 
     override func didReceiveMemoryWarning() {

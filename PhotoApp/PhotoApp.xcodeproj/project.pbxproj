@@ -15,6 +15,8 @@
 		C6C0133E1DB70A480012ACC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C0133C1DB70A480012ACC7 /* LaunchScreen.storyboard */; };
 		C6C013491DB70A480012ACC7 /* PhotoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C013481DB70A480012ACC7 /* PhotoAppTests.swift */; };
 		C6C013541DB70A480012ACC7 /* PhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C013531DB70A480012ACC7 /* PhotoAppUITests.swift */; };
+		C6C013621DB72A260012ACC7 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6C013611DB72A260012ACC7 /* config.plist */; };
+		C6C013641DB72B280012ACC7 /* getProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C013631DB72B280012ACC7 /* getProperty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		C6C0134F1DB70A480012ACC7 /* PhotoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C013531DB70A480012ACC7 /* PhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppUITests.swift; sourceTree = "<group>"; };
 		C6C013551DB70A480012ACC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6C013611DB72A260012ACC7 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		C6C013631DB72B280012ACC7 /* getProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getProperty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				C6C0133C1DB70A480012ACC7 /* LaunchScreen.storyboard */,
 				C6C0133F1DB70A480012ACC7 /* Info.plist */,
 				C6C013371DB70A480012ACC7 /* PhotoApp.xcdatamodeld */,
+				C6C013611DB72A260012ACC7 /* config.plist */,
+				C6C013631DB72B280012ACC7 /* getProperty.swift */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6C013621DB72A260012ACC7 /* config.plist in Resources */,
 				C6C0133E1DB70A480012ACC7 /* LaunchScreen.storyboard in Resources */,
 				C6C0133B1DB70A480012ACC7 /* Assets.xcassets in Resources */,
 				C6C013361DB70A480012ACC7 /* Main.storyboard in Resources */,
@@ -263,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6C013331DB70A480012ACC7 /* ViewController.swift in Sources */,
+				C6C013641DB72B280012ACC7 /* getProperty.swift in Sources */,
 				C6C013311DB70A480012ACC7 /* AppDelegate.swift in Sources */,
 				C6C013391DB70A480012ACC7 /* PhotoApp.xcdatamodeld in Sources */,
 			);
