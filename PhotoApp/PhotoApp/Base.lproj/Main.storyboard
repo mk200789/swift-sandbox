@@ -40,11 +40,19 @@
                                     <action selector="selectPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vv1-bI-GZu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8t-Lu-z4c">
+                                <frame key="frameInset" minX="16" minY="446" width="343" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="ehu-PQ-U75" id="rcZ-Eq-lMb"/>
+                        <outlet property="resultLabel" destination="z8t-Lu-z4c" id="bqJ-77-QUE"/>
                         <outlet property="selectButtonLabel" destination="G20-6t-FDl" id="YNq-SB-dNd"/>
                     </connections>
                 </viewController>

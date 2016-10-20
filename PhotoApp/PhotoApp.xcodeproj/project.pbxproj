@@ -202,6 +202,7 @@
 				TargetAttributes = {
 					C6C0132C1DB70A480012ACC7 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3GDGGYA77N;
 						ProvisioningStyle = Automatic;
 					};
 					C6C013431DB70A480012ACC7 = {
@@ -424,7 +425,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3GDGGYA77N;
 				INFOPLIST_FILE = PhotoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk200789.PhotoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,7 +439,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3GDGGYA77N;
 				INFOPLIST_FILE = PhotoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk200789.PhotoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,6 +522,7 @@
 				C6C0135A1DB70A480012ACC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6C0135B1DB70A480012ACC7 /* Build configuration list for PBXNativeTarget "PhotoAppTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +531,7 @@
 				C6C0135D1DB70A480012ACC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6C0135E1DB70A480012ACC7 /* Build configuration list for PBXNativeTarget "PhotoAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +540,7 @@
 				C6C013601DB70A480012ACC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

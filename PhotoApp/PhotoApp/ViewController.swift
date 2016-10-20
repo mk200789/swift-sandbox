@@ -20,15 +20,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var imageURL : String = ""
     
+    var result : NSDictionary = NSDictionary()
+    
+    @IBOutlet var resultLabel: UILabel!
+    
     @IBAction func selectPhotoButton(_ sender: AnyObject) {
         //set an alertcontroller
         let alert = UIAlertController(title: "Select Photo", message: nil, preferredStyle: .actionSheet)
         
         //include photolib action in alert
         let photolib = UIAlertAction(title: "Photo Library", style: .default) { (action) in
-            print("photo lib!")
             self.photoLibTapped()
-            self.getTags()
         }
         
         alert.addAction(photolib)
@@ -50,39 +52,66 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func photoLibTapped(){
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.allowsEditing = true
-        self.present(imagePicker, animated: true, completion: nil)
+        if (UIImagePickerController.availableMediaTypes(for: .photoLibrary) != nil){
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }else{
+            print("cant go to photolibrary")
+        }
     }
     
     func cameraTapped(){
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = false
-        self.present(imagePicker, animated: true, completion: nil)
+        if (UIImagePickerController.availableMediaTypes(for: .camera) != nil){
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else{
+          print("cant take pictures")
+        }
     }
     
-    
+
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //save the selected image to imageView
         imageView.image = info[UIImagePickerControllerOriginalImage] as! UIImage?
         imageView.contentMode = .scaleAspectFit
         
-        let url = info[UIImagePickerControllerReferenceURL] as! NSURL
-        let imageName = url.lastPathComponent
-        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as String
-        let path = documentDirectory.appending(imageName!)
-        print(path)
-        
-        self.imageURL = path
-
+        getTags()
         
         //dismiss the view
         dismiss(animated: true, completion: nil)
         
         
     }
+    
+
+    
+    var tags : NSArray = []
+    var probs: NSArray = []
+    
+    func updateLabel(){
+        resultLabel.text = ""
+        for i in self.tags{
+            resultLabel.text?.append(String(describing: i) + ", ")
+        }
+    }
+    
+    func setup(){
+        let results = (self.result["results"] as! NSArray)[0]
+        let result = (results as! NSDictionary)["result"]
+        let tag = ((result as! NSDictionary)["tag"] as! NSDictionary)["classes"] as! NSArray
+        
+        let probs = ((result as! NSDictionary)["tag"] as! NSDictionary)["probs"] as! NSArray
+        
+        self.tags = tag
+        self.probs = probs
+    }
+    
     
     func getTags(){
         let tagURL = "https://api.clarifai.com/v1/tag/"
@@ -93,15 +122,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         request.httpMethod = "POST"
         request.setValue(header, forHTTPHeaderField: "Authorization")
-        request.setValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
         
-        request.httpBody = ("encoded_data=\(self.imageURL)").data(using: .utf8)
+        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.8)
+        let base64String = imageData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+    
+
+        request.httpBody = ("encoded_data=\(encodeURIComponent(text: base64String!))").data(using: .utf8)
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            print(response)
+            if ((response as! HTTPURLResponse).statusCode == 200){
+                print("success!")
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
+                    DispatchQueue.main.async {
+                        self.result = json
+                        self.setup()
+                        self.updateLabel()
+                    }
+                }catch{
+                    
+                }
+            }
         }
         task.resume()
-        
         
     }
     
@@ -141,13 +184,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    func encodeURIComponent(text: String) -> String {
+        let characterSet = NSMutableCharacterSet.alphanumeric()
+        characterSet.addCharacters(in: "-_.!~*'()")
+        
+        return text.addingPercentEncoding(withAllowedCharacters: characterSet as CharacterSet)!
+    }
+    
+    func generateBoundaryString() -> String
+    {
+        return "Boundary-\(NSUUID().uuidString)"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         selectButtonLabel.layer.cornerRadius = 2
         selectButtonLabel.layer.borderWidth = 0.1
         
-        getAccessToken()
+        resultLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        resultLabel.numberOfLines = 0
+        
+//        getAccessToken()
+        self.accessToken = getVal(key: "access_token")
     }
 
     override func didReceiveMemoryWarning() {
