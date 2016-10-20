@@ -55,7 +55,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if (UIImagePickerController.availableMediaTypes(for: .photoLibrary) != nil){
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
-            imagePicker.allowsEditing = true
+            imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
         }else{
             print("cant go to photolibrary")
@@ -114,6 +114,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     func getTags(){
+        resultLabel.text = ""
+        
         let tagURL = "https://api.clarifai.com/v1/tag/"
         let header = "Bearer " + self.accessToken
         
@@ -123,7 +125,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         request.httpMethod = "POST"
         request.setValue(header, forHTTPHeaderField: "Authorization")
         
-        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.8)
+        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.3)//UIImageJPEGRepresentation(imageView.image!, 0.8)
         let base64String = imageData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
     
 
@@ -136,8 +138,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     let json = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
                     DispatchQueue.main.async {
                         self.result = json
+                        print(json)
                         self.setup()
                         self.updateLabel()
+                        
+                        
                     }
                 }catch{
                     
