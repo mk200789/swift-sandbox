@@ -24,7 +24,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet var resultLabel: UILabel!
     
+    @IBAction func showTable(_ sender: AnyObject) {
+        print("SHOW TABLE CLICKED")
+        performSegue(withIdentifier: "show_table", sender: nil)
+    }
+    
+    @IBOutlet var showTableButton: UIButton!
+    
+    
     @IBAction func selectPhotoButton(_ sender: AnyObject) {
+        showTableButton.isEnabled = false
+        
         //set an alertcontroller
         let alert = UIAlertController(title: "Select Photo", message: nil, preferredStyle: .actionSheet)
         
@@ -85,8 +95,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //dismiss the view
         dismiss(animated: true, completion: nil)
-        
-        
+
     }
     
 
@@ -96,10 +105,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func updateLabel(){
         resultLabel.text = ""
+        
         for i in self.tags{
             resultLabel.text?.append(String(describing: i) + ", ")
         }
+        
+        let str = NSString(string: resultLabel.text!)
+        resultLabel.text = str.substring(to: str.length-2)
+        
+        showTableButton.isEnabled = true
     }
+    
+
     
     func setup(){
         let results = (self.result["results"] as! NSArray)[0]
@@ -108,7 +125,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let probs = ((result as! NSDictionary)["tag"] as! NSDictionary)["probs"] as! NSArray
         
-        self.tags = tag
+        //takes the top 8 tags
+        self.tags = tag.subarray(with: NSRange.init(location: 0, length: 8)) as NSArray
         self.probs = probs
     }
     
@@ -125,7 +143,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         request.httpMethod = "POST"
         request.setValue(header, forHTTPHeaderField: "Authorization")
         
-        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.3)//UIImageJPEGRepresentation(imageView.image!, 0.8)
+        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.3)
         let base64String = imageData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
     
 
