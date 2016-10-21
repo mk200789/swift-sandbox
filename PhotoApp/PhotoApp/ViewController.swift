@@ -236,6 +236,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let segueDestination = segue.destination as! WordViewController
+        segueDestination.wordList = self.tags
+    }
 
 
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6341EE71DB9A8300049BF4C /* WordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6341EE61DB9A8300049BF4C /* WordTableViewController.swift */; };
+		C6341FAE1DB9BFA60049BF4C /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6341FAD1DB9BFA60049BF4C /* WordViewController.swift */; };
 		C6C013311DB70A480012ACC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C013301DB70A480012ACC7 /* AppDelegate.swift */; };
 		C6C013331DB70A480012ACC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C013321DB70A480012ACC7 /* ViewController.swift */; };
 		C6C013361DB70A480012ACC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C013341DB70A480012ACC7 /* Main.storyboard */; };
@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C6341EE61DB9A8300049BF4C /* WordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordTableViewController.swift; sourceTree = "<group>"; };
+		C6341FAD1DB9BFA60049BF4C /* WordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		C6C0132D1DB70A480012ACC7 /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C013301DB70A480012ACC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C013321DB70A480012ACC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		C6C013481DB70A480012ACC7 /* PhotoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppTests.swift; sourceTree = "<group>"; };
 		C6C0134A1DB70A480012ACC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C0134F1DB70A480012ACC7 /* PhotoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6C013531DB70A480012ACC7 /* PhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppUITests.swift; sourceTree = "<group>"; };
+		C6C013531DB70A480012ACC7 /* PhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoAppUITests.swift; path = PhotoAppUITests/PhotoAppUITests.swift; sourceTree = SOURCE_ROOT; };
 		C6C013551DB70A480012ACC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6C013611DB72A260012ACC7 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		C6C013631DB72B280012ACC7 /* getProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getProperty.swift; sourceTree = "<group>"; };
@@ -107,6 +107,7 @@
 			children = (
 				C6C013301DB70A480012ACC7 /* AppDelegate.swift */,
 				C6C013321DB70A480012ACC7 /* ViewController.swift */,
+				C6341FAD1DB9BFA60049BF4C /* WordViewController.swift */,
 				C6C013341DB70A480012ACC7 /* Main.storyboard */,
 				C6C0133A1DB70A480012ACC7 /* Assets.xcassets */,
 				C6C0133C1DB70A480012ACC7 /* LaunchScreen.storyboard */,
@@ -114,7 +115,6 @@
 				C6C013371DB70A480012ACC7 /* PhotoApp.xcdatamodeld */,
 				C6C013611DB72A260012ACC7 /* config.plist */,
 				C6C013631DB72B280012ACC7 /* getProperty.swift */,
-				C6341EE61DB9A8300049BF4C /* WordTableViewController.swift */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -273,9 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6341EE71DB9A8300049BF4C /* WordTableViewController.swift in Sources */,
 				C6C013331DB70A480012ACC7 /* ViewController.swift in Sources */,
 				C6C013641DB72B280012ACC7 /* getProperty.swift in Sources */,
+				C6341FAE1DB9BFA60049BF4C /* WordViewController.swift in Sources */,
 				C6C013311DB70A480012ACC7 /* AppDelegate.swift in Sources */,
 				C6C013391DB70A480012ACC7 /* PhotoApp.xcdatamodeld in Sources */,
 			);

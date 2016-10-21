@@ -1,5 +1,5 @@
 //
-//  WordTableViewController.swift
+//  TableViewController.swift
 //  PhotoApp
 //
 //  Created by Wan Kim Mok on 10/20/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WordTableViewController: UITableViewController {
+class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
