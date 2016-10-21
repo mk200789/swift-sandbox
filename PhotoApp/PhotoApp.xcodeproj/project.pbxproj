@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6341EE71DB9A8300049BF4C /* WordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6341EE61DB9A8300049BF4C /* WordTableViewController.swift */; };
 		C6C013311DB70A480012ACC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C013301DB70A480012ACC7 /* AppDelegate.swift */; };
 		C6C013331DB70A480012ACC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C013321DB70A480012ACC7 /* ViewController.swift */; };
 		C6C013361DB70A480012ACC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6C013341DB70A480012ACC7 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C6341EE61DB9A8300049BF4C /* WordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordTableViewController.swift; sourceTree = "<group>"; };
 		C6C0132D1DB70A480012ACC7 /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C013301DB70A480012ACC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6C013321DB70A480012ACC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				C6C013371DB70A480012ACC7 /* PhotoApp.xcdatamodeld */,
 				C6C013611DB72A260012ACC7 /* config.plist */,
 				C6C013631DB72B280012ACC7 /* getProperty.swift */,
+				C6341EE61DB9A8300049BF4C /* WordTableViewController.swift */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6341EE71DB9A8300049BF4C /* WordTableViewController.swift in Sources */,
 				C6C013331DB70A480012ACC7 /* ViewController.swift in Sources */,
 				C6C013641DB72B280012ACC7 /* getProperty.swift in Sources */,
 				C6C013311DB70A480012ACC7 /* AppDelegate.swift in Sources */,

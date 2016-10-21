@@ -73,7 +73,7 @@
         <!--Root View Controller-->
         <scene sceneID="KHB-7J-KXK">
             <objects>
-                <tableViewController id="r2N-9B-gvy" sceneMemberID="viewController">
+                <tableViewController id="r2N-9B-gvy" customClass="WordTableViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e9Y-bB-YKI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
