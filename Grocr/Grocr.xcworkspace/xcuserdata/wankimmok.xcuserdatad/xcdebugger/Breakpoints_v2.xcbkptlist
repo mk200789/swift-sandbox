@@ -15,8 +15,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
-            landmarkName = "addGroceryItem(_:)"
-            landmarkType = "5">
+            landmarkName = "addGroceryItem(sender:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -32,7 +32,7 @@
             startingLineNumber = "123"
             endingLineNumber = "123"
             landmarkName = "userCountButtonDidTouch()"
-            landmarkType = "5">
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -40,6 +40,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Grocr.GroceryListTableViewController.addGroceryItem (Grocr.GroceryListTableViewController)(Swift.AnyObject) -&gt; ()"
                   moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wankimmok/Desktop/projects/swift-sandbox/Grocr/Grocr/GroceryListTableViewController.swift"
                   timestampString = "480568456.411031"
                   startingColumnNumber = "9223372036854775807"
@@ -54,6 +55,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Grocr.GroceryListTableViewController.(addGroceryItem (Grocr.GroceryListTableViewController) -&gt; (Swift.AnyObject) -&gt; ()).(closure #1) with unmangled suffix &quot;_promote0&quot;"
                   moduleName = "Grocr"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/wankimmok/Desktop/projects/swift-sandbox/Grocr/Grocr/GroceryListTableViewController.swift"
                   timestampString = "480568456.412129"
                   startingColumnNumber = "9223372036854775807"
