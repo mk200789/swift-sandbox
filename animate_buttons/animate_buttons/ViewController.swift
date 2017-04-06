@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var toggle_Button = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,18 @@ class ViewController: UIViewController {
     
     func test(sender: UIButton){
         print("button touched")
-        UIView.animate(withDuration: 2.0, animations: {
-            sender.frame = CGRect(x: CGFloat(sender.frame.origin.x)+20.0, y: CGFloat(sender.frame.origin.y)+20.0, width: sender.frame.size.width, height: sender.frame.size.height)
-        })
+        if toggle_Button == false{
+            toggle_Button = true
+            UIView.animate(withDuration: 2.0, animations: {
+                sender.frame = CGRect(x: CGFloat(sender.frame.origin.x)+20.0, y: CGFloat(sender.frame.origin.y)+20.0, width: sender.frame.size.width, height: sender.frame.size.height)
+            })
+        }else{
+            toggle_Button = false
+            UIView.animate(withDuration: 2.0, animations: {
+                sender.frame = CGRect(x: CGFloat(sender.frame.origin.x)-20.0, y: CGFloat(sender.frame.origin.y)-20.0, width: sender.frame.size.width, height: sender.frame.size.height)
+            })
+        }
+        
         
     }
 
