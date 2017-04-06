@@ -19,18 +19,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //add initial button to view
         var image = UIImage(named: "star")
         image = image?.withRenderingMode(.alwaysOriginal)
         let starButton = UIButton(frame: CGRect(x: 50, y: 50, width: (image?.size.width)!, height: (image?.size.height)!))
         starButton.setImage(image, for: .normal)
         starButton.addTarget(self, action: #selector(expand_buttons), for: UIControlEvents.touchUpInside)
-        
         prepare_hidden_buttons(main_button: starButton)
-        
         self.view.addSubview(starButton)
         
         //add a label to view
-        
         var label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 25))
         label.text = "This view is to animate exposed hidden 'About' button."
         label.numberOfLines = 0
@@ -43,6 +41,9 @@ class ViewController: UIViewController {
         label.center.y = self.view.center.y
         
         self.view.addSubview(label)
+        
+        
+        
         
     }
     
@@ -63,9 +64,9 @@ class ViewController: UIViewController {
     }
     
     func expose_hidden_buttons(){
-        print("expose_hidden_buttons")
         
         if toggle_Button == false{
+            print("expose_hidden_buttons")
             self.button1.alpha = 0.1
             toggle_Button = true
             button1.isHidden = false
@@ -73,15 +74,18 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveEaseOut, animations: {
                 self.button1.alpha = 0.8
                 self.button1.frame = CGRect(x: CGFloat(self.button1.frame.origin.x)+80.0, y: CGFloat(self.button1.frame.origin.y)+80.0, width: self.button1.frame.size.width, height: self.button1.frame.size.height)
+                self.button1.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             }) { (true) in
                 self.button1.alpha = 1.0
             }
         }else{
+            print("hide_hidden_buttons")
             toggle_Button = false
             self.button1.alpha = 0.8
             UIView.animate(withDuration: 1.6, delay: 0.0, options: .curveEaseIn ,animations: {
                 self.button1.alpha = 0.4
                 self.button1.frame = CGRect(x: CGFloat(self.button1.frame.origin.x)-80.0, y: CGFloat(self.button1.frame.origin.y)-80.0, width: self.button1.frame.size.width, height: self.button1.frame.size.height)
+                self.button1.transform = CGAffineTransform(scaleX: 1, y: 1)
             }, completion: { (true) in
                 self.button1.isHidden = true
                 self.button1.alpha = 0.1
