@@ -34,26 +34,39 @@ class ViewController: UIViewController {
         print("expose_hidden_buttons")
         button1 = UIButton(frame: CGRect(x: CGFloat(main_button.frame.origin.x), y: CGFloat(main_button.frame.origin.y) , width: 100, height: 25))
         button1.backgroundColor = UIColor.blue
-        button1.setTitle("Exposed!", for: .normal)
+        button1.setTitle("About!", for: .normal)
         button1.isHidden = true
+        button1.addTarget(self, action: #selector(about), for: .touchUpInside)
         self.view.addSubview(button1)
+    }
+    
+    func about(sender: UIButton){
+        print("About button clicked!")
     }
     
     func expose_hidden_buttons(){
         print("expose_hidden_buttons")
+        
         if toggle_Button == false{
+            self.button1.alpha = 0.1
             toggle_Button = true
             button1.isHidden = false
-            UIView.animate(withDuration: 2.0, animations: {
+
+            UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveEaseOut, animations: {
+                self.button1.alpha = 0.8
                 self.button1.frame = CGRect(x: CGFloat(self.button1.frame.origin.x)+80.0, y: CGFloat(self.button1.frame.origin.y)+80.0, width: self.button1.frame.size.width, height: self.button1.frame.size.height)
-                })
+            }) { (true) in
+                self.button1.alpha = 1.0
+            }
         }else{
-            
             toggle_Button = false
-            UIView.animate(withDuration: 2.0, animations: {
+            self.button1.alpha = 0.8
+            UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveEaseIn ,animations: {
+                self.button1.alpha = 0.4
                 self.button1.frame = CGRect(x: CGFloat(self.button1.frame.origin.x)-80.0, y: CGFloat(self.button1.frame.origin.y)-80.0, width: self.button1.frame.size.width, height: self.button1.frame.size.height)
             }, completion: { (true) in
                 self.button1.isHidden = true
+                self.button1.alpha = 0.1
             })
 
         }
