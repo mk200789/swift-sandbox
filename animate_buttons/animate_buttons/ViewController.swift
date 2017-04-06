@@ -29,6 +29,21 @@ class ViewController: UIViewController {
         
         self.view.addSubview(starButton)
         
+        //add a label to view
+        
+        var label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 25))
+        label.text = "This view is to animate exposed hidden 'About' button."
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
+        label.backgroundColor = UIColor.lightGray
+        label.sizeToFit()
+        label.center = self.view.center
+        label.center.x = self.view.center.x
+        label.center.y = self.view.center.y
+        
+        self.view.addSubview(label)
+        
     }
     
     func prepare_hidden_buttons(main_button: UIButton){
