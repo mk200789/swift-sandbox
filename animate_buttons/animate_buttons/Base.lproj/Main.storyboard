@@ -23,7 +23,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="5xP-ov-XH3" kind="show" identifier="about_seg" id="4yW-ra-p8v"/>
+                        <segue destination="5xP-ov-XH3" kind="presentation" identifier="about_seg" id="4yW-ra-p8v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -43,6 +43,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="main_seg" id="jus-vB-FXi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scK-EU-7TD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

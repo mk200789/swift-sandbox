@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     
     func about(sender: UIButton){
         print("About button clicked!")
-        performSegue(withIdentifier: "about_seg", sender: nil)
+        performSegue(withIdentifier: "about_seg", sender: self)
     }
     
     func expose_hidden_buttons(){

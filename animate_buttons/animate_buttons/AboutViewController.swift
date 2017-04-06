@@ -27,9 +27,22 @@ class AboutViewController: UIViewController {
         label.center.x = self.view.center.x
         label.center.y = self.view.center.y
         
+        //add a return button at bottom of view
+        let returnMainButton = UIButton(frame: CGRect(x: self.view.frame.size.width/2, y: self.view.frame.size.height-50, width: 150, height: 25))
+        returnMainButton.backgroundColor = UIColor.brown
+        returnMainButton.titleLabel?.textColor = UIColor.black
+        returnMainButton.setTitle("Return to main", for: .normal)
+        returnMainButton.addTarget(self, action: #selector(back_to_main), for: .touchUpInside)
+        returnMainButton.center.x = self.view.center.x
+        
+        self.view.addSubview(returnMainButton)
         self.view.addSubview(label)
     }
 
+    func back_to_main(sender: UIButton){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
