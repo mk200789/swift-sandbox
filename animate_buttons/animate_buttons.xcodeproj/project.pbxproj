@@ -13,6 +13,7 @@
 		C696EAD41E95A1D500F8093E /* animate_buttons.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C696EAD21E95A1D500F8093E /* animate_buttons.xcdatamodeld */; };
 		C696EAD61E95A1D500F8093E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C696EAD51E95A1D500F8093E /* Assets.xcassets */; };
 		C696EAD91E95A1D500F8093E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C696EAD71E95A1D500F8093E /* LaunchScreen.storyboard */; };
+		C696EAE11E95FAF100F8093E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696EAE01E95FAF100F8093E /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C696EAD51E95A1D500F8093E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C696EAD81E95A1D500F8093E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C696EADA1E95A1D500F8093E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C696EAE01E95FAF100F8093E /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				C696EACB1E95A1D500F8093E /* AppDelegate.swift */,
 				C696EACD1E95A1D500F8093E /* ViewController.swift */,
+				C696EAE01E95FAF100F8093E /* AboutViewController.swift */,
 				C696EACF1E95A1D500F8093E /* Main.storyboard */,
 				C696EAD51E95A1D500F8093E /* Assets.xcassets */,
 				C696EAD71E95A1D500F8093E /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				C696EAD41E95A1D500F8093E /* animate_buttons.xcdatamodeld in Sources */,
 				C696EACE1E95A1D500F8093E /* ViewController.swift in Sources */,
+				C696EAE11E95FAF100F8093E /* AboutViewController.swift in Sources */,
 				C696EACC1E95A1D500F8093E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +308,7 @@
 				C696EADF1E95A1D500F8093E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

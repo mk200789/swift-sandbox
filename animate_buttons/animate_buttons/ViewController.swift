@@ -43,8 +43,6 @@ class ViewController: UIViewController {
         self.view.addSubview(label)
         
         
-        
-        
     }
     
     func prepare_hidden_buttons(main_button: UIButton){
@@ -61,6 +59,7 @@ class ViewController: UIViewController {
     
     func about(sender: UIButton){
         print("About button clicked!")
+        performSegue(withIdentifier: "about_seg", sender: nil)
     }
     
     func expose_hidden_buttons(){

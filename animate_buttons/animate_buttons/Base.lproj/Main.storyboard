@@ -22,10 +22,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="5xP-ov-XH3" kind="show" identifier="about_seg" id="4yW-ra-p8v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="136.28185907046478"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="lWc-GV-aV3">
+            <objects>
+                <viewController id="5xP-ov-XH3" customClass="AboutViewController" customModule="animate_buttons" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QRo-yg-7Td"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yx9-3z-gSr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xk7-F3-WXa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="scK-EU-7TD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="136"/>
         </scene>
     </scenes>
 </document>
