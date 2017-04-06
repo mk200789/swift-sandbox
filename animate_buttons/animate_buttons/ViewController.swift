@@ -26,16 +26,19 @@ class ViewController: UIViewController {
         starButton.addTarget(self, action: #selector(expand_buttons), for: UIControlEvents.touchUpInside)
         
         prepare_hidden_buttons(main_button: starButton)
+        
         self.view.addSubview(starButton)
         
     }
     
     func prepare_hidden_buttons(main_button: UIButton){
         print("expose_hidden_buttons")
-        button1 = UIButton(frame: CGRect(x: CGFloat(main_button.frame.origin.x), y: CGFloat(main_button.frame.origin.y) , width: 100, height: 25))
+        button1 = UIButton(frame: CGRect(x: CGFloat(main_button.frame.origin.x), y: CGFloat(main_button.frame.origin.y) , width: 50, height: 50))
         button1.backgroundColor = UIColor.blue
         button1.setTitle("About!", for: .normal)
         button1.isHidden = true
+        button1.layer.cornerRadius = 0.5*button1.bounds.size.width
+        button1.titleLabel?.font = UIFont.boldSystemFont(ofSize: 8)
         button1.addTarget(self, action: #selector(about), for: .touchUpInside)
         self.view.addSubview(button1)
     }
@@ -61,7 +64,7 @@ class ViewController: UIViewController {
         }else{
             toggle_Button = false
             self.button1.alpha = 0.8
-            UIView.animate(withDuration: 2.0, delay: 0.0, options: .curveEaseIn ,animations: {
+            UIView.animate(withDuration: 1.6, delay: 0.0, options: .curveEaseIn ,animations: {
                 self.button1.alpha = 0.4
                 self.button1.frame = CGRect(x: CGFloat(self.button1.frame.origin.x)-80.0, y: CGFloat(self.button1.frame.origin.y)-80.0, width: self.button1.frame.size.width, height: self.button1.frame.size.height)
             }, completion: { (true) in
