@@ -15,6 +15,16 @@ class AboutViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        //add an image
+        let mainImage = UIImage(named: "flower.jpg")?.withRenderingMode(.alwaysOriginal)
+        let imageview = UIImageView(image: mainImage)
+        imageview.contentMode = .scaleAspectFit
+        imageview.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        imageview.center.x = self.view.center.x
+        imageview.alpha = 0.5
+        self.view.addSubview(imageview)
+        
+        
         //add a label to view
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 25))
         label.text = "This view is to animate a pop up hearts, you click on the image."

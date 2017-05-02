@@ -14,6 +14,7 @@
 		C696EAD61E95A1D500F8093E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C696EAD51E95A1D500F8093E /* Assets.xcassets */; };
 		C696EAD91E95A1D500F8093E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C696EAD71E95A1D500F8093E /* LaunchScreen.storyboard */; };
 		C696EAE11E95FAF100F8093E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696EAE01E95FAF100F8093E /* AboutViewController.swift */; };
+		C696EAE31E9607D000F8093E /* flower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C696EAE21E9607D000F8093E /* flower.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C696EAD81E95A1D500F8093E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C696EADA1E95A1D500F8093E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C696EAE01E95FAF100F8093E /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		C696EAE21E9607D000F8093E /* flower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		C696EACA1E95A1D500F8093E /* animate_buttons */ = {
 			isa = PBXGroup;
 			children = (
+				C696EAE21E9607D000F8093E /* flower.jpg */,
 				C696EACB1E95A1D500F8093E /* AppDelegate.swift */,
 				C696EACD1E95A1D500F8093E /* ViewController.swift */,
 				C696EAE01E95FAF100F8093E /* AboutViewController.swift */,
@@ -130,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C696EAE31E9607D000F8093E /* flower.jpg in Resources */,
 				C696EAD91E95A1D500F8093E /* LaunchScreen.storyboard in Resources */,
 				C696EAD61E95A1D500F8093E /* Assets.xcassets in Resources */,
 				C696EAD11E95A1D500F8093E /* Main.storyboard in Resources */,
