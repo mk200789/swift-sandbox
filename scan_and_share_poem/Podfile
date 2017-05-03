@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'scan_and_share_poem' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for scan_and_share_poem
+  pod 'TesseractOCRiOS', '4.0.0'
+
+  target 'scan_and_share_poemTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'scan_and_share_poemUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

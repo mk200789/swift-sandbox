@@ -8,6 +8,7 @@
 
 #import "tesseract-bridging-header.h"
 
+
 @implementation tesseract_bridging_header
 
 @end

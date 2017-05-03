@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,35 +23,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiO-ey-pAk">
-                                <rect key="frame" x="31" y="52" width="257" height="332"/>
-                                <color key="backgroundColor" red="0.95158512411876939" green="0.95628737623671145" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="qiO-ey-pAk" secondAttribute="height" multiplier="257:332" id="3ol-v2-ALy"/>
-                                    <constraint firstAttribute="height" constant="332" id="GZ8-Wj-5wZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOF-yH-9nt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOF-yH-9nt">
                                 <rect key="frame" x="64" y="429" width="192" height="30"/>
                                 <color key="backgroundColor" red="0.076151214801382872" green="0.23994372943999165" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JOF-yH-9nt" secondAttribute="height" multiplier="32:5" id="yXT-en-0v4"/>
+                                </constraints>
                                 <state key="normal" title="Snap or Upload Photo">
                                     <color key="titleColor" red="0.99017520507495349" green="0.98438546935891469" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="UploadPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JkF-v4-oqv"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rso-Ez-jq9">
+                                <rect key="frame" x="32" y="53" width="257" height="332"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PZT-f2-BAR">
+                                        <rect key="frame" x="0.0" y="0.0" width="257" height="332"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PZT-f2-BAR" secondAttribute="bottom" id="anU-rM-9tA"/>
+                                    <constraint firstAttribute="width" secondItem="rso-Ez-jq9" secondAttribute="height" multiplier="257:332" id="c6u-Xu-2lO"/>
+                                    <constraint firstAttribute="trailing" secondItem="PZT-f2-BAR" secondAttribute="trailing" id="dGa-M8-U42"/>
+                                    <constraint firstItem="PZT-f2-BAR" firstAttribute="top" secondItem="rso-Ez-jq9" secondAttribute="top" id="nUt-hp-sFJ"/>
+                                    <constraint firstItem="PZT-f2-BAR" firstAttribute="leading" secondItem="rso-Ez-jq9" secondAttribute="leading" id="rjN-Dp-8ys"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.61715740692515664" green="0.61543150969852078" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="qiO-ey-pAk" secondAttribute="trailing" constant="16" id="5kK-h9-aV2"/>
-                            <constraint firstItem="qiO-ey-pAk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bh9-3L-ZXq"/>
-                            <constraint firstItem="JOF-yH-9nt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="age-Gw-UyT"/>
-                            <constraint firstItem="qiO-ey-pAk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="dPm-k3-rqv"/>
-                            <constraint firstItem="qiO-ey-pAk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="mha-wx-ZDy"/>
-                            <constraint firstItem="JOF-yH-9nt" firstAttribute="top" secondItem="qiO-ey-pAk" secondAttribute="bottom" constant="45" id="sy3-aj-r6i"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rso-Ez-jq9" secondAttribute="trailing" constant="15" id="4nf-Q9-dj5"/>
+                            <constraint firstItem="rso-Ez-jq9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="A18-Lf-Vwd"/>
+                            <constraint firstItem="JOF-yH-9nt" firstAttribute="top" secondItem="rso-Ez-jq9" secondAttribute="bottom" constant="44" id="gvE-5O-g76"/>
+                            <constraint firstItem="rso-Ez-jq9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="jwY-d4-z21"/>
+                            <constraint firstItem="JOF-yH-9nt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wS8-y0-eTD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="PZT-f2-BAR" id="ssA-Rq-JCZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

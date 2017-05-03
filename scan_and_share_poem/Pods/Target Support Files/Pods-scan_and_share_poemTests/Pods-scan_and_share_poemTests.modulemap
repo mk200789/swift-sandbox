@@ -1,0 +1,6 @@
+framework module Pods_scan_and_share_poemTests {
+  umbrella header "Pods-scan_and_share_poemTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

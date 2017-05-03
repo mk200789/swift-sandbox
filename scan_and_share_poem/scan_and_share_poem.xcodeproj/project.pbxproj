@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D08859736553DE35B1C9E9C /* Pods_scan_and_share_poem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89087C425EE3D918FFDFD90 /* Pods_scan_and_share_poem.framework */; };
+		79FD79AC37DEF7A288B21EEF /* Pods_scan_and_share_poemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F824A856EE1000E60883D9D /* Pods_scan_and_share_poemTests.framework */; };
+		AACC559C769162F7F49A3A69 /* Pods_scan_and_share_poemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF93040E5A87E641EA59F45B /* Pods_scan_and_share_poemUITests.framework */; };
 		C622C3311EB8349B006FD095 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622C3301EB8349B006FD095 /* AppDelegate.swift */; };
 		C622C3331EB8349B006FD095 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622C3321EB8349B006FD095 /* ViewController.swift */; };
 		C622C3361EB8349B006FD095 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C622C3341EB8349B006FD095 /* Main.storyboard */; };
@@ -14,6 +17,9 @@
 		C622C33B1EB8349B006FD095 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C622C3391EB8349B006FD095 /* LaunchScreen.storyboard */; };
 		C622C3461EB8349B006FD095 /* scan_and_share_poemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622C3451EB8349B006FD095 /* scan_and_share_poemTests.swift */; };
 		C622C3511EB8349B006FD095 /* scan_and_share_poemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C622C3501EB8349B006FD095 /* scan_and_share_poemUITests.swift */; };
+		C6395D481EB8569B00477129 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C6395D471EB8569B00477129 /* libz.1.1.3.tbd */; };
+		C6395D4A1EB8593300477129 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = C6395D491EB8593300477129 /* tessdata */; };
+		C6395D501EB85BA100477129 /* tesseract-bridging-header.m in Sources */ = {isa = PBXBuildFile; fileRef = C6395D4F1EB85BA100477129 /* tesseract-bridging-header.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F824A856EE1000E60883D9D /* Pods_scan_and_share_poemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_scan_and_share_poemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18909C7DAE3B5B92451017AB /* Pods-scan_and_share_poemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scan_and_share_poemUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-scan_and_share_poemUITests/Pods-scan_and_share_poemUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1B7D4A5F9E4C13BF710FE648 /* Pods-scan_and_share_poem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scan_and_share_poem.release.xcconfig"; path = "Pods/Target Support Files/Pods-scan_and_share_poem/Pods-scan_and_share_poem.release.xcconfig"; sourceTree = "<group>"; };
+		498697C4BCD664E3747D69AB /* Pods-scan_and_share_poemTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scan_and_share_poemTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-scan_and_share_poemTests/Pods-scan_and_share_poemTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A187550ADA8A63C031AFFC33 /* Pods-scan_and_share_poemTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scan_and_share_poemTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scan_and_share_poemTests/Pods-scan_and_share_poemTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF93040E5A87E641EA59F45B /* Pods_scan_and_share_poemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_scan_and_share_poemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C622C32D1EB8349B006FD095 /* scan_and_share_poem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scan_and_share_poem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C622C3301EB8349B006FD095 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C622C3321EB8349B006FD095 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +59,14 @@
 		C622C34C1EB8349B006FD095 /* scan_and_share_poemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = scan_and_share_poemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C622C3501EB8349B006FD095 /* scan_and_share_poemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scan_and_share_poemUITests.swift; sourceTree = "<group>"; };
 		C622C3521EB8349B006FD095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6395D471EB8569B00477129 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		C6395D491EB8593300477129 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		C6395D4D1EB85BA100477129 /* scan_and_share_poem-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "scan_and_share_poem-Bridging-Header.h"; sourceTree = "<group>"; };
+		C6395D4E1EB85BA100477129 /* tesseract-bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tesseract-bridging-header.h"; sourceTree = "<group>"; };
+		C6395D4F1EB85BA100477129 /* tesseract-bridging-header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "tesseract-bridging-header.m"; sourceTree = "<group>"; };
+		D89087C425EE3D918FFDFD90 /* Pods_scan_and_share_poem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_scan_and_share_poem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8C117FDAA83AE407792BCD1 /* Pods-scan_and_share_poem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scan_and_share_poem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-scan_and_share_poem/Pods-scan_and_share_poem.debug.xcconfig"; sourceTree = "<group>"; };
+		F2CF9BB6A490D63A5BB43C9C /* Pods-scan_and_share_poemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scan_and_share_poemUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scan_and_share_poemUITests/Pods-scan_and_share_poemUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6395D481EB8569B00477129 /* libz.1.1.3.tbd in Frameworks */,
+				5D08859736553DE35B1C9E9C /* Pods_scan_and_share_poem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79FD79AC37DEF7A288B21EEF /* Pods_scan_and_share_poemTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +91,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACC559C769162F7F49A3A69 /* Pods_scan_and_share_poemUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D9A7FF5D7E7093D7414FB2A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8C117FDAA83AE407792BCD1 /* Pods-scan_and_share_poem.debug.xcconfig */,
+				1B7D4A5F9E4C13BF710FE648 /* Pods-scan_and_share_poem.release.xcconfig */,
+				498697C4BCD664E3747D69AB /* Pods-scan_and_share_poemTests.debug.xcconfig */,
+				A187550ADA8A63C031AFFC33 /* Pods-scan_and_share_poemTests.release.xcconfig */,
+				18909C7DAE3B5B92451017AB /* Pods-scan_and_share_poemUITests.debug.xcconfig */,
+				F2CF9BB6A490D63A5BB43C9C /* Pods-scan_and_share_poemUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		66CC5510380A651E9D1F4BCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6395D471EB8569B00477129 /* libz.1.1.3.tbd */,
+				D89087C425EE3D918FFDFD90 /* Pods_scan_and_share_poem.framework */,
+				0F824A856EE1000E60883D9D /* Pods_scan_and_share_poemTests.framework */,
+				AF93040E5A87E641EA59F45B /* Pods_scan_and_share_poemUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C622C3241EB8349B006FD095 = {
 			isa = PBXGroup;
 			children = (
+				C6395D4E1EB85BA100477129 /* tesseract-bridging-header.h */,
+				C6395D4F1EB85BA100477129 /* tesseract-bridging-header.m */,
 				C622C32F1EB8349B006FD095 /* scan_and_share_poem */,
 				C622C3441EB8349B006FD095 /* scan_and_share_poemTests */,
 				C622C34F1EB8349B006FD095 /* scan_and_share_poemUITests */,
 				C622C32E1EB8349B006FD095 /* Products */,
+				2D9A7FF5D7E7093D7414FB2A /* Pods */,
+				66CC5510380A651E9D1F4BCD /* Frameworks */,
+				C6395D4D1EB85BA100477129 /* scan_and_share_poem-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +156,7 @@
 				C622C3371EB8349B006FD095 /* Assets.xcassets */,
 				C622C3391EB8349B006FD095 /* LaunchScreen.storyboard */,
 				C622C33C1EB8349B006FD095 /* Info.plist */,
+				C6395D491EB8593300477129 /* tessdata */,
 			);
 			path = scan_and_share_poem;
 			sourceTree = "<group>";
@@ -132,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C622C3551EB8349C006FD095 /* Build configuration list for PBXNativeTarget "scan_and_share_poem" */;
 			buildPhases = (
+				A60A18A9F59F2A171B89E17C /* [CP] Check Pods Manifest.lock */,
 				C622C3291EB8349B006FD095 /* Sources */,
 				C622C32A1EB8349B006FD095 /* Frameworks */,
 				C622C32B1EB8349B006FD095 /* Resources */,
+				B2AFF4315D56AE53B68F872E /* [CP] Embed Pods Frameworks */,
+				00D738DF5AB1C75212392A4E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C622C3581EB8349C006FD095 /* Build configuration list for PBXNativeTarget "scan_and_share_poemTests" */;
 			buildPhases = (
+				D1D1FAE1A5D250269620E8C2 /* [CP] Check Pods Manifest.lock */,
 				C622C33D1EB8349B006FD095 /* Sources */,
 				C622C33E1EB8349B006FD095 /* Frameworks */,
 				C622C33F1EB8349B006FD095 /* Resources */,
+				30095E950B01E92784BA45DF /* [CP] Embed Pods Frameworks */,
+				8A972589246C7EE81CD260B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C622C35B1EB8349C006FD095 /* Build configuration list for PBXNativeTarget "scan_and_share_poemUITests" */;
 			buildPhases = (
+				8D1BCEDDEDEB0B346AD03D6F /* [CP] Check Pods Manifest.lock */,
 				C622C3481EB8349B006FD095 /* Sources */,
 				C622C3491EB8349B006FD095 /* Frameworks */,
 				C622C34A1EB8349B006FD095 /* Resources */,
+				EDC9C47960234A7926C18780 /* [CP] Embed Pods Frameworks */,
+				9E4B52CEA65177DB9E793CBA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +257,7 @@
 					C622C32C1EB8349B006FD095 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 96KV52LNQ2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					C622C3401EB8349B006FD095 = {
@@ -236,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C622C33B1EB8349B006FD095 /* LaunchScreen.storyboard in Resources */,
+				C6395D4A1EB8593300477129 /* tessdata in Resources */,
 				C622C3381EB8349B006FD095 /* Assets.xcassets in Resources */,
 				C622C3361EB8349B006FD095 /* Main.storyboard in Resources */,
 			);
@@ -257,12 +322,151 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00D738DF5AB1C75212392A4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-scan_and_share_poem/Pods-scan_and_share_poem-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30095E950B01E92784BA45DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-scan_and_share_poemTests/Pods-scan_and_share_poemTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A972589246C7EE81CD260B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-scan_and_share_poemTests/Pods-scan_and_share_poemTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D1BCEDDEDEB0B346AD03D6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9E4B52CEA65177DB9E793CBA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-scan_and_share_poemUITests/Pods-scan_and_share_poemUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A60A18A9F59F2A171B89E17C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B2AFF4315D56AE53B68F872E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-scan_and_share_poem/Pods-scan_and_share_poem-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1D1FAE1A5D250269620E8C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EDC9C47960234A7926C18780 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-scan_and_share_poemUITests/Pods-scan_and_share_poemUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C622C3291EB8349B006FD095 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C622C3331EB8349B006FD095 /* ViewController.swift in Sources */,
+				C6395D501EB85BA100477129 /* tesseract-bridging-header.m in Sources */,
 				C622C3311EB8349B006FD095 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,32 +617,40 @@
 		};
 		C622C3561EB8349C006FD095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8C117FDAA83AE407792BCD1 /* Pods-scan_and_share_poem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 96KV52LNQ2;
 				INFOPLIST_FILE = scan_and_share_poem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mk200789.scan-and-share-poem";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "scan_and_share_poem-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C622C3571EB8349C006FD095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7D4A5F9E4C13BF710FE648 /* Pods-scan_and_share_poem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 96KV52LNQ2;
 				INFOPLIST_FILE = scan_and_share_poem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mk200789.scan-and-share-poem";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "scan_and_share_poem-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		C622C3591EB8349C006FD095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 498697C4BCD664E3747D69AB /* Pods-scan_and_share_poemTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +666,7 @@
 		};
 		C622C35A1EB8349C006FD095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A187550ADA8A63C031AFFC33 /* Pods-scan_and_share_poemTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -469,6 +682,7 @@
 		};
 		C622C35C1EB8349C006FD095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18909C7DAE3B5B92451017AB /* Pods-scan_and_share_poemUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 3GDGGYA77N;
@@ -483,6 +697,7 @@
 		};
 		C622C35D1EB8349C006FD095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2CF9BB6A490D63A5BB43C9C /* Pods-scan_and_share_poemUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 3GDGGYA77N;
@@ -514,6 +729,7 @@
 				C622C3571EB8349C006FD095 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C622C3581EB8349C006FD095 /* Build configuration list for PBXNativeTarget "scan_and_share_poemTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +738,7 @@
 				C622C35A1EB8349C006FD095 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C622C35B1EB8349C006FD095 /* Build configuration list for PBXNativeTarget "scan_and_share_poemUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +747,7 @@
 				C622C35D1EB8349C006FD095 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
