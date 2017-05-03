@@ -20,6 +20,7 @@
 		C6395D481EB8569B00477129 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C6395D471EB8569B00477129 /* libz.1.1.3.tbd */; };
 		C6395D4A1EB8593300477129 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = C6395D491EB8593300477129 /* tessdata */; };
 		C6395D501EB85BA100477129 /* tesseract-bridging-header.m in Sources */ = {isa = PBXBuildFile; fileRef = C6395D4F1EB85BA100477129 /* tesseract-bridging-header.m */; };
+		C6395D571EB97AEB00477129 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C6395D561EB97AEB00477129 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		C6395D4D1EB85BA100477129 /* scan_and_share_poem-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "scan_and_share_poem-Bridging-Header.h"; sourceTree = "<group>"; };
 		C6395D4E1EB85BA100477129 /* tesseract-bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tesseract-bridging-header.h"; sourceTree = "<group>"; };
 		C6395D4F1EB85BA100477129 /* tesseract-bridging-header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "tesseract-bridging-header.m"; sourceTree = "<group>"; };
+		C6395D561EB97AEB00477129 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D89087C425EE3D918FFDFD90 /* Pods_scan_and_share_poem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_scan_and_share_poem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C117FDAA83AE407792BCD1 /* Pods-scan_and_share_poem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scan_and_share_poem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-scan_and_share_poem/Pods-scan_and_share_poem.debug.xcconfig"; sourceTree = "<group>"; };
 		F2CF9BB6A490D63A5BB43C9C /* Pods-scan_and_share_poemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-scan_and_share_poemUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-scan_and_share_poemUITests/Pods-scan_and_share_poemUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6395D571EB97AEB00477129 /* libz.tbd in Frameworks */,
 				C6395D481EB8569B00477129 /* libz.1.1.3.tbd in Frameworks */,
 				5D08859736553DE35B1C9E9C /* Pods_scan_and_share_poem.framework in Frameworks */,
 			);
@@ -114,6 +117,7 @@
 		66CC5510380A651E9D1F4BCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6395D561EB97AEB00477129 /* libz.tbd */,
 				C6395D471EB8569B00477129 /* libz.1.1.3.tbd */,
 				D89087C425EE3D918FFDFD90 /* Pods_scan_and_share_poem.framework */,
 				0F824A856EE1000E60883D9D /* Pods_scan_and_share_poemTests.framework */,
@@ -262,13 +266,13 @@
 					};
 					C622C3401EB8349B006FD095 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 3GDGGYA77N;
+						DevelopmentTeam = 96KV52LNQ2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C622C32C1EB8349B006FD095;
 					};
 					C622C34B1EB8349B006FD095 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 3GDGGYA77N;
+						DevelopmentTeam = 96KV52LNQ2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C622C32C1EB8349B006FD095;
 					};
@@ -621,6 +625,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = 96KV52LNQ2;
 				INFOPLIST_FILE = scan_and_share_poem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -638,6 +643,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
 				DEVELOPMENT_TEAM = 96KV52LNQ2;
 				INFOPLIST_FILE = scan_and_share_poem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -654,7 +660,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 3GDGGYA77N;
+				DEVELOPMENT_TEAM = 96KV52LNQ2;
 				INFOPLIST_FILE = scan_and_share_poemTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mk200789.scan-and-share-poemTests";
@@ -670,7 +676,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 3GDGGYA77N;
+				DEVELOPMENT_TEAM = 96KV52LNQ2;
 				INFOPLIST_FILE = scan_and_share_poemTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mk200789.scan-and-share-poemTests";
@@ -685,7 +691,7 @@
 			baseConfigurationReference = 18909C7DAE3B5B92451017AB /* Pods-scan_and_share_poemUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 3GDGGYA77N;
+				DEVELOPMENT_TEAM = 96KV52LNQ2;
 				INFOPLIST_FILE = scan_and_share_poemUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mk200789.scan-and-share-poemUITests";
@@ -700,7 +706,7 @@
 			baseConfigurationReference = F2CF9BB6A490D63A5BB43C9C /* Pods-scan_and_share_poemUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 3GDGGYA77N;
+				DEVELOPMENT_TEAM = 96KV52LNQ2;
 				INFOPLIST_FILE = scan_and_share_poemUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mk200789.scan-and-share-poemUITests";

@@ -28,8 +28,41 @@ class ViewController: UIViewController {
     }
 
     @IBAction func UploadPhoto(_ sender: Any) {
-        textView.text = "Clicked!"
+        let photoPickerActionSheet = UIAlertController(title: "Snap/Upload Photo", message: nil, preferredStyle: .actionSheet)
+        
+        //check if there's a camera, if so add that to photoPickerActionSheet
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let cameraButton = UIAlertAction(title: "Take a photo", style: .default, handler: { (alert) in
+                let photoPicker = UIImagePickerController()
+                photoPicker.sourceType = .camera
+                self.present(photoPicker, animated: true, completion: nil)
+            })
+            
+            photoPickerActionSheet.addAction(cameraButton)
+            
+        }
+        
+        //add photolibrary to photoPickerActionSheet
+        let libraryButton = UIAlertAction(title: "Choose Existing", style: .default) { (alert) in
+            let photoPicker = UIImagePickerController()
+            photoPicker.sourceType = .photoLibrary
+            self.present(photoPicker, animated: true, completion: nil)
+        }
+
+        photoPickerActionSheet.addAction(libraryButton)
+        
+        //add cancel to actionsheet
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+        photoPickerActionSheet.addAction(cancelButton)
+        
+        //present view controller
+        self.present(photoPickerActionSheet, animated: true, completion: nil)
+
+        
     }
+    
+    
 
 }
 
